@@ -1,0 +1,22 @@
+{
+    "arrowParens": "avoid",
+    "bracketSpacing": true,
+    "htmlWhitespaceSensitivity": "css",
+    "insertPragma": false,
+    "jsxBracketSameLine": true,
+    "jsxSingleQuote": false,
+    "printWidth": 140,
+    "proseWrap": "preserve",
+    "quoteProps": "as-needed",
+    "requirePragma": false,
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 4,
+    "trailingComma": "none",
+    "useTabs": false,
+    "rangeStart": 0,
+    "singleAttributePerLine": false,
+    "emmet.includeLanguages": {
+        "javascript": "javascriptreact"
+    }
+}

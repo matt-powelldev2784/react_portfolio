@@ -71,13 +71,3 @@ const StyledButton = styled.button`
     width: 10rem;
     font-size: 1.5rem;
 `
-
-const headingCss = {
-    color: '#003a68',
-    'font-size': '2rem'
-}
-
-const paragraphCss = {
-    color: '#000000',
-    'font-size': '1.2rem'
-}

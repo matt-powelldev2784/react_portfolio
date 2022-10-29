@@ -72,12 +72,13 @@ const animateNeonFlicker = keyframes`
 
 const StyledArrowP = styled.p`
     position: absolute;
-    bottom: 0.5rem;
+    overflow: visible;
+    bottom: -12rem;
     left: 0;
     right: 0;
     margin: auto;
-    width: 6rem;
-    height: 8rem;
+    width: 20rem;
+    height: 20rem;
 
     font-size: 8rem;
 
@@ -92,7 +93,9 @@ const StyledArrowP = styled.p`
     cursor: pointer;
 
     @media (max-device-width: 440px) {
-        height: 5rem;
+        width: 15rem;
+        height: 15rem;
+        bottom: -9.5rem;
         font-size: 5rem;
     }
 `

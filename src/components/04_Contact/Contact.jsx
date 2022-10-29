@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
-import { ThemeContext } from '../../App/App'
+import { ThemeContext } from '../../app/App'
 
 export const Contact = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
     const { theme } = React.useContext(ThemeContext)

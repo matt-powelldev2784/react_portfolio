@@ -1,6 +1,6 @@
 import React, { Fragment, useState, forwardRef } from 'react'
 import styled from 'styled-components'
-import { ThemeContext } from '../../App/App'
+import { ThemeContext } from '../../app/App'
 import { Background } from './Background'
 import { TitleLogo } from './TitleLogo'
 import { TitleLine } from './TitleLine'

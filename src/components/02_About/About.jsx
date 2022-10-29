@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
-import { ThemeContext } from '../../App/App'
+import { ThemeContext } from '../../app/App'
 import { NeonText } from '../ui/NeonText'
 import { AboutText } from './AboutText'
 

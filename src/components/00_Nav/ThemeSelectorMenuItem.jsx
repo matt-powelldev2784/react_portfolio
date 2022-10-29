@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ThemeContext } from '../../App/App'
+import { ThemeContext } from '../../app/App'
 
 export const ThemeSelectorMenuItem = () => {
     const { theme, currentTheme, setCurrentTheme } = React.useContext(ThemeContext)

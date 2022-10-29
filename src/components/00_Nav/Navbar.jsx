@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { ThemeContext } from '../../App/App'
+import { ThemeContext } from '../../app/App'
 import { MenuElements } from './MenuElements'
 import menuIcon from '../../img/menu_white_36.svg'
 

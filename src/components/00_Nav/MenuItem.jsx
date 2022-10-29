@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ThemeContext } from '../../App/App'
+import { ThemeContext } from '../../app/App'
 
 export const MenuItem = ({ href, menuContent }) => {
     const { theme } = React.useContext(ThemeContext)

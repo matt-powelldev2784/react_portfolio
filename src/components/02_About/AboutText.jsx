@@ -8,12 +8,16 @@ export const AboutText = () => {
 
     return (
         <StyledSection>
+            <StyledH1>
+                ABOUT <StyledSpan>ME</StyledSpan>
+            </StyledH1>
+
             <TypeWriterEffect
                 textStyle={{ margin: '1rem' }}
                 startDelay={100}
                 cursorColor="black"
                 text={text}
-                typeSpeed={1}
+                typeSpeed={50}
                 //scrollArea={myAppRef}
             />
         </StyledSection>
@@ -22,14 +26,34 @@ export const AboutText = () => {
 
 const StyledSection = styled.section`
     position: relative;
-    width: 50%;
+    width: 70%;
     min-width: 25rem;
-    background: red;
     margin: auto;
+    font-size: 2rem;
+    color: #d1d7e0;
 
     @media (max-device-width: 440px) {
         width: 90%;
         min-width: 90%;
         font-size: 0.9rem;
     }
+`
+
+const StyledH1 = styled.h1`
+    position: relative;
+    display: blcok;
+    width: 100%;
+    min-width: 100%;
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: left;
+    color: #d1d7e0;
+`
+
+const StyledSpan = styled.span`
+    display: inline;
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: left;
+    color: #ffffff;
 `

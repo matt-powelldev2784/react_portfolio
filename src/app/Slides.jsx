@@ -19,22 +19,22 @@ export const Slides = () => {
     })
 
     const scrollToAbout = () => {
-        aboutPageRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' })
+        aboutPageRef.current.scrollIntoView({ block: 'start', behavior: 'smooth', inline: 'nearest' })
         setPageMarker({ title: false, about: true, projects: false, contact: false })
     }
 
     const scrollToProjects = () => {
-        projectsPageRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' })
+        projectsPageRef.current.scrollIntoView({ block: 'start', behavior: 'smooth', inline: 'nearest' })
         setPageMarker({ title: false, about: false, projects: true, contact: false })
     }
 
     const scrollToContact = () => {
-        contactPageRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' })
+        contactPageRef.current.scrollIntoView({ block: 'start', behavior: 'smooth', inline: 'nearest' })
         setPageMarker({ title: false, about: false, projects: false, contact: true })
     }
 
     const scrollToTitle = () => {
-        titlePageRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' })
+        titlePageRef.current.scrollIntoView({ block: 'start', behavior: 'smooth', inline: 'nearest' })
         setPageMarker({ title: true, about: false, projects: false, contact: false })
     }
 

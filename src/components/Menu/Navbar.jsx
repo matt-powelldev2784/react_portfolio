@@ -9,7 +9,6 @@ export const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false)
     const { theme } = React.useContext(ThemeContext)
     const { THEME_BG, THEME_MOB_MENU_BG } = theme?.colors?.themeA
-    console.log('THEME_MOB_MENU_BG', THEME_MOB_MENU_BG)
 
     useEffect(() => {
         const deviceWidth = window.innerWidth
@@ -42,7 +41,6 @@ const StyledNav = styled.nav`
     right: 0;
     padding: 0.75rem;
     z-index: 10000;
-    background: #272727;
 
     @media (max-device-width: 440px) {
         position: fixed;
@@ -52,6 +50,7 @@ const StyledNav = styled.nav`
         padding: unset;
         right: unset;
         margin: unset;
+        background: #272727;
     }
 `
 

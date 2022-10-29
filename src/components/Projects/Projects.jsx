@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import styled from 'styled-components'
-import { FullPageSection } from '../ui/standard/FullPageSection'
 import { FlipCard } from '../Projects/Card/FlipCard'
+import { NeonArrow } from '../ui/custom/NeonArrow'
 
-export const Projects = () => {
+const Projects = ({ scrollToComponent, triggerAnimation }, ref) => {
     return (
-        <StyledSection>
+        <StyledSection ref={ref}>
             <StyledFlexBox>
                 <StyledFlexItem>
                     <FlipCard />
@@ -17,15 +17,17 @@ export const Projects = () => {
                     <FlipCard />
                 </StyledFlexItem>
             </StyledFlexBox>
+            <NeonArrow char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />
         </StyledSection>
     )
 }
+
+export const ProjectsForwardRef = forwardRef(Projects)
 
 const StyledSection = styled.section`
     position: relative;
     display: block;
     width: 100vw;
-    text-align: center;
 `
 
 const StyledFlexBox = styled.div`
@@ -37,6 +39,7 @@ const StyledFlexBox = styled.div`
     justify-content: center;
     align-items: center;
     margin: 0rem auto 0rem auto;
+    padding: 4rem;
     background: blue;
 
     @media (max-device-width: 440px) {

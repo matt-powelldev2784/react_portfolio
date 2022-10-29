@@ -38,11 +38,6 @@ const fadeInAnimationOnClick = keyframes`
 }`
 
 const StyledArrowContainer = styled.div`
-    position: absolute;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-
     animation: ${({ triggerAnimation }) => {
         return triggerAnimation
             ? css`
@@ -77,11 +72,15 @@ const animateNeonFlicker = keyframes`
 
 const StyledArrowP = styled.p`
     position: absolute;
-    width: 100%;
-    height: 8rem;
-    font-size: 8rem;
-    bottom: 1rem;
+    bottom: 0.5rem;
+    left: 0;
+    right: 0;
     margin: auto;
+    width: 6rem;
+    height: 8rem;
+
+    font-size: 8rem;
+
     text-align: center;
     transform: ${({ rotateDeg }) => `rotate(${rotateDeg || 0}deg)`};
     font-family: 'Noto Sans Symbols 2', sans-serif;
@@ -94,7 +93,6 @@ const StyledArrowP = styled.p`
 
     @media (max-device-width: 440px) {
         height: 5rem;
-        bottom: 0;
         font-size: 5rem;
     }
 `

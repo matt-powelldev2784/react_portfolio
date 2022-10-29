@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, forwardRef } from 'react'
 import styled from 'styled-components'
 import { ThemeContext } from '../../app/App'
 import { Background } from './Background'
@@ -6,7 +6,7 @@ import { TitleLogo } from './TitleLogo'
 import { TitleLine } from './TitleLine'
 import { NeonArrow } from '../ui/custom/NeonArrow'
 
-export const Title = ({ scrollToComponent }) => {
+const Title = ({ scrollToComponent, triggerAnimation }, ref) => {
     const { theme } = React.useContext(ThemeContext)
     const { TITLE_BG, TITLE_H1, TITLE_H2 } = theme?.colors?.title
 
@@ -18,21 +18,24 @@ export const Title = ({ scrollToComponent }) => {
 
     return (
         <Fragment>
-            <StyledSection>
+            <StyledSection ref={ref}>
                 <Background />
                 <StyledFlexBox cssProps={{ background: TITLE_BG }}>
                     <TitleLogo fill1={TITLE_H1} fill2={TITLE_H2} fill3={TITLE_H2} />
                     {lineAnimationStart && <TitleLine />}
                 </StyledFlexBox>
-                <NeonArrow char={'⏷'} onClick={scrollToComponent} />
+                <NeonArrow char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />
             </StyledSection>
         </Fragment>
     )
 }
 
+export const TitleForwardRef = forwardRef(Title)
+
 const StyledSection = styled.section`
     position: relative;
     display: block;
+    width: 100vw;
 `
 
 const StyledFlexBox = styled.div`

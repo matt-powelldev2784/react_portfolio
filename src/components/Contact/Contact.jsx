@@ -2,25 +2,22 @@ import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 import { ThemeContext } from '../../app/App'
 import { NeonArrow } from '../ui/custom/NeonArrow'
-import { AboutText } from './AboutText'
 
-const About = ({ triggerAnimation, scrollToComponent, pageTheme }, ref) => {
+export const Contact = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
     const { theme } = React.useContext(ThemeContext)
     const { THEME_BLOCK_FG, THEME_BLOCK_BG, THEME_BG } = theme?.colors?.[pageTheme]
 
     return (
         <StyledSection ref={ref}>
             <StyledFlexBox background={THEME_BG}>
-                <StyledFlexItem>
-                    <AboutText />
-                    <NeonArrow char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />
-                </StyledFlexItem>
+                <StyledFlexItem>Contact</StyledFlexItem>
             </StyledFlexBox>
+            <NeonArrow char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />
         </StyledSection>
     )
 }
 
-export const AboutForwardRef = forwardRef(About)
+export const ContactForwardRef = forwardRef(Contact)
 
 const StyledSection = styled.section`
     position: relative;

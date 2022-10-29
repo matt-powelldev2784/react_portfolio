@@ -4,7 +4,7 @@ import { ThemeContext } from '../../App/App'
 import { Background } from './Background'
 import { TitleLogo } from './TitleLogo'
 import { TitleLine } from './TitleLine'
-import { NeonArrow } from '../ui/NeonArrow'
+import { NeonText } from '../ui/NeonText'
 
 const Title = ({ scrollToComponent, triggerAnimation }, ref) => {
     const { theme } = React.useContext(ThemeContext)
@@ -24,7 +24,7 @@ const Title = ({ scrollToComponent, triggerAnimation }, ref) => {
                     <TitleLogo fill1={TITLE_H1} fill2={TITLE_H2} fill3={TITLE_H2} />
                     {lineAnimationStart && <TitleLine />}
                 </StyledFlexBox>
-                <NeonArrow char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />
+                <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />
             </StyledSection>
         </Fragment>
     )

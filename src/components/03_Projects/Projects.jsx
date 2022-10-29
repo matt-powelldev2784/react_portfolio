@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 import { FlipCard } from '../03_Projects/Card/FlipCard'
-import { NeonArrow } from '../ui/NeonArrow'
+import { NeonText } from '../ui/NeonText'
 
 const Projects = ({ scrollToComponent, triggerAnimation }, ref) => {
     return (
@@ -17,7 +17,7 @@ const Projects = ({ scrollToComponent, triggerAnimation }, ref) => {
                     <FlipCard />
                 </StyledFlexItem>
             </StyledFlexBox>
-            <NeonArrow char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />
+            <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />
         </StyledSection>
     )
 }

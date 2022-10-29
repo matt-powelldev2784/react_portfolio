@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { keyframes, css } from 'styled-components'
 
-export const NeonArrow = ({ onClick, triggerAnimation, char, rotateDeg }) => {
+export const NeonText = ({ onClick, triggerAnimation, char, rotateDeg }) => {
     return (
         <StyledArrowContainer triggerAnimation={triggerAnimation}>
             <StyledArrowP rotateDeg={rotateDeg} onClick={onClick}>

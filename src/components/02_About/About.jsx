@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 import { ThemeContext } from '../../App/App'
-import { NeonArrow } from '../ui/NeonArrow'
+import { NeonText } from '../ui/NeonText'
 import { AboutText } from './AboutText'
 
 const About = ({ triggerAnimation, scrollToComponent, pageTheme }, ref) => {
@@ -13,7 +13,7 @@ const About = ({ triggerAnimation, scrollToComponent, pageTheme }, ref) => {
             <StyledFlexBox background={THEME_BG}>
                 <StyledFlexItem>
                     <AboutText />
-                    <NeonArrow char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />
+                    <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />
                 </StyledFlexItem>
             </StyledFlexBox>
         </StyledSection>

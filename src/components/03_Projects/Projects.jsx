@@ -31,6 +31,7 @@ const StyledSection = styled.section`
 `
 
 const StyledFlexBox = styled.div`
+    background: blue;
     display: flex;
     min-height: 100vh;
     text-align: center;
@@ -40,7 +41,6 @@ const StyledFlexBox = styled.div`
     align-items: center;
     margin: auto;
     padding: 4rem;
-    background: blue;
 
     @media (max-device-width: 440px) {
         width: 100vw;
@@ -56,6 +56,6 @@ const StyledFlexItem = styled.div`
     @media (max-device-width: 440px) {
         width: 100vw;
         min-width: 100vw;
-        padding: 2rem 0rem 2rem 0rem;
+        padding: 0rem;
     }
 `

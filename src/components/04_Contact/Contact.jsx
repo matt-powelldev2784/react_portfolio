@@ -1,7 +1,6 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 import { ThemeContext } from '../../App/App'
-import { NeonArrow } from '../ui/NeonArrow'
 
 export const Contact = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
     const { theme } = React.useContext(ThemeContext)
@@ -12,7 +11,6 @@ export const Contact = ({ scrollToComponent, triggerAnimation, pageTheme }, ref)
             <StyledFlexBox background={THEME_BG}>
                 <StyledFlexItem>Contact</StyledFlexItem>
             </StyledFlexBox>
-            <NeonArrow char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />
         </StyledSection>
     )
 }

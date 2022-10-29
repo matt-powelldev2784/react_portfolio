@@ -38,6 +38,8 @@ const fadeInAnimationOnClick = keyframes`
 }`
 
 const StyledArrowContainer = styled.div`
+    overflow: visible;
+
     animation: ${({ triggerAnimation }) => {
         return triggerAnimation
             ? css`
@@ -72,7 +74,6 @@ const animateNeonFlicker = keyframes`
 
 const StyledArrowP = styled.p`
     position: absolute;
-    overflow: visible;
     bottom: -12rem;
     left: 0;
     right: 0;

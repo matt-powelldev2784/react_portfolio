@@ -69,7 +69,7 @@ const Flexbox = styled.div`
     }
 `
 
-const MenuImgConatiner = styled.div`
+const MenuImgConatiner = styled.ul`
     position: relative;
     display: block;
     width: 100vw;

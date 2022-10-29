@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { ThemeContext } from '../../app/App'
-import { FlexItem } from '../ui/standard/FlexItem'
 
 export const ThemeSelectorMenuItem = () => {
     const { theme, currentTheme, setCurrentTheme } = React.useContext(ThemeContext)
@@ -14,13 +13,17 @@ export const ThemeSelectorMenuItem = () => {
     }
 
     return (
-        <FlexItem>
+        <StyledListItem>
             <StyledMenuItem onClick={changeTheme} menuText={THEME_MENU_TEXT} menuTextMob={THEME_MOB_MENU_TEXT}>
                 {themeMenuTitle}
             </StyledMenuItem>
-        </FlexItem>
+        </StyledListItem>
     )
 }
+
+const StyledListItem = styled.li`
+    display: block;
+`
 
 const StyledMenuItem = styled.div`
     position: relative;

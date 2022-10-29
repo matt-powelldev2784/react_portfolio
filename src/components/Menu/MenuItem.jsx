@@ -2,22 +2,25 @@ import React from 'react'
 import styled from 'styled-components'
 import { ThemeContext } from '../../app/App'
 import { Link } from '../ui/standard/Link'
-import { FlexItem } from '../ui/standard/FlexItem'
 
 export const MenuItem = ({ href, menuContent }) => {
     const { theme } = React.useContext(ThemeContext)
     const { THEME_MENU_TEXT, THEME_MOB_MENU_TEXT } = theme?.colors?.themeA
 
     return (
-        <FlexItem>
+        <StyledListItem>
             <Link href={href}>
                 <StyledMenuItem menuText={THEME_MENU_TEXT} menuTextMob={THEME_MOB_MENU_TEXT}>
                     {menuContent}
                 </StyledMenuItem>
             </Link>
-        </FlexItem>
+        </StyledListItem>
     )
 }
+
+const StyledListItem = styled.li`
+    display: block;
+`
 
 const StyledMenuItem = styled.div`
     position: relative;

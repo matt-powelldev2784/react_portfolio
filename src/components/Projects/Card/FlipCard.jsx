@@ -37,6 +37,7 @@ const StyledContainer = styled.div`
     opacity: 1;
 
     @media (max-device-width: 440px) {
+        margin: 0rem;
         width: 100vw;
     }
 `

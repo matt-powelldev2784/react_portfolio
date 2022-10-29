@@ -38,15 +38,24 @@ const StyledFlexBox = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 0rem auto 0rem auto;
+    margin: auto;
     padding: 4rem;
     background: blue;
 
     @media (max-device-width: 440px) {
+        width: 100vw;
+        padding: 0rem;
     }
 `
 
 const StyledFlexItem = styled.div`
     display: block;
     padding: 1rem;
+    min-width: 26rem;
+
+    @media (max-device-width: 440px) {
+        width: 100vw;
+        min-width: 100vw;
+        padding: 2rem 0rem 2rem 0rem;
+    }
 `

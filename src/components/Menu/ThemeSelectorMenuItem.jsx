@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { ThemeContext } from '../../app/App'
-import { ContainerDiv } from '../ui/standard/ContainerDiv'
-import { Link } from '../ui/standard/Link'
 import { FlexItem } from '../ui/standard/FlexItem'
 
 export const ThemeSelectorMenuItem = () => {

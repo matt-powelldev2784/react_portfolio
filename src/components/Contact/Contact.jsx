@@ -5,7 +5,7 @@ import { NeonArrow } from '../ui/custom/NeonArrow'
 
 export const Contact = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
     const { theme } = React.useContext(ThemeContext)
-    const { THEME_BLOCK_FG, THEME_BLOCK_BG, THEME_BG } = theme?.colors?.[pageTheme]
+    const { THEME_BG } = theme?.colors?.[pageTheme]
 
     return (
         <StyledSection ref={ref}>

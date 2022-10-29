@@ -6,7 +6,7 @@ import { AboutText } from './AboutText'
 
 const About = ({ triggerAnimation, scrollToComponent, pageTheme }, ref) => {
     const { theme } = React.useContext(ThemeContext)
-    const { THEME_BLOCK_FG, THEME_BLOCK_BG, THEME_BG } = theme?.colors?.[pageTheme]
+    const { THEME_BG } = theme?.colors?.[pageTheme]
 
     return (
         <StyledSection ref={ref}>

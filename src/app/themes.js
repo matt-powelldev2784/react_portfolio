@@ -78,12 +78,12 @@ export const light = {
             '0px 1px 2px 0px rgba(0, 0, 0, 0.3), 1px 2px 4px 0px rgba(0, 0, 0, 0.3), 2px 4px 8px 0px rgba(0, 0, 0, 0.3), 2px 4px 16px 0px rgba(0, 0, 0, 0.3);'
     }
 }
-const Colors = {
-    color1: '#802bb1',
-    color2: '#2d283e',
-    color3: '#564f6f',
-    color4: '#4C495C',
-    color5: '#d1d7e0',
-    color6: '#B12B88',
-    background: '#272727'
-}
+// const Colors = {
+//     color1: '#802bb1',
+//     color2: '#2d283e',
+//     color3: '#564f6f',
+//     color4: '#4C495C',
+//     color5: '#d1d7e0',
+//     color6: '#B12B88',
+//     background: '#272727'
+// }

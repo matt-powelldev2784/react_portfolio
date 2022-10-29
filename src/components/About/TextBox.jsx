@@ -1,17 +1,16 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled, { keyframes, css } from 'styled-components'
 import { ThemeContext } from '../../../../app/App'
-import { Typeography } from '../../Typeogrpahy/Typeography'
 
 export const TextBox = ({ triggerAnimation, pageTheme }) => {
     const { theme } = React.useContext(ThemeContext)
-    const { THEME_HEADER_TEXT, THEME_HEADER_BG, THEME_TEXT, THEME_CARD_SHADOW } = theme?.colors?.[pageTheme]
+    const { THEME_TEXT } = theme?.colors?.[pageTheme]
 
     console.log('triggerAnimation', triggerAnimation)
 
     return (
         <StyledTextContainer triggerAnimation={triggerAnimation}>
-            <p>ffff</p>
+            <p background={THEME_TEXT}>ffff</p>
         </StyledTextContainer>
     )
 }

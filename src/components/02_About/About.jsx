@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
-import { ThemeContext } from '../../app/App'
-import { NeonArrow } from '../ui/custom/NeonArrow'
+import { ThemeContext } from '../../App/App'
+import { NeonArrow } from '../ui/NeonArrow'
 import { AboutText } from './AboutText'
 
 const About = ({ triggerAnimation, scrollToComponent, pageTheme }, ref) => {

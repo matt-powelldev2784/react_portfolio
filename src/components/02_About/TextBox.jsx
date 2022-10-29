@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { keyframes, css } from 'styled-components'
-import { ThemeContext } from '../../../../app/App'
+import { ThemeContext } from '../../../../App/App'
 
 export const TextBox = ({ triggerAnimation, pageTheme }) => {
     const { theme } = React.useContext(ThemeContext)

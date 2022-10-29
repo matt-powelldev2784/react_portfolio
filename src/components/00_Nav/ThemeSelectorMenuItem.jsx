@@ -1,19 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ThemeContext } from '../../app/App'
-import { Link } from '../ui/standard/Link'
+import { ThemeContext } from '../../App/App'
 
-export const MenuItem = ({ href, menuContent }) => {
-    const { theme } = React.useContext(ThemeContext)
+export const ThemeSelectorMenuItem = () => {
+    const { theme, currentTheme, setCurrentTheme } = React.useContext(ThemeContext)
     const { THEME_MENU_TEXT, THEME_MOB_MENU_TEXT } = theme?.colors?.themeA
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light'
+    const themeMenuTitle = `${newTheme.toUpperCase()} THEME`
+
+    const changeTheme = e => {
+        setCurrentTheme(newTheme)
+    }
 
     return (
         <StyledListItem>
-            <Link href={href}>
-                <StyledMenuItem menuText={THEME_MENU_TEXT} menuTextMob={THEME_MOB_MENU_TEXT}>
-                    {menuContent}
-                </StyledMenuItem>
-            </Link>
+            <StyledMenuItem onClick={changeTheme} menuText={THEME_MENU_TEXT} menuTextMob={THEME_MOB_MENU_TEXT}>
+                {themeMenuTitle}
+            </StyledMenuItem>
         </StyledListItem>
     )
 }
@@ -28,6 +31,7 @@ const StyledMenuItem = styled.div`
     padding: 0.6rem 0.7rem 0.3rem 0.7rem;
     font-size: 1rem;
     font-weight: 700;
+    text-align: center;
     color: ${({ menuText }) => menuText};
     border-bottom: solid 2px transparent;
     z-index: 10000;

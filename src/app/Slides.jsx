@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react'
 import styled from 'styled-components'
-import { TitleForwardRef } from '../components/Title/Title'
-import { AboutForwardRef } from '../components/About/About'
-import { ProjectsForwardRef } from '../components/Projects/Projects'
-import { ContactForwardRef } from '../components/Contact/Contact'
+import { TitleForwardRef } from '../components/01_Title/Title'
+import { AboutForwardRef } from '../components/02_About/About'
+import { ProjectsForwardRef } from '../components/03_Projects/Projects'
+import { ContactForwardRef } from '../components/04_Contact/Contact'
 
 export const Slides = () => {
     const titlePageRef = useRef()

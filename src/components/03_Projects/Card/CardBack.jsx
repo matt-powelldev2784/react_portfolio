@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import { Typeography } from '../../ui/Typeogrpahy/Typeography'
 import otsLogo from '../../../img/ots_logo.svg'
 
 export const CardBack = ({ title, text1, text2, img, href }) => {
@@ -8,15 +7,9 @@ export const CardBack = ({ title, text1, text2, img, href }) => {
         <Fragment>
             <StyledBack>
                 <StyledLogoImg src={otsLogo} />
-                <Typeography variant={'h1'} cssProps={headingCss}>
-                    Football Player Registration App
-                </Typeography>
-                <Typeography variant={'p'} cssProps={paragraphCss}>
-                    Frontend built with React, TypeScript, Redux Toolkit and Styled Components.
-                </Typeography>
-                <Typeography variant={'p'} cssProps={paragraphCss}>
-                    Backend created with NodeJS, Express, Mongo DB, Express Validator, Bcrypt and JWT
-                </Typeography>
+                <StyledH1>Football Player Registration App</StyledH1>
+                <StyledP>Frontend built with React, TypeScript, Redux Toolkit and Styled Components.</StyledP>
+                <StyledP>Backend created with NodeJS, Express, Mongo DB, Express Validator, Bcrypt and JWT</StyledP>
                 <StyledButton>Visit Site</StyledButton>
             </StyledBack>
         </Fragment>
@@ -25,6 +18,7 @@ export const CardBack = ({ title, text1, text2, img, href }) => {
 
 const StyledBack = styled.div`
     position: absolute;
+    overflow: visible;
     width: 22rem;
     height: 30rem;
     border-radius: 20px;
@@ -35,6 +29,33 @@ const StyledBack = styled.div`
 
     @media (max-device-width: 440px) {
         width: 100%;
+    }
+`
+
+const StyledH1 = styled.h1`
+    position: relative;
+    display: block;
+    margin: auto;
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+
+    @media (max-device-width: 440px) {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+`
+
+const StyledP = styled.p`
+    display: block;
+    margin: 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 300;
+
+    @media (max-device-width: 440px) {
+        font-size: 1rem;
     }
 `
 

@@ -28,6 +28,7 @@ export const FlipCard = ({ themeLetter, cardProps }) => {
 
 const StyledContainer = styled.div`
     position: relative;
+    overflow: visible;
     width: 22rem;
     height: 30rem;
     margin: 1rem;
@@ -46,6 +47,7 @@ const StyledFlipper = styled.div`
     width: 22rem;
     height: 30rem;
     border-radius: 20px;
+    overflow: visible;
 
     ${({ startFlipAnimation }) => {
         const flipAnimation = 'transition: 0.4s; transform-style: preserve-3d; transform: rotateY(180deg);'

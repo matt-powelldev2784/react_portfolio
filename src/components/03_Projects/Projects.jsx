@@ -1,7 +1,7 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
-import { FlipCard } from '../Projects/Card/FlipCard'
-import { NeonArrow } from '../ui/custom/NeonArrow'
+import { FlipCard } from '../03_Projects/Card/FlipCard'
+import { NeonArrow } from '../ui/NeonArrow'
 
 const Projects = ({ scrollToComponent, triggerAnimation }, ref) => {
     return (

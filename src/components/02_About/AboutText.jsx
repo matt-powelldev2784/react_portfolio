@@ -11,23 +11,22 @@ export const AboutText = () => {
             <StyledH1>
                 ABOUT <StyledSpan>ME</StyledSpan>
             </StyledH1>
-            <div>
-                <TypeWriterEffect
-                    textStyle={{ margin: '1rem' }}
-                    startDelay={100}
-                    cursorColor="black"
-                    text={text}
-                    typeSpeed={50}
-                    //scrollArea={myAppRef}
-                />
-            </div>
+
+            <TypeWriterEffect
+                textStyle={{ margin: '1rem' }}
+                startDelay={100}
+                cursorColor="black"
+                text={text}
+                typeSpeed={50}
+                //scrollArea={myAppRef}
+            />
         </StyledSection>
     )
 }
 
 const StyledSection = styled.section`
     position: relative;
-    width: 70%;
+    width: 70rem;
     min-width: 25rem;
     margin: auto;
     font-size: 2rem;

@@ -28,18 +28,19 @@ export const FlipCard = ({ themeLetter, cardProps }) => {
 
 const StyledContainer = styled.div`
     position: relative;
+    display: block;
     overflow: visible;
     width: 22rem;
     height: 30rem;
     margin: 1rem;
+    text-align: center;
     border-radius: 20px;
 
     perspective: 1000px;
-    opacity: 1;
 
     @media (max-device-width: 440px) {
-        margin: 3.5rem 0rem 4rem 0rem;
-        width: 100vw;
+        margin: 1rem 0rem;
+        width: 80vw;
     }
 `
 
@@ -57,7 +58,7 @@ const StyledFlipper = styled.div`
 
     @media (max-device-width: 440px) {
         display: block;
-        width: 80%;
+        width: 100%;
         margin: auto;
     }
 `

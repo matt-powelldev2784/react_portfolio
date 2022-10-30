@@ -11,21 +11,21 @@ const Projects = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
     const { THEME_BG } = theme?.colors?.[pageTheme]
 
     return (
-        <StyledSection>
+        <StyledSection ref={ref}>
             <Background backgroundImage={backgroundImage} />
-            <StyledFlexBoxConatiner background={THEME_BG}>
-                <StyledFlexBox ref={ref}>
+            <StyledBackgroundConatiner background={THEME_BG}>
+                <StyledFlexBox>
                     <StyledFlexItem>
-                        <FlipCard />
+                        <StyledP>{'⏴'}</StyledP>
                     </StyledFlexItem>
                     <StyledFlexItem>
                         <FlipCard />
                     </StyledFlexItem>
                     <StyledFlexItem>
-                        <FlipCard />
+                        <StyledP>{'⏵'}</StyledP>
                     </StyledFlexItem>
                 </StyledFlexBox>
-            </StyledFlexBoxConatiner>
+            </StyledBackgroundConatiner>
             <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />
         </StyledSection>
     )
@@ -41,18 +41,12 @@ const StyledSection = styled.section`
     overflow: hidden;
 `
 
-const StyledFlexBoxConatiner = styled.div`
+const StyledBackgroundConatiner = styled.div`
     position: relative;
-    display: flex;
+    display: block;
     min-height: 100vh;
-    height: fit-content;
-    text-align: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
     margin: auto;
-    padding: 2.4rem;
 
     background: rgb(0, 0, 0, 0.75);
 
@@ -63,30 +57,40 @@ const StyledFlexBoxConatiner = styled.div`
 `
 
 const StyledFlexBox = styled.div`
-    position: relative;
+    position: absolute;
     display: flex;
-    min-height: 100vh;
-    text-align: center;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
-    align-items: center;
-    margin: auto;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     @media (max-device-width: 440px) {
-        width: 100vw;
-        padding: 0rem;
     }
 `
 
 const StyledFlexItem = styled.div`
-    display: block;
-    padding: 1rem;
-    min-width: 26rem;
+    position: relative;
+    height: 32rem;
 
     @media (max-device-width: 440px) {
-        width: 100vw;
-        min-width: 100vw;
-        padding: 0rem;
+    }
+`
+
+const StyledP = styled.p`
+    position: relative;
+    display: block;
+    height: 32rem;
+    color: #ffffff;
+    padding: 7.5rem 1rem;
+    font-size: 10rem;
+    font-family: 'Noto Sans Symbols 2', sans-serif;
+    margin: auto;
+
+    @media (max-device-width: 440px) {
+        padding: 13rem 0rem;
+        font-size: 3rem;
     }
 `

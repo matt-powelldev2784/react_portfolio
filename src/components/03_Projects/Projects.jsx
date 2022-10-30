@@ -37,6 +37,7 @@ const StyledSection = styled.section`
     position: relative;
     display: block;
     width: 100vw;
+    height: fit-content;
     overflow: hidden;
 `
 
@@ -44,6 +45,7 @@ const StyledFlexBoxConatiner = styled.div`
     position: relative;
     display: flex;
     min-height: 100vh;
+    height: fit-content;
     text-align: center;
     flex-direction: row;
     flex-wrap: wrap;

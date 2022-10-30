@@ -57,7 +57,7 @@ const StyledFlipper = styled.div`
 
     @media (max-device-width: 440px) {
         display: block;
-        width: 90%;
+        width: 80%;
         margin: auto;
     }
 `

@@ -6,11 +6,13 @@ export const CardBack = ({ title, text1, text2, img, href }) => {
     return (
         <Fragment>
             <StyledBack>
-                <StyledLogoImg src={otsLogo} />
-                <StyledH1>Football Player Registration App</StyledH1>
-                <StyledP>Frontend built with React, TypeScript, Redux Toolkit and Styled Components.</StyledP>
-                <StyledP>Backend created with NodeJS, Express, Mongo DB, Express Validator, Bcrypt and JWT</StyledP>
-                <StyledButton>Visit Site</StyledButton>
+                <StyledContainerDiv>
+                    <StyledLogoImg src={otsLogo} />
+                    <StyledH1>Football Player Registration App</StyledH1>
+                    <StyledP>Frontend built with React, TypeScript, Redux Toolkit and Styled Components.</StyledP>
+                    <StyledP>Backend created with NodeJS, Express, Mongo DB, Express Validator, Bcrypt and JWT</StyledP>
+                    <StyledButton>Visit Site</StyledButton>
+                </StyledContainerDiv>
             </StyledBack>
         </Fragment>
     )
@@ -32,6 +34,13 @@ const StyledBack = styled.div`
     }
 `
 
+const StyledContainerDiv = styled.div`
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+`
+
 const StyledH1 = styled.h1`
     position: relative;
     display: block;
@@ -42,7 +51,7 @@ const StyledH1 = styled.h1`
     font-weight: 700;
 
     @media (max-device-width: 440px) {
-        font-size: 1.5rem;
+        font-size: 2rem;
         font-weight: 700;
     }
 `
@@ -61,13 +70,13 @@ const StyledP = styled.p`
 
 const StyledLogoImg = styled.img`
     position: relative;
-    margin: 0.5rem;
+    margin: 0rem;
     width: 7rem;
 `
 
 const StyledButton = styled.button`
     position: relative;
-    margin: 0.5rem;
+    margin: 0rem;
     width: 10rem;
     font-size: 1.5rem;
 `

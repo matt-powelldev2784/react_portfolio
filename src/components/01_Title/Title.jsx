@@ -1,10 +1,11 @@
 import React, { Fragment, useState, forwardRef } from 'react'
 import styled from 'styled-components'
 import { ThemeContext } from '../../app/App'
-import { Background } from './Background'
+import { Background } from './Title_Background'
 import { TitleLogo } from './TitleLogo'
 import { TitleLine } from './TitleLine'
 import { NeonText } from '../ui/NeonText'
+import backgroundImage from '../../img/background_blocks.svg'
 
 const Title = ({ scrollToComponent, triggerAnimation }, ref) => {
     const { theme } = React.useContext(ThemeContext)
@@ -19,8 +20,8 @@ const Title = ({ scrollToComponent, triggerAnimation }, ref) => {
     return (
         <Fragment>
             <StyledSection ref={ref}>
-                <Background />
-                <StyledFlexBox cssProps={{ background: TITLE_BG }}>
+                <Background backgroundImage={backgroundImage} />
+                <StyledFlexBox background={TITLE_BG}>
                     <TitleLogo fill1={TITLE_H1} fill2={TITLE_H2} fill3={TITLE_H2} />
                     {lineAnimationStart && <TitleLine />}
                 </StyledFlexBox>
@@ -36,6 +37,7 @@ const StyledSection = styled.section`
     position: relative;
     display: block;
     width: 100vw;
+    overflow: hidden;
 `
 
 const StyledFlexBox = styled.div`

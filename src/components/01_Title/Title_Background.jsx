@@ -1,8 +1,7 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import backgroundImage from '../../img/background_blocks.svg'
 
-export const Background = () => {
+export const Background = ({ backgroundImage }) => {
     return (
         <StyledContainer>
             <StyledFlexbox>
@@ -47,6 +46,7 @@ const StyledBackgroundImg = styled.img`
     margin: auto;
     position: absolute;
     width: 45%;
+    height: 45%;
 
     @media (max-device-width: 440px) {
         width: 50%;

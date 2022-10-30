@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { ThemeContext } from '../../app/App'
 import { NeonText } from '../ui/NeonText'
 import { AboutText } from './AboutText'
+import { Background } from '../ui/Background'
+import backgroundImage from '../../img/room_bg.jpg'
 
 const About = ({ triggerAnimation, scrollToComponent, pageTheme }, ref) => {
     const { theme } = React.useContext(ThemeContext)
@@ -10,6 +12,7 @@ const About = ({ triggerAnimation, scrollToComponent, pageTheme }, ref) => {
 
     return (
         <StyledSection ref={ref}>
+            <Background backgroundImage={backgroundImage} />
             <StyledFlexBox background={THEME_BG}>
                 <StyledFlexItem>
                     <AboutText />
@@ -26,6 +29,7 @@ const StyledSection = styled.section`
     position: relative;
     display: block;
     width: 100vw;
+    overflow: hidden;
 `
 
 const StyledFlexBox = styled.section`
@@ -39,6 +43,7 @@ const StyledFlexBox = styled.section`
     align-items: center;
     margin: auto;
     background: ${({ background }) => background};
+    opacity: 75%;
 `
 
 const StyledFlexItem = styled.div``

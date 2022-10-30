@@ -43,7 +43,7 @@ export const Slides = () => {
             <TitleForwardRef scrollToComponent={scrollToAbout} ref={titlePageRef} />
             <AboutForwardRef pageTheme={'themeA'} triggerAnimation={pageMarker.about} scrollToComponent={scrollToProjects} ref={aboutPageRef} />
             <ProjectsForwardRef
-                pageTheme={'themeA'}
+                pageTheme={'themeB'}
                 triggerAnimation={pageMarker.projects}
                 scrollToComponent={scrollToContact}
                 ref={projectsPageRef}

@@ -31,7 +31,7 @@ export const dark = {
             '0px 1px 2px 0px rgba(0, 0, 0, 0.3), 1px 2px 4px 0px rgba(0, 0, 0, 0.3), 2px 4px 8px 0px rgba(0, 0, 0, 0.3), 2px 4px 16px 0px rgba(0, 0, 0, 0.3)'
     },
     themeB: {
-        THEME_BG: '#2bb180',
+        THEME_BG: '#000000',
         THEME_TEXT: '#d1d7e0',
         THEME_HEADER_BG: '#802bb1',
         THEME_HEADER_TEXT: '#d1d7e0',

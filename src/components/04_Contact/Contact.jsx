@@ -26,7 +26,7 @@ const StyledSection = styled.section`
     overflow: hidden;
 `
 
-const StyledFlexBox = styled.section`
+const StyledFlexBox = styled.div`
     position: relative;
     display: flex;
     min-height: 100vh;

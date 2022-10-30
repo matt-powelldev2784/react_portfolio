@@ -38,7 +38,7 @@ const fadeInAnimationOnClick = keyframes`
 }`
 
 const StyledArrowContainer = styled.div`
-    overflow: visible;
+    overflow: hidden;
 
     animation: ${({ triggerAnimation }) => {
         return triggerAnimation

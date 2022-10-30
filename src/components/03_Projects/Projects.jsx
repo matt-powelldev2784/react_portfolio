@@ -11,10 +11,10 @@ const Projects = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
     const { THEME_BG } = theme?.colors?.[pageTheme]
 
     return (
-        <StyledSection ref={ref}>
+        <StyledSection>
             <Background backgroundImage={backgroundImage} />
             <StyledFlexBoxConatiner background={THEME_BG}>
-                <StyledFlexBox>
+                <StyledFlexBox ref={ref}>
                     <StyledFlexItem>
                         <FlipCard />
                     </StyledFlexItem>
@@ -50,10 +50,9 @@ const StyledFlexBoxConatiner = styled.div`
     justify-content: center;
     align-items: center;
     margin: auto;
-    padding: 4rem;
+    padding: 2.4rem;
 
-    background: ${({ background }) => background};
-    opacity: 95%;
+    background: rgb(0, 0, 0, 0.75);
 
     @media (max-device-width: 440px) {
         width: 100vw;

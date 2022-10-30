@@ -33,7 +33,7 @@ const StyledSection = styled.section`
     color: #d1d7e0;
 
     @media (max-device-width: 440px) {
-        width: 90%;
+        width: 320px;
         min-width: 90%;
         font-size: 0.9rem;
     }
@@ -50,6 +50,7 @@ const StyledH1 = styled.h1`
     color: #d1d7e0;
 
     @media (max-device-width: 440px) {
+        margin: 1rem;
         font-size: 2rem;
     }
 `

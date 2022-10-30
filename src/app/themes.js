@@ -13,7 +13,7 @@ export const base = {
 
 export const dark = {
     title: {
-        TITLE_BG: '#272727',
+        TITLE_BG: '#000000',
         TITLE_H1: '#802bb1',
         TITLE_H2: '#d1d7e0'
     },

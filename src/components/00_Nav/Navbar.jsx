@@ -50,7 +50,7 @@ const StyledNav = styled.nav`
         padding: unset;
         right: unset;
         margin: unset;
-        background: #272727;
+        background: #000000;
     }
 `
 

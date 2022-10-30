@@ -1,17 +1,18 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
-import otsLogo from '../../../img/ots_logo.svg'
 
-export const CardBack = ({ title, text1, text2, img, href }) => {
+export const CardBack = ({ cardProps }) => {
+    const { titleBack, text1, text2, img, href } = cardProps
+
     return (
         <Fragment>
             <StyledBack>
                 <StyledContainerDiv>
-                    <StyledLogoImg src={otsLogo} />
-                    <StyledH1>Football Player Registration App</StyledH1>
-                    <StyledP>Frontend built with React, TypeScript, Redux Toolkit and Styled Components.</StyledP>
-                    <StyledP>Backend created with NodeJS, Express, Mongo DB, Express Validator, Bcrypt and JWT</StyledP>
-                    <StyledButton>Visit Site</StyledButton>
+                    <StyledLogoImg src={img} />
+                    <StyledH1>{titleBack}</StyledH1>
+                    <StyledP>{text1}</StyledP>
+                    <StyledP>{text2}</StyledP>
+                    <StyledButton href={href}>Visit Site</StyledButton>
                 </StyledContainerDiv>
             </StyledBack>
         </Fragment>
@@ -21,7 +22,7 @@ export const CardBack = ({ title, text1, text2, img, href }) => {
 const StyledBack = styled.div`
     position: absolute;
     overflow: visible;
-    width: 22rem;
+    width: 40rem;
     height: 30rem;
     border-radius: 20px;
     background: #ffffff;

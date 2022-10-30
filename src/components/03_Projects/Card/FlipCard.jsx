@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { CardFront } from './CardFront'
 import { CardBack } from './CardBack'
 
-export const FlipCard = ({ themeLetter, cardProps }) => {
+export const FlipCard = ({ cardProps }) => {
     const [startFlipAnimation, setStartFlipAnimation] = useState(false)
     const [toggleCard, setToggleCard] = useState(false)
 
@@ -19,8 +19,8 @@ export const FlipCard = ({ themeLetter, cardProps }) => {
     return (
         <StyledContainer cardProps={cardProps}>
             <StyledFlipper onClick={handleOnClick} startFlipAnimation={startFlipAnimation} cardProps={cardProps}>
-                {!toggleCard && <CardFront themeLetter={themeLetter} cardProps={cardProps} />}
-                {toggleCard && <CardBack themeLetter={themeLetter} cardProps={cardProps} />}
+                {!toggleCard && <CardFront cardProps={cardProps} />}
+                {toggleCard && <CardBack cardProps={cardProps} />}
             </StyledFlipper>
         </StyledContainer>
     )
@@ -30,7 +30,7 @@ const StyledContainer = styled.div`
     position: relative;
     display: block;
     overflow: visible;
-    width: 22rem;
+    width: 40rem;
     height: 30rem;
     margin: 1rem;
     text-align: center;
@@ -39,13 +39,13 @@ const StyledContainer = styled.div`
     perspective: 1000px;
 
     @media (max-device-width: 440px) {
-        margin: 1rem 0rem;
+        margin: 3.2rem 0rem;
         width: 80vw;
     }
 `
 
 const StyledFlipper = styled.div`
-    width: 22rem;
+    width: 40rem;
     height: 30rem;
     border-radius: 20px;
     overflow: visible;

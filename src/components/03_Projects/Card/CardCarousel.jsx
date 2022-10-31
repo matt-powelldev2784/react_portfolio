@@ -7,6 +7,7 @@ import { flipCardInfo } from './FlipCardInfo'
 export const CardCarousel = () => {
     const [flipCardNumber, setFlipCardNumber] = useState(0)
     const { isDesktop } = React.useContext(ThemeContext)
+    console.log('isDesktop', isDesktop)
 
     const maxFlipCardNumber = 2
     const minFlipCardNumber = 0
@@ -31,19 +32,16 @@ export const CardCarousel = () => {
 
     return (
         <StyledFlexBox>
-            {isDesktop && <StyledP onClick={onPrevFlipCard}>{'⏴'}</StyledP>}
+            <StyledPrevArrowP onClick={onPrevFlipCard}>{'⏴'}</StyledPrevArrowP>
             {currentFlipCard}
-            {isDesktop && <StyledP onClick={onNextFlipCard}>{'⏵'}</StyledP>}
+            <StyledNextArrowP onClick={onNextFlipCard}>{'⏵'}</StyledNextArrowP>
         </StyledFlexBox>
     )
 }
 
 const StyledFlexBox = styled.div`
     position: absolute;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
+    display: block;
     margin: 0;
     top: 50%;
     left: 50%;
@@ -53,18 +51,42 @@ const StyledFlexBox = styled.div`
     }
 `
 
-const StyledP = styled.p`
-    position: relative;
+const StyledNextArrowP = styled.p`
+    position: absolute;
     display: block;
-    height: 32rem;
+    margin: 0;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+
     color: #ffffff;
-    padding: 7.5rem 1rem;
     font-size: 10rem;
     font-family: 'Noto Sans Symbols 2', sans-serif;
     margin: auto;
+    z-index: 1;
 
     @media (max-device-width: 440px) {
-        padding: 13rem 0rem;
-        font-size: 3rem;
+        font-size: 5rem;
+        right: -1rem;
+    }
+`
+
+const StyledPrevArrowP = styled.p`
+    position: absolute;
+    display: block;
+    margin: 0;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+
+    color: #ffffff;
+    font-size: 10rem;
+    font-family: 'Noto Sans Symbols 2', sans-serif;
+    margin: auto;
+    z-index: 1;
+
+    @media (max-device-width: 440px) {
+        font-size: 5rem;
+        left: -1rem;
     }
 `

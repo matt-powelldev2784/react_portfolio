@@ -90,8 +90,8 @@ const StyledPrevArrowP = styled.p`
 
     @media (max-device-width: 440px) {
         font-size: 2rem;
-        top: 1.6rem;
-        left: 1.3rem;
+        top: 1.65rem;
+        left: 1.25rem;
     }
 `
 
@@ -116,7 +116,7 @@ const StyledNextCircleDiv = styled.div`
     }
 `
 
-const StyledNextArrowP = styled.div`
+const StyledNextArrowP = styled.p`
     position: absolute;
     top: 3.5rem;
     left: 3rem;

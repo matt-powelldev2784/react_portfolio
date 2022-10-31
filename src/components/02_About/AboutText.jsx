@@ -26,7 +26,7 @@ export const AboutText = () => {
 
 const StyledSection = styled.section`
     position: relative;
-    width: 70rem;
+    width: 50rem;
     min-width: 25rem;
     margin: auto;
     font-size: 2rem;

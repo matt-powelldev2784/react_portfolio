@@ -7,23 +7,20 @@ import { Background } from '../ui/Background'
 import backgroundImage from '../../img/hall_bg.jpg'
 
 const Projects = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
-    const { theme } = React.useContext(ThemeContext)
+    const { isDesktop, theme } = React.useContext(ThemeContext)
     const { THEME_BG } = theme?.colors?.[pageTheme]
 
     return (
         <StyledSection ref={ref}>
             <Background backgroundImage={backgroundImage} />
             <StyledBackgroundConatiner background={THEME_BG}>
-                <StyledFlexBox>
-                    <StyledFlexItem>
-                        <CardCarousel />
-                    </StyledFlexItem>
-                    <StyledFlexItem>
-                        <StyledDotP>{'• • •'}</StyledDotP>
-                    </StyledFlexItem>
-                </StyledFlexBox>
+                <StyledContainer>
+                    <CardCarousel />
+
+                    <StyledDotP>{'• • •'}</StyledDotP>
+                </StyledContainer>
             </StyledBackgroundConatiner>
-            <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />
+            {isDesktop && <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
         </StyledSection>
     )
 }
@@ -53,7 +50,7 @@ const StyledBackgroundConatiner = styled.div`
     }
 `
 
-const StyledFlexBox = styled.div`
+const StyledContainer = styled.div`
     position: absolute;
     display: block;
     flex-direction: column;
@@ -63,14 +60,7 @@ const StyledFlexBox = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
-    @media (max-device-width: 440px) {
-    }
-`
-
-const StyledFlexItem = styled.div`
-    position: relative;
-    display: block;
+    margin: 0 rem 0.5rem;
 
     @media (max-device-width: 440px) {
     }
@@ -80,7 +70,7 @@ const StyledDotP = styled.p`
     position: relative;
     display: block;
     color: #ffffff;
-    top: 15rem;
+    top: 18rem;
     width: 100%;
     height: 100%;
     font-size: 3rem;
@@ -89,5 +79,7 @@ const StyledDotP = styled.p`
 
     @media (max-device-width: 440px) {
         font-size: 3rem;
+        height: 1rem;
+        top: 14.5rem;
     }
 `

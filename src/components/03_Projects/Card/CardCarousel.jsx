@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { ThemeContext } from '../../../app/App'
 import { FlipCard } from '../Card/FlipCard'
 import { flipCardInfo } from './FlipCardInfo'
 
 export const CardCarousel = () => {
     const [flipCardNumber, setFlipCardNumber] = useState(0)
+    const { isDesktop } = React.useContext(ThemeContext)
+
     const maxFlipCardNumber = 2
     const minFlipCardNumber = 0
-    console.log('flipCardNumber', flipCardNumber)
 
     const onNextFlipCard = () => {
         if (maxFlipCardNumber !== flipCardNumber) {
@@ -29,13 +31,9 @@ export const CardCarousel = () => {
 
     return (
         <StyledFlexBox>
-            <StyledFlexItem onClick={onPrevFlipCard}>
-                <StyledP>{'⏴'}</StyledP>
-            </StyledFlexItem>
-            <StyledFlexItem>{currentFlipCard}</StyledFlexItem>
-            <StyledFlexItem onClick={onNextFlipCard}>
-                <StyledP>{'⏵'}</StyledP>
-            </StyledFlexItem>
+            {isDesktop && <StyledP onClick={onPrevFlipCard}>{'⏴'}</StyledP>}
+            {currentFlipCard}
+            {isDesktop && <StyledP onClick={onNextFlipCard}>{'⏵'}</StyledP>}
         </StyledFlexBox>
     )
 }
@@ -50,14 +48,6 @@ const StyledFlexBox = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
-    @media (max-device-width: 440px) {
-    }
-`
-
-const StyledFlexItem = styled.div`
-    position: relative;
-    height: 32rem;
 
     @media (max-device-width: 440px) {
     }

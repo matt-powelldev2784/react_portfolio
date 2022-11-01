@@ -2,15 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 
 export const CardFront = ({ cardProps }) => {
-    const { title, backgroundImg, img } = cardProps
+    const { title, backgroundImg, imgFront } = cardProps
 
     return (
         <StyledFront>
             <StyledBackgroundImg src={backgroundImg} />
-            <StyledLogoImg src={img} />
+            <StyledLogoImg src={imgFront} />
             <StyledTitleDiv>
                 <StyledH1>{title}</StyledH1>
-                <StyledH2>Click card to view details...</StyledH2>
+                <StyledH2>Flip the card to view details...</StyledH2>
             </StyledTitleDiv>
         </StyledFront>
     )

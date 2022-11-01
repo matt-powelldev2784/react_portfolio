@@ -2,17 +2,24 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 
 export const CardBack = ({ cardProps }) => {
-    const { titleBack, text1, text2, img, href } = cardProps
+    const { titleBack, text1, text2, imgBack, href } = cardProps
+
+    const onButtonClick = () => {
+        window.open(href)
+    }
 
     return (
         <Fragment>
             <StyledBack>
                 <StyledContainerDiv>
-                    <StyledLogoImg src={img} />
+                    <StyledImgContainer>
+                        <StyledLogoImg src={imgBack} />
+                    </StyledImgContainer>
+
                     <StyledH1>{titleBack}</StyledH1>
                     <StyledP>{text1}</StyledP>
                     <StyledP>{text2}</StyledP>
-                    <StyledButton href={href}>Visit Site</StyledButton>
+                    <StyledButton onClick={onButtonClick}>Visit Site</StyledButton>
                 </StyledContainerDiv>
             </StyledBack>
         </Fragment>
@@ -69,10 +76,26 @@ const StyledP = styled.p`
     }
 `
 
+const StyledImgContainer = styled.div`
+    position: relative;
+    display: block;
+    width: 20rem;
+    height: 12rem;
+    margin: auto;
+
+    @media (max-device-width: 440px) {
+        width: 10rem;
+        height: 6rem;
+    }
+`
+
 const StyledLogoImg = styled.img`
     position: relative;
+    top: 50%;
+    transform: translateY(-50%);
     margin: 0rem;
-    width: 7rem;
+    height: 90%;
+    max-width: 90%;
 `
 
 const StyledButton = styled.button`
@@ -80,4 +103,5 @@ const StyledButton = styled.button`
     margin: 0rem;
     width: 10rem;
     font-size: 1.5rem;
+    z-index: 1;
 `

@@ -1,13 +1,10 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { ThemeContext } from '../../../app/App'
 import { FlipCard } from '../Card/FlipCard'
 import { flipCardInfo } from './FlipCardInfo'
 
 export const CardCarousel = () => {
     const [flipCardNumber, setFlipCardNumber] = useState(0)
-    const { isDesktop } = React.useContext(ThemeContext)
-    console.log('isDesktop', isDesktop)
 
     const maxFlipCardNumber = flipCardInfo.length - 1
     const minFlipCardNumber = 0

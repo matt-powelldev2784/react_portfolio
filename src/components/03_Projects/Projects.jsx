@@ -40,7 +40,7 @@ const StyledBackgroundConatiner = styled.div`
     height: 100%;
     margin: auto;
 
-    background: rgb(0, 0, 0, 0.9);
+    background: rgb(0, 0, 0, 0.75);
 
     @media (max-device-width: 440px) {
         width: 100vw;

@@ -40,7 +40,7 @@ const StyledBackgroundConatiner = styled.div`
     height: 100%;
     margin: auto;
 
-    background: rgb(0, 0, 0, 0.5);
+    background: rgb(0, 0, 0, 1);
 
     @media (max-device-width: 440px) {
         width: 100vw;
@@ -51,10 +51,11 @@ const StyledBackgroundConatiner = styled.div`
 const StyledContainer = styled.div`
     position: absolute;
     display: block;
-    top: 50%;
+    top: 46%;
     left: 50%;
     transform: translate(-50%, -50%);
 
     @media (max-device-width: 440px) {
+        top: 50%;
     }
 `

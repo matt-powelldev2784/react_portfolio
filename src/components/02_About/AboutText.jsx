@@ -35,7 +35,7 @@ const StyledSection = styled.section`
     @media (max-device-width: 440px) {
         width: 320px;
         min-width: 90%;
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 `
 

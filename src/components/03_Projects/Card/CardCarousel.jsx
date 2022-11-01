@@ -9,7 +9,7 @@ export const CardCarousel = () => {
     const { isDesktop } = React.useContext(ThemeContext)
     console.log('isDesktop', isDesktop)
 
-    const maxFlipCardNumber = 2
+    const maxFlipCardNumber = flipCardInfo.length - 1
     const minFlipCardNumber = 0
 
     const onNextFlipCard = () => {
@@ -17,6 +17,8 @@ export const CardCarousel = () => {
             setFlipCardNumber(prevState => {
                 return prevState + 1
             })
+        } else {
+            setFlipCardNumber(minFlipCardNumber)
         }
     }
 
@@ -25,10 +27,20 @@ export const CardCarousel = () => {
             setFlipCardNumber(prevState => {
                 return prevState - 1
             })
+        } else {
+            setFlipCardNumber(maxFlipCardNumber)
         }
     }
 
     const currentFlipCard = <FlipCard cardProps={flipCardInfo[flipCardNumber]} />
+    const flipCardDots = flipCardInfo.map((flipcard, i) => {
+        // prettier-ignore
+        const dotSpan = i === flipCardNumber ?
+            <StyledDotSpan color={'#ffffff'} key={i}>{'•'}</StyledDotSpan>
+            : <StyledDotSpan key={i}> {'•'} </StyledDotSpan>
+
+        return dotSpan
+    })
 
     return (
         <StyledContainerDiv>
@@ -36,8 +48,7 @@ export const CardCarousel = () => {
                 <StyledPrevArrowP onClick={onPrevFlipCard}>{'⬅'}</StyledPrevArrowP>
             </StyledPrevCircleDiv>
             {currentFlipCard}
-
-            <StyledDotP>{'• • •'}</StyledDotP>
+            <StyledDotContainer>{flipCardDots}</StyledDotContainer>
             <StyledNextCircleDiv>
                 <StyledNextArrowP onClick={onNextFlipCard}>{'⮕'}</StyledNextArrowP>
             </StyledNextCircleDiv>
@@ -137,19 +148,26 @@ const StyledNextArrowP = styled.p`
     }
 `
 
-const StyledDotP = styled.p`
+const StyledDotContainer = styled.span`
     position: absolute;
     display: block;
     color: #ffffff;
-    top: 31rem;
+    top: 30.5rem;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 3rem;
-    font-family: 'Noto Sans Symbols 2', sans-serif;
-    margin: auto;
 
     @media (max-device-width: 440px) {
-        font-size: 3rem;
-        top: 32rem;
+        top: 32.4rem;
+    }
+`
+
+const StyledDotSpan = styled.span`
+    color: ${({ color }) => (color ? color : '#272727')};
+    font-size: 3rem;
+    padding: 0.25rem;
+    font-family: 'Noto Sans Symbols 2', sans-serif;
+
+    @media (max-device-width: 440px) {
+        font-size: 2rem;
     }
 `

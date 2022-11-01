@@ -16,8 +16,6 @@ const Projects = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
             <StyledBackgroundConatiner background={THEME_BG}>
                 <StyledContainer>
                     <CardCarousel />
-                    {/* 
-                    <StyledDotP>{'• • •'}</StyledDotP> */}
                 </StyledContainer>
             </StyledBackgroundConatiner>
             {isDesktop && <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
@@ -63,23 +61,5 @@ const StyledContainer = styled.div`
     margin: 0 rem 0.5rem;
 
     @media (max-device-width: 440px) {
-    }
-`
-
-const StyledDotP = styled.p`
-    position: relative;
-    display: block;
-    color: #ffffff;
-    top: 12rem;
-    width: 100%;
-    height: 100%;
-    font-size: 3rem;
-    font-family: 'Noto Sans Symbols 2', sans-serif;
-    margin: auto;
-
-    @media (max-device-width: 440px) {
-        font-size: 3rem;
-        height: 1rem;
-        top: 14.5rem;
     }
 `

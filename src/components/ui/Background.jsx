@@ -27,7 +27,5 @@ const StyledBackgroundImg = styled.img`
     object-fit: cover;
 
     @media (max-device-width: 440px) {
-        width: 100%;
-        object-fit: unset;
     }
 `

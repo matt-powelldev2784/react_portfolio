@@ -69,7 +69,6 @@ const StyledH2 = styled.h2`
     text-align: center;
     font-size: 1.5rem;
     font-weight: 300;
-    background: unset;
 
     @media (max-device-width: 440px) {
         font-size: 1rem;

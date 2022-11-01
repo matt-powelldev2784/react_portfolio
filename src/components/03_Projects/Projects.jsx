@@ -4,7 +4,7 @@ import { ThemeContext } from '../../app/App'
 import { CardCarousel } from './Card/CardCarousel'
 import { NeonText } from '../ui/NeonText'
 import { Background } from '../ui/Background'
-import backgroundImage from '../../img/hall_bg.jpg'
+import backgroundImage from '../../img/blue_tech_bg2.jpg'
 
 const Projects = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
     const { isDesktop, theme } = React.useContext(ThemeContext)
@@ -40,7 +40,7 @@ const StyledBackgroundConatiner = styled.div`
     height: 100%;
     margin: auto;
 
-    background: rgb(0, 0, 0, 0.75);
+    background: rgb(0, 0, 0, 0.5);
 
     @media (max-device-width: 440px) {
         width: 100vw;
@@ -51,14 +51,9 @@ const StyledBackgroundConatiner = styled.div`
 const StyledContainer = styled.div`
     position: absolute;
     display: block;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin: 0 rem 0.5rem;
 
     @media (max-device-width: 440px) {
     }

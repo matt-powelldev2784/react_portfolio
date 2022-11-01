@@ -56,8 +56,7 @@ export const CardCarousel = () => {
 const StyledContainerDiv = styled.div`
     position: absolute;
     display: block;
-    margin: 0;
-    top: 50%;
+    top: 0%;
     left: 50%;
     transform: translate(-50%, -50%);
 

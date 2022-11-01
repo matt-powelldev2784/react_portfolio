@@ -7,7 +7,7 @@ export const CardFront = ({ cardProps }) => {
     return (
         <StyledFront>
             <StyledBackgroundImg src={backgroundImg} />
-            <StyledLogoImg src={imgFront} />
+            {imaFront && <StyledLogoImg src={imgFront} />}
             <StyledTitleDiv>
                 <StyledH1>{title}</StyledH1>
                 <StyledH2>Flip the card to view details...</StyledH2>

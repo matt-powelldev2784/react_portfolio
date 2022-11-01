@@ -36,6 +36,8 @@ export const CardCarousel = () => {
                 <StyledPrevArrowP onClick={onPrevFlipCard}>{'⬅'}</StyledPrevArrowP>
             </StyledPrevCircleDiv>
             {currentFlipCard}
+
+            <StyledDotP>{'• • •'}</StyledDotP>
             <StyledNextCircleDiv>
                 <StyledNextArrowP onClick={onNextFlipCard}>{'⮕'}</StyledNextArrowP>
             </StyledNextCircleDiv>
@@ -132,5 +134,22 @@ const StyledNextArrowP = styled.p`
         font-size: 2rem;
         top: 1.6rem;
         left: 1.45rem;
+    }
+`
+
+const StyledDotP = styled.p`
+    position: absolute;
+    display: block;
+    color: #ffffff;
+    top: 31rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    font-family: 'Noto Sans Symbols 2', sans-serif;
+    margin: auto;
+
+    @media (max-device-width: 440px) {
+        font-size: 3rem;
+        top: 32rem;
     }
 `

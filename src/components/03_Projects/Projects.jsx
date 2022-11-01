@@ -16,8 +16,8 @@ const Projects = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
             <StyledBackgroundConatiner background={THEME_BG}>
                 <StyledContainer>
                     <CardCarousel />
-
-                    <StyledDotP>{'• • •'}</StyledDotP>
+                    {/* 
+                    <StyledDotP>{'• • •'}</StyledDotP> */}
                 </StyledContainer>
             </StyledBackgroundConatiner>
             {isDesktop && <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
@@ -70,7 +70,7 @@ const StyledDotP = styled.p`
     position: relative;
     display: block;
     color: #ffffff;
-    top: 18rem;
+    top: 12rem;
     width: 100%;
     height: 100%;
     font-size: 3rem;

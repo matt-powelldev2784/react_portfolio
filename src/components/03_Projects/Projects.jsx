@@ -13,11 +13,11 @@ const Projects = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
     return (
         <StyledSection ref={ref}>
             <Background backgroundImage={backgroundImage} />
-            <StyledBackgroundConatiner background={THEME_BG}>
+            <StyledOpacityConatiner background={THEME_BG}>
                 <StyledContainer>
                     <CardCarousel />
                 </StyledContainer>
-            </StyledBackgroundConatiner>
+            </StyledOpacityConatiner>
             {isDesktop && <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
         </StyledSection>
     )
@@ -33,7 +33,7 @@ const StyledSection = styled.section`
     overflow: hidden;
 `
 
-const StyledBackgroundConatiner = styled.div`
+const StyledOpacityConatiner = styled.div`
     position: relative;
     display: block;
     min-height: 100vh;

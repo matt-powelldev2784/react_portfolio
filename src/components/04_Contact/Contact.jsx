@@ -2,6 +2,8 @@ import React, { forwardRef } from 'react'
 import styled from 'styled-components'
 import { ThemeContext } from '../../app/App'
 import { NeonText } from '../ui/NeonText'
+import { Background } from '../ui/Background'
+import backgroundImage from '../../img/email_bg.jpg'
 
 export const Contact = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
     const { theme } = React.useContext(ThemeContext)
@@ -9,9 +11,12 @@ export const Contact = ({ scrollToComponent, triggerAnimation, pageTheme }, ref)
 
     return (
         <StyledSection ref={ref}>
-            <StyledFlexBox background={THEME_BG}>
-                <StyledFlexItem>Contact</StyledFlexItem>
-            </StyledFlexBox>
+            <Background backgroundImage={backgroundImage} />
+            <StyledOpacityConatiner>
+                <StyledFlexBox background={THEME_BG}>
+                    <StyledFlexItem>Contact</StyledFlexItem>
+                </StyledFlexBox>
+            </StyledOpacityConatiner>
             <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />
         </StyledSection>
     )
@@ -26,6 +31,21 @@ const StyledSection = styled.section`
     overflow: hidden;
 `
 
+const StyledOpacityConatiner = styled.div`
+    position: relative;
+    display: block;
+    min-height: 100vh;
+    height: 100%;
+    margin: auto;
+
+    background: rgb(0, 0, 0, 0.2);
+
+    @media (max-device-width: 440px) {
+        width: 100vw;
+        padding: 0rem;
+    }
+`
+
 const StyledFlexBox = styled.div`
     position: relative;
     display: flex;
@@ -37,6 +57,7 @@ const StyledFlexBox = styled.div`
     align-items: center;
     margin: auto;
     background: ${({ background }) => background};
+    opacity: 75%;
 `
 
 const StyledFlexItem = styled.div``

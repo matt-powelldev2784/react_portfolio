@@ -5,6 +5,7 @@ import { NeonText } from '../ui/NeonText'
 import { Background } from '../ui/Background'
 import backgroundImage from '../../img/email_bg.jpg'
 import { ContactDetails } from './ContactDetails'
+import { ContactForm } from './ContactForm'
 
 export const Contact = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
     const { theme } = React.useContext(ThemeContext)
@@ -16,7 +17,7 @@ export const Contact = ({ scrollToComponent, triggerAnimation, pageTheme }, ref)
             <StyledOpacityConatiner background={THEME_BG}>
                 <StyledFlexBox background={THEME_BG}>
                     <ContactDetails />
-                    <StyledFlexItem>dfdfdghhgdgdfhhgffghhfgfghhfg</StyledFlexItem>
+                    <ContactForm />
                 </StyledFlexBox>
             </StyledOpacityConatiner>
             <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />
@@ -54,15 +55,14 @@ const StyledFlexBox = styled.div`
     min-height: 100vh;
     text-align: center;
     flex-direction: row;
-    flex-wrap: no-wrap;
+    flex-wrap: nowrap;
     justify-content: center;
-    align-items: top;
-
+    align-items: start;
     margin: auto;
-`
-const StyledFlexItem = styled.div`
-    position: relative;
-    display: block;
-    margin: 1rem;
-    min-width: 35rem;
+
+    @media (max-device-width: 440px) {
+        flex-direction: column;
+        padding: 0;
+        width: 100vw;
+    }
 `

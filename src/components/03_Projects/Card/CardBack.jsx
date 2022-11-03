@@ -111,5 +111,6 @@ const StyledButton = styled.button`
     color: #000000;
     border: 3px solid #d1d7e0;
     border-radius: 20px;
+    cursor: pointer;
     z-index: 1;
 `

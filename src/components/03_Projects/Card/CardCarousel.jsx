@@ -74,6 +74,7 @@ const StyledPrevCircleDiv = styled.div`
     left: -8rem;
     border-radius: 50%;
     border: 3px solid #ffffff;
+    cursor: pointer;
 
     background: #000000;
     z-index: 1;
@@ -114,6 +115,7 @@ const StyledNextCircleDiv = styled.div`
     right: -8rem;
     border-radius: 50%;
     border: 3px solid #ffffff;
+    cursor: pointer;
 
     background: #000000;
     z-index: 1;

@@ -60,22 +60,6 @@ const StyledPBold = styled.p`
     text-align: left;
     color: #d1d7e0;
 `
-const StyledP = styled.p`
-    position: relative;
-    display: block;
-    height: 4rem;
-    padding: 1rem;
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: 300;
-    text-align: left;
-    color: #d1d7e0;
-
-    @media (max-device-width: 440px) {
-        font-size: 1rem;
-        font-weight: 300;
-    }
-`
 
 const StyledA = styled.a`
     position: relative;

@@ -27,6 +27,7 @@ const StyledFront = styled.div`
     box-shadow: rgb(40, 40, 40) 0px 20px 30px -10px;
 
     @media (max-device-width: 440px) {
+        height: 27rem;
         width: 100%;
     }
 `

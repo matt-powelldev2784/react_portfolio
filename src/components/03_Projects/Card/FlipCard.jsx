@@ -39,7 +39,7 @@ const StyledContainer = styled.div`
     perspective: 1000px;
 
     @media (max-device-width: 440px) {
-        margin: 3.2rem 0rem;
+        margin: 0rem 0rem;
         height: 27rem;
         width: 80vw;
     }

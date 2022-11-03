@@ -41,6 +41,7 @@ const StyledBack = styled.div`
 
     @media (max-device-width: 440px) {
         width: 100%;
+        height: 27rem;
     }
 `
 

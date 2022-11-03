@@ -56,7 +56,7 @@ export const CardCarousel = () => {
 const StyledContainerDiv = styled.div`
     position: absolute;
     display: block;
-    top: 0%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -152,7 +152,7 @@ const StyledDotContainer = styled.span`
     transform: translateX(-50%);
 
     @media (max-device-width: 440px) {
-        top: 32.4rem;
+        top: 26.8rem;
     }
 `
 

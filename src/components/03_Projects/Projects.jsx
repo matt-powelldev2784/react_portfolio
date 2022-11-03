@@ -13,11 +13,8 @@ const Projects = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
     return (
         <StyledSection ref={ref}>
             <Background backgroundImage={backgroundImage} />
-            <StyledOpacityConatiner background={THEME_BG}>
-                <StyledContainer>
-                    <CardCarousel />
-                </StyledContainer>
-            </StyledOpacityConatiner>
+            <StyledOpacityConatiner background={THEME_BG} />
+            <CardCarousel />
             {isDesktop && <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
         </StyledSection>
     )
@@ -48,14 +45,14 @@ const StyledOpacityConatiner = styled.div`
     }
 `
 
-const StyledContainer = styled.div`
-    position: absolute;
-    display: block;
-    top: 46%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+// const StyledContainer = styled.div`
+//     position: absolute;
+//     display: block;
+//     top: 46%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     border: 10px solid black;
 
-    @media (max-device-width: 440px) {
-        top: 46%;
-    }
-`
+//     @media (max-device-width: 440px) {
+//     }
+// `

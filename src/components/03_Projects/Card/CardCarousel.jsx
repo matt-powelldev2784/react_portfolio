@@ -99,7 +99,7 @@ const StyledPrevArrowP = styled.p`
 
     @media (max-device-width: 440px) {
         font-size: 2rem;
-        top: 1.65rem;
+        top: 1.6rem;
         left: 1.25rem;
     }
 `
@@ -139,7 +139,7 @@ const StyledNextArrowP = styled.p`
     @media (max-device-width: 440px) {
         font-size: 2rem;
         top: 1.6rem;
-        left: 1.45rem;
+        left: 1.4rem;
     }
 `
 

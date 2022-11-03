@@ -42,8 +42,7 @@ const StyledFlexBox = styled.section`
     justify-content: center;
     align-items: center;
     margin: auto;
-    background: ${({ background }) => background};
-    opacity: 75%;
+    background: rgb(128, 43, 177, 0.75);
 `
 
 const StyledFlexItem = styled.div``

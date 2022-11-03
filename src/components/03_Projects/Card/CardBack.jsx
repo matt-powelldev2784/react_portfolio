@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 
 export const CardBack = ({ cardProps }) => {
-    const { titleBack, text1, text2, imgBack, href } = cardProps
+    const { title, description, text1, text2, imgBack, href } = cardProps
 
     const onButtonClick = () => {
         window.open(href)
@@ -16,7 +16,9 @@ export const CardBack = ({ cardProps }) => {
                         <StyledLogoImg src={imgBack} />
                     </StyledImgContainer>
 
-                    <StyledH1>{titleBack}</StyledH1>
+                    <StyledH1>{title}</StyledH1>
+                    <StyledH1>{description}</StyledH1>
+
                     <StyledP>{text1}</StyledP>
                     <StyledP>{text2}</StyledP>
                     <StyledButton onClick={onButtonClick}>Visit Site</StyledButton>
@@ -53,13 +55,13 @@ const StyledH1 = styled.h1`
     position: relative;
     display: block;
     margin: auto;
-    padding: 0.5rem;
+    padding: 0.2rem;
     text-align: center;
     font-size: 2rem;
     font-weight: 700;
 
     @media (max-device-width: 440px) {
-        font-size: 2rem;
+        font-size: 1.2rem;
         font-weight: 700;
     }
 `
@@ -73,6 +75,7 @@ const StyledP = styled.p`
 
     @media (max-device-width: 440px) {
         font-size: 1rem;
+        margin: 1.2rem;
     }
 `
 
@@ -80,7 +83,7 @@ const StyledImgContainer = styled.div`
     position: relative;
     display: block;
     width: 20rem;
-    height: 12rem;
+    height: 10rem;
     margin: auto;
 
     @media (max-device-width: 440px) {
@@ -103,5 +106,9 @@ const StyledButton = styled.button`
     margin: 0rem;
     width: 10rem;
     font-size: 1.5rem;
+    background: #ffffff;
+    color: #000000;
+    border: 3px solid #d1d7e0;
+    border-radius: 20px;
     z-index: 1;
 `

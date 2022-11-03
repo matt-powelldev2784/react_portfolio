@@ -4,7 +4,7 @@ import { ThemeContext } from '../../app/App'
 import { CardCarousel } from './Card/CardCarousel'
 import { NeonText } from '../ui/NeonText'
 import { Background } from '../ui/Background'
-import backgroundImage from '../../img/blue_tech_bg2.jpg'
+import backgroundImage from '../../img/white_room_bg.jpg'
 
 const Projects = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
     const { isDesktop, theme } = React.useContext(ThemeContext)
@@ -40,7 +40,7 @@ const StyledOpacityConatiner = styled.div`
     height: 100%;
     margin: auto;
 
-    background: rgb(0, 0, 0, 1);
+    background: rgb(209, 215, 224, 0.5);
 
     @media (max-device-width: 440px) {
         width: 100vw;

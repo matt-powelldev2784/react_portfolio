@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 export const CardFront = ({ cardProps }) => {
-    const { title, backgroundImg, imgFront } = cardProps
+    const { title, description, backgroundImg, imgFront } = cardProps
 
     return (
         <StyledFront>
@@ -10,6 +10,7 @@ export const CardFront = ({ cardProps }) => {
             {imgFront && <StyledLogoImg src={imgFront} />}
             <StyledTitleDiv>
                 <StyledH1>{title}</StyledH1>
+                <StyledH1>{description}</StyledH1>
                 <StyledH2>Flip the card to view details...</StyledH2>
             </StyledTitleDiv>
         </StyledFront>
@@ -33,16 +34,18 @@ const StyledFront = styled.div`
 const StyledTitleDiv = styled.div`
     position: absolute;
     left: 50%;
-    bottom: 1rem;
+    bottom: 2rem;
     width: 70%;
     transform: translate(-50%);
-    background: #003a68;
-    color: #ffffff;
+    background: #000000;
+    color: #d1d7e0;
+    border: 3px solid #ffffff;
     border-radius: 20px;
     font-size: 3rem;
 
     @media (max-device-width: 440px) {
         width: 90%;
+        bottom: 1rem;
     }
 `
 
@@ -50,13 +53,14 @@ const StyledH1 = styled.h1`
     position: relative;
     display: block;
     margin: 1rem auto;
-    padding: 0.5rem;
+
     text-align: center;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 700;
 
     @media (max-device-width: 440px) {
-        font-size: 2rem;
+        padding: 0rem 0.3rem;
+        font-size: 1.2rem;
         font-weight: 700;
     }
 `

@@ -4,6 +4,7 @@ import { ThemeContext } from '../../app/App'
 import { NeonText } from '../ui/NeonText'
 import { Background } from '../ui/Background'
 import backgroundImage from '../../img/email_bg.jpg'
+import { ContactDetails } from './ContactDetails'
 
 export const Contact = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
     const { theme } = React.useContext(ThemeContext)
@@ -12,9 +13,10 @@ export const Contact = ({ scrollToComponent, triggerAnimation, pageTheme }, ref)
     return (
         <StyledSection ref={ref}>
             <Background backgroundImage={backgroundImage} />
-            <StyledOpacityConatiner>
+            <StyledOpacityConatiner background={THEME_BG}>
                 <StyledFlexBox background={THEME_BG}>
-                    <StyledFlexItem>Contact</StyledFlexItem>
+                    <ContactDetails />
+                    <StyledFlexItem>dfdfdghhgdgdfhhgffghhfgfghhfg</StyledFlexItem>
                 </StyledFlexBox>
             </StyledOpacityConatiner>
             <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />
@@ -37,8 +39,7 @@ const StyledOpacityConatiner = styled.div`
     min-height: 100vh;
     height: 100%;
     margin: auto;
-
-    background: rgb(0, 0, 0, 0.2);
+    background: rgb(128, 43, 177, 0.9);
 
     @media (max-device-width: 440px) {
         width: 100vw;
@@ -49,15 +50,19 @@ const StyledOpacityConatiner = styled.div`
 const StyledFlexBox = styled.div`
     position: relative;
     display: flex;
+    padding: 5rem;
     min-height: 100vh;
     text-align: center;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: no-wrap;
     justify-content: center;
-    align-items: center;
-    margin: auto;
-    background: ${({ background }) => background};
-    opacity: 75%;
-`
+    align-items: top;
 
-const StyledFlexItem = styled.div``
+    margin: auto;
+`
+const StyledFlexItem = styled.div`
+    position: relative;
+    display: block;
+    margin: 1rem;
+    min-width: 35rem;
+`

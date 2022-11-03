@@ -73,7 +73,7 @@ const StyledPrevCircleDiv = styled.div`
     height: 6rem;
     left: -8rem;
     border-radius: 50%;
-    border: 2px solid #ffffff;
+    border: 3px solid #ffffff;
 
     background: #000000;
     z-index: 1;
@@ -87,8 +87,8 @@ const StyledPrevCircleDiv = styled.div`
 
 const StyledPrevArrowP = styled.p`
     position: absolute;
-    top: 3.5rem;
-    left: 2.75rem;
+    top: 3.4rem;
+    left: 2.7rem;
     transform: translate(-50%, -50%);
 
     color: #ffffff;
@@ -113,7 +113,7 @@ const StyledNextCircleDiv = styled.div`
     height: 6rem;
     right: -8rem;
     border-radius: 50%;
-    border: 2px solid #ffffff;
+    border: 3px solid #ffffff;
 
     background: #000000;
     z-index: 1;
@@ -127,10 +127,9 @@ const StyledNextCircleDiv = styled.div`
 
 const StyledNextArrowP = styled.p`
     position: absolute;
-    top: 3.5rem;
-    left: 3rem;
+    top: 3.4rem;
+    left: 2.9rem;
     transform: translate(-50%, -50%);
-
     color: #ffffff;
     font-size: 4.5rem;
     font-family: 'Noto Sans Symbols 2', sans-serif;

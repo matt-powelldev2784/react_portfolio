@@ -56,6 +56,6 @@ const StyledContainer = styled.div`
     transform: translate(-50%, -50%);
 
     @media (max-device-width: 440px) {
-        top: 50%;
+        top: 46%;
     }
 `

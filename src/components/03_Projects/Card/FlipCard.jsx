@@ -40,6 +40,7 @@ const StyledContainer = styled.div`
 
     @media (max-device-width: 440px) {
         margin: 3.2rem 0rem;
+        height: 27rem;
         width: 80vw;
     }
 `
@@ -59,6 +60,7 @@ const StyledFlipper = styled.div`
     @media (max-device-width: 440px) {
         display: block;
         width: 100%;
+        height: 27rem;
         margin: auto;
     }
 `

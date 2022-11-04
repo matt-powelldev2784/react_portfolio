@@ -7,7 +7,7 @@ import { Background } from '../ui/Background'
 import backgroundImage from '../../img/white_room_bg.jpg'
 
 const Projects = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
-    const { isDesktop, theme } = React.useContext(ThemeContext)
+    const { theme } = React.useContext(ThemeContext)
     const { THEME_BG } = theme?.colors?.[pageTheme]
 
     return (
@@ -15,7 +15,7 @@ const Projects = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
             <Background backgroundImage={backgroundImage} />
             <StyledOpacityConatiner background={THEME_BG} />
             <CardCarousel />
-            {isDesktop && <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
+            <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />
         </StyledSection>
     )
 }

@@ -10,6 +10,7 @@ export const ContactForm = () => {
             <FormInput type="text" placeholder="Name" label="NAME" name="email" width={'30rem'}></FormInput>
             <FormInput type="text" placeholder="Email" label="EMAIL" name="email" width={'30rem'}></FormInput>
             <FormTextArea type="textarea" placeholder="Message" label="MESSAGE" name="email" width={'30rem'} height={'10rem'}></FormTextArea>
+            <StyledButton>Submit</StyledButton>
         </StyledFlexItem>
     )
 }
@@ -41,7 +42,26 @@ const StyledH1 = styled.h1`
     clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
 
     @media (max-device-width: 440px) {
+        font-size: 1rem;
+        margin: 0.5rem 0rem;
         width: 90vw;
+    }
+`
+
+const StyledButton = styled.button`
+    position: relative;
+    display: block;
+    margin: 2.5rem 0rem;
+    width: 8rem;
+    font-size: 1.5rem;
+    background: #ffffff;
+    color: #000000;
+    border: 3px solid #d1d7e0;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+
+    @media (max-device-width: 440px) {
         font-size: 1rem;
     }
 `

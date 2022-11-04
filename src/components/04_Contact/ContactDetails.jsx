@@ -50,6 +50,7 @@ const StyledH1 = styled.h1`
 
     @media (max-device-width: 440px) {
         font-size: 1rem;
+        margin: 0.5rem 0rem;
         width: 90vw;
     }
 `
@@ -60,7 +61,8 @@ const StyledLi = styled.li`
     height: 4rem;
 
     @media (max-device-width: 440px) {
-        height: 3rem;
+        height: 2rem;
+        margin: 0.3rem;
     }
 `
 const StyledPBold = styled.p`
@@ -73,7 +75,7 @@ const StyledPBold = styled.p`
     color: #d1d7e0;
 
     @media (max-device-width: 440px) {
-        height: 3rem;
+        height: 2rem;
     }
 `
 
@@ -89,7 +91,8 @@ const StyledA = styled.a`
     color: #d1d7e0;
 
     @media (max-device-width: 440px) {
-        height: 3rem;
+        height: 2rem;
+        padding: 0.4rem;
         font-size: 0.95rem;
         font-weight: 700;
     }
@@ -104,8 +107,9 @@ const StyledLogoImg = styled.img`
 
     @media (max-device-width: 440px) {
         position: relative;
-        height: 3rem;
-        padding: 0.5rem 0.5rem;
+        height: 2rem;
+        padding: 0.1rem 0.1rem;
+        margin: 0rem 0.3rem;
         float: left;
     }
 `

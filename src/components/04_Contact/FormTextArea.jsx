@@ -32,6 +32,7 @@ const StyledContainerDiv = styled.div`
 
     @media (max-device-width: 440px) {
         width: 90vw;
+        margin: 0.3rem 0rem;
     }
 `
 

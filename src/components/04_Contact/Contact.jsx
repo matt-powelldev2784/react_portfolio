@@ -54,17 +54,16 @@ const StyledFlexBox = styled.div`
     display: flex;
     padding: 5rem;
     min-height: 100vh;
-    text-align: center;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: start;
-    margin: auto;
 
     @media (max-device-width: 440px) {
-        display: block;
-        padding: 0;
-        margin: 0rem 0rem;
-        width: 100vw;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 1.5rem 0rem;
+
+        width: 90vw;
     }
 `

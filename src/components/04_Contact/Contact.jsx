@@ -14,7 +14,7 @@ export const Contact = ({ scrollToComponent, triggerAnimation, pageTheme }, ref)
     return (
         <StyledSection ref={ref}>
             <Background backgroundImage={backgroundImage} />
-            <StyledOpacityConatiner background={THEME_BG}>
+            <StyledOpacityConatiner>
                 <StyledFlexBox background={THEME_BG}>
                     <ContactDetails />
                     <ContactForm />
@@ -38,6 +38,7 @@ const StyledOpacityConatiner = styled.div`
     position: relative;
     display: block;
     min-height: 100vh;
+    max-height: 100vh;
     height: 100%;
     margin: auto;
     background: rgb(128, 43, 177, 0.9);
@@ -61,8 +62,9 @@ const StyledFlexBox = styled.div`
     margin: auto;
 
     @media (max-device-width: 440px) {
-        flex-direction: column;
+        display: block;
         padding: 0;
+        margin: 0rem 0rem;
         width: 100vw;
     }
 `

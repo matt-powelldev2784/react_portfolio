@@ -96,7 +96,7 @@ const StyledArrowP = styled.p`
     @media (max-device-width: 440px) {
         width: 15rem;
         height: 15rem;
-        bottom: -10rem;
+        bottom: -8rem;
         font-size: 5rem;
     }
 `

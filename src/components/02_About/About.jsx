@@ -8,7 +8,7 @@ import { Background } from '../ui/Background'
 import backgroundImage from '../../img/room_bg.jpg'
 
 const About = ({ triggerAnimation, scrollToComponent, pageTheme }, ref) => {
-    const { theme } = React.useContext(ThemeContext)
+    const { theme, isDesktop } = React.useContext(ThemeContext)
     const { THEME_BG } = theme?.colors?.[pageTheme]
 
     const swipeHandlers = useSwipeable({
@@ -22,8 +22,8 @@ const About = ({ triggerAnimation, scrollToComponent, pageTheme }, ref) => {
             <StyledFlexBox background={THEME_BG}>
                 <StyledFlexItem>
                     <AboutText />
-                    <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />
                 </StyledFlexItem>
+                {isDesktop && <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
             </StyledFlexBox>
         </StyledSection>
     )

@@ -9,7 +9,7 @@ import { NeonText } from '../ui/NeonText'
 import backgroundImage from '../../img/background_blocks.svg'
 
 const Title = ({ scrollToComponent, triggerAnimation }, ref) => {
-    const { theme } = React.useContext(ThemeContext)
+    const { theme, isDesktop } = React.useContext(ThemeContext)
     const { TITLE_BG, TITLE_H1, TITLE_H2 } = theme?.colors?.title
 
     const [lineAnimationStart, setLineAnimationStart] = useState(false)
@@ -30,7 +30,7 @@ const Title = ({ scrollToComponent, triggerAnimation }, ref) => {
                     <TitleLogo fill1={TITLE_H1} fill2={TITLE_H2} fill3={TITLE_H2} />
                     {lineAnimationStart && <TitleLine />}
                 </StyledFlexBox>
-                <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />
+                {isDesktop && <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
             </StyledSection>
         </Fragment>
     )

@@ -8,7 +8,7 @@ import { Background } from '../ui/Background'
 import backgroundImage from '../../img/white_room_bg.jpg'
 
 const Projects = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
-    const { theme } = React.useContext(ThemeContext)
+    const { theme, isDesktop } = React.useContext(ThemeContext)
     const { THEME_BG } = theme?.colors?.[pageTheme]
 
     const swipeHandlers = useSwipeable({
@@ -21,7 +21,7 @@ const Projects = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
             <Background backgroundImage={backgroundImage} />
             <StyledOpacityConatiner background={THEME_BG} />
             <CardCarousel />
-            <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />
+            {isDesktop && <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
         </StyledSection>
     )
 }

@@ -9,7 +9,7 @@ import { ContactDetails } from './ContactDetails'
 import { ContactForm } from './ContactForm'
 
 export const Contact = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
-    const { theme } = React.useContext(ThemeContext)
+    const { theme, isDesktop } = React.useContext(ThemeContext)
     const { THEME_BG } = theme?.colors?.[pageTheme]
 
     const swipeHandlers = useSwipeable({
@@ -26,7 +26,7 @@ export const Contact = ({ scrollToComponent, triggerAnimation, pageTheme }, ref)
                     <ContactForm />
                 </StyledFlexBox>
             </StyledOpacityConatiner>
-            <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />
+            {isDesktop && <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
         </StyledSection>
     )
 }

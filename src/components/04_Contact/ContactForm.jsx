@@ -64,6 +64,6 @@ const StyledButton = styled.button`
 
     @media (max-device-width: 440px) {
         font-size: 1rem;
-        margin: 0.5rem auto;
+        margin: 0rem auto;
     }
 `

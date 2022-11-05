@@ -58,9 +58,10 @@ const Input = styled.input`
 
     @media (max-device-width: 440px) {
         width: 90vw;
-        border: 3px solid #d1d7e0;
+        border: 2px solid #d1d7e0;
         border-radius: 0.7rem;
-        height: 80%;
+        max-height: 80%;
+        height: 1.8rem;
     }
 `
 

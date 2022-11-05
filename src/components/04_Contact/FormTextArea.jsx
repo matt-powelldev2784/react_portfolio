@@ -59,16 +59,17 @@ const TextArea = styled.textarea`
 
     @media (max-device-width: 440px) {
         width: 90vw;
-        border: 3px solid #d1d7e0;
+        border: 2px solid #d1d7e0;
         border-radius: 0.7rem;
-        height: 80%;
+        max-height: 80%;
+        height: 7.5rem;
     }
 `
 
 const Span = styled.span`
-    position: relative;
     display: block;
     float: left;
+    padding: 0.1rem;
     color: #d1d7e0;
     font-weight: 700;
     font-size: 1.2rem;

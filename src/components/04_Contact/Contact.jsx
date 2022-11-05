@@ -13,7 +13,8 @@ export const Contact = ({ scrollToComponent, triggerAnimation, pageTheme }, ref)
     const { THEME_BG } = theme?.colors?.[pageTheme]
 
     const swipeHandlers = useSwipeable({
-        onSwipedUp: eventData => scrollToComponent()
+        onSwipedUp: eventData => scrollToComponent(),
+        delta: 200
     })
 
     return (

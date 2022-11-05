@@ -48,7 +48,7 @@ const StyledH1 = styled.h1`
         clip-path: unset;
     }
 
-    @media (max-device-width: 321px) {
+    @media (max-device-width: 380px) {
         font-size: 1rem;
         margin: 0.5rem 0rem;
         width: 90vw;
@@ -74,7 +74,7 @@ const StyledButton = styled.button`
         margin: 0.5rem auto;
     }
 
-    @media (max-device-width: 321px) {
+    @media (max-device-width: 380px) {
         font-size: 1rem;
         margin: 0 auto;
     }

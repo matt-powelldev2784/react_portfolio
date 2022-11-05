@@ -73,7 +73,7 @@ const StyledFlexBox = styled.div`
         width: 100vw;
     }
 
-    @media (max-device-width: 321px) {
+    @media (max-device-width: 380px) {
         flex-direction: column;
         justify-content: flex-start;
         padding: 1.5rem 0rem;

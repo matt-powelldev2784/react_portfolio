@@ -1,4 +1,5 @@
 import React, { Fragment, useState, forwardRef } from 'react'
+import { useSwipeable } from 'react-swipeable'
 import styled from 'styled-components'
 import { ThemeContext } from '../../app/App'
 import { Background } from './Title_Background'
@@ -6,8 +7,6 @@ import { TitleLogo } from './TitleLogo'
 import { TitleLine } from './TitleLine'
 import { NeonText } from '../ui/NeonText'
 import backgroundImage from '../../img/background_blocks.svg'
-
-import { useSwipeable } from 'react-swipeable'
 
 const Title = ({ scrollToComponent, triggerAnimation }, ref) => {
     const { theme } = React.useContext(ThemeContext)
@@ -25,9 +24,9 @@ const Title = ({ scrollToComponent, triggerAnimation }, ref) => {
 
     return (
         <Fragment>
-            <StyledSection ref={ref} {...swipeHandlers}>
+            <StyledSection {...swipeHandlers}>
                 <Background backgroundImage={backgroundImage} />
-                <StyledFlexBox background={TITLE_BG}>
+                <StyledFlexBox background={TITLE_BG} ref={ref}>
                     <TitleLogo fill1={TITLE_H1} fill2={TITLE_H2} fill3={TITLE_H2} />
                     {lineAnimationStart && <TitleLine />}
                 </StyledFlexBox>

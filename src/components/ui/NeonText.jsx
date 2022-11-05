@@ -46,7 +46,7 @@ const StyledArrowContainer = styled.div`
                   ${fadeInAnimationOnClick} 1.8s ease normal
               `
             : css`
-                  ${fadeInAnimation} 5.5s ease normal
+                  ${fadeInAnimation} 4.5s ease normal
               `
     }};
 

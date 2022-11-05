@@ -1,5 +1,6 @@
 import React, { forwardRef } from 'react'
 import styled from 'styled-components'
+import { useSwipeable } from 'react-swipeable'
 import { ThemeContext } from '../../app/App'
 import { NeonText } from '../ui/NeonText'
 import { Background } from '../ui/Background'
@@ -11,8 +12,13 @@ export const Contact = ({ scrollToComponent, triggerAnimation, pageTheme }, ref)
     const { theme } = React.useContext(ThemeContext)
     const { THEME_BG } = theme?.colors?.[pageTheme]
 
+    const swipeHandlers = useSwipeable({
+        onSwiped: eventData => scrollToComponent()
+    })
+
     return (
-        <StyledSection ref={ref}>
+        <StyledSection {...swipeHandlers}>
+            <StyledRefDiv ref={ref} />
             <Background backgroundImage={backgroundImage} />
             <StyledOpacityConatiner>
                 <StyledFlexBox background={THEME_BG}>
@@ -33,6 +39,7 @@ const StyledSection = styled.section`
     width: 100vw;
     overflow: hidden;
 `
+const StyledRefDiv = styled.div``
 
 const StyledOpacityConatiner = styled.div`
     position: relative;

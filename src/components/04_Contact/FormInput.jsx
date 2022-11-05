@@ -32,6 +32,11 @@ const StyledContainerDiv = styled.div`
 
     @media (max-device-width: 440px) {
         width: 90vw;
+        margin: 1rem 0rem;
+    }
+
+    @media (max-device-width: 321px) {
+        width: 90vw;
         margin: 0.3rem 0rem;
     }
 `
@@ -57,6 +62,14 @@ const Input = styled.input`
     font-size: 1rem;
 
     @media (max-device-width: 440px) {
+        width: 90vw;
+        border: 2px solid #d1d7e0;
+        border-radius: 0.7rem;
+        max-height: 80%;
+        height: 2.5rem;
+    }
+
+    @media (max-device-width: 321px) {
         width: 90vw;
         border: 2px solid #d1d7e0;
         border-radius: 0.7rem;

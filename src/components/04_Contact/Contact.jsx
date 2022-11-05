@@ -68,6 +68,13 @@ const StyledFlexBox = styled.div`
 
     @media (max-device-width: 440px) {
         flex-direction: column;
+        justify-content: space-evenly;
+        padding: 1.5rem 0rem;
+        width: 100vw;
+    }
+
+    @media (max-device-width: 321px) {
+        flex-direction: column;
         justify-content: center;
         padding: 1.5rem 0rem;
         width: 100vw;

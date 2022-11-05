@@ -47,6 +47,13 @@ const StyledH1 = styled.h1`
         width: 90vw;
         clip-path: unset;
     }
+
+    @media (max-device-width: 440px) {
+        font-size: 1.2rem;
+        margin: 0.5rem 0rem;
+        width: 90vw;
+        clip-path: unset;
+    }
 `
 
 const StyledButton = styled.button`
@@ -63,7 +70,12 @@ const StyledButton = styled.button`
     z-index: 1;
 
     @media (max-device-width: 440px) {
+        font-size: 1.2rem;
+        margin: 1rem auto;
+    }
+
+    @media (max-device-width: 321px) {
         font-size: 1rem;
-        margin: 0rem auto;
+        margin: 0 auto;
     }
 `

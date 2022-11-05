@@ -49,6 +49,13 @@ const StyledH1 = styled.h1`
     clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
 
     @media (max-device-width: 440px) {
+        font-size: 1.2rem;
+        margin: 0.5rem 0rem;
+        width: 90vw;
+        clip-path: unset;
+    }
+
+    @media (max-device-width: 321px) {
         font-size: 1rem;
         margin: 0.5rem 0rem;
         width: 90vw;
@@ -62,6 +69,11 @@ const StyledLi = styled.li`
     height: 4rem;
 
     @media (max-device-width: 440px) {
+        height: 2rem;
+        margin: 1rem;
+    }
+
+    @media (max-device-width: 321px) {
         height: 2rem;
         margin: 0.3rem;
     }

@@ -7,11 +7,17 @@ import { TitleLine } from './TitleLine'
 import { NeonText } from '../ui/NeonText'
 import backgroundImage from '../../img/background_blocks.svg'
 
+import { useSwipeable } from 'react-swipeable'
+
 const Title = ({ scrollToComponent, triggerAnimation }, ref) => {
     const { theme } = React.useContext(ThemeContext)
     const { TITLE_BG, TITLE_H1, TITLE_H2 } = theme?.colors?.title
 
     const [lineAnimationStart, setLineAnimationStart] = useState(false)
+
+    const swipeHandlers = useSwipeable({
+        onSwipe: eventData => console.log('aaaa')
+    })
 
     setTimeout(() => {
         setLineAnimationStart(true)
@@ -19,7 +25,7 @@ const Title = ({ scrollToComponent, triggerAnimation }, ref) => {
 
     return (
         <Fragment>
-            <StyledSection ref={ref}>
+            <StyledSection ref={ref} {...swipeHandlers}>
                 <Background backgroundImage={backgroundImage} />
                 <StyledFlexBox background={TITLE_BG}>
                     <TitleLogo fill1={TITLE_H1} fill2={TITLE_H2} fill3={TITLE_H2} />

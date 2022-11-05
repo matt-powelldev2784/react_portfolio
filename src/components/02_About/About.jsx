@@ -17,7 +17,7 @@ const About = ({ triggerAnimation, scrollToComponent, pageTheme }, ref) => {
 
     return (
         <StyledSection {...swipeHandlers}>
-            <StyledRefDiv ref={ref}>sss</StyledRefDiv>
+            <StyledRefDiv ref={ref}></StyledRefDiv>
             <Background backgroundImage={backgroundImage} />
             <StyledFlexBox background={THEME_BG}>
                 <StyledFlexItem>

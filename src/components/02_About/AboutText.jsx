@@ -44,23 +44,28 @@ const StyledH1 = styled.h1`
     display: block;
     width: 100%;
     min-width: 100%;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 700;
+    padding: 0.5rem;
     text-align: left;
-    color: #d1d7e0;
+    color: #802bb1;
+    background: #d1d7e0;
+    clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
 
     @media (max-device-width: 440px) {
-        margin: 1rem;
+        margin: 1rem 0rem;
+        padding: 0.3rem;
         font-size: 2rem;
+        clip-path: unset;
     }
 `
 
 const StyledSpan = styled.span`
     display: inline;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 700;
     text-align: left;
-    color: #ffffff;
+    color: #802bb1;
 
     @media (max-device-width: 440px) {
         font-size: 2rem;

@@ -20,6 +20,7 @@ const Projects = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
             <StyledRefDiv ref={ref} />
             <Background backgroundImage={backgroundImage} />
             <StyledOpacityConatiner background={THEME_BG} />
+
             <CardCarousel />
             {isDesktop && <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
         </StyledSection>
@@ -44,7 +45,7 @@ const StyledOpacityConatiner = styled.div`
     height: 100%;
     margin: auto;
 
-    background: rgb(209, 215, 224, 0.5);
+    background: rgb(24, 29, 36, 0.7);
 
     @media (max-device-width: 440px) {
         width: 100vw;

@@ -63,7 +63,6 @@ const StyledFlexBox = styled.div`
         flex-direction: column;
         justify-content: flex-start;
         padding: 1.5rem 0rem;
-
-        width: 90vw;
+        width: 100vw;
     }
 `

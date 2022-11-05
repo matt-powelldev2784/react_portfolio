@@ -29,8 +29,8 @@ const StyledFlexItem = styled.div`
     min-width: 35rem;
 
     @media (max-device-width: 440px) {
-        width: 100%;
-        margin: 1rem;
+        width: 90vw;
+        margin: 1rem auto 0.5rem auto;
         min-width: unset;
     }
 `
@@ -52,6 +52,7 @@ const StyledH1 = styled.h1`
         font-size: 1rem;
         margin: 0.5rem 0rem;
         width: 90vw;
+        clip-path: unset;
     }
 `
 

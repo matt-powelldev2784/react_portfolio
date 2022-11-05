@@ -75,7 +75,7 @@ const StyledFlexBox = styled.div`
 
     @media (max-device-width: 321px) {
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         padding: 1.5rem 0rem;
         width: 100vw;
     }

@@ -37,6 +37,7 @@ const StyledContainerDiv = styled.div`
 
     @media (max-device-width: 321px) {
         width: 90vw;
+        height: 100%;
         margin: 0.3rem 0rem;
     }
 `
@@ -75,7 +76,7 @@ const TextArea = styled.textarea`
         border: 2px solid #d1d7e0;
         border-radius: 0.7rem;
         max-height: 80%;
-        height: 7.5rem;
+        height: 6rem;
     }
 `
 

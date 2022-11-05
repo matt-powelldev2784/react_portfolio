@@ -42,14 +42,14 @@ const StyledH1 = styled.h1`
     clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
 
     @media (max-device-width: 440px) {
-        font-size: 1rem;
+        font-size: 1.2rem;
         margin: 0.5rem 0rem;
         width: 90vw;
         clip-path: unset;
     }
 
-    @media (max-device-width: 440px) {
-        font-size: 1.2rem;
+    @media (max-device-width: 321px) {
+        font-size: 1rem;
         margin: 0.5rem 0rem;
         width: 90vw;
         clip-path: unset;
@@ -71,7 +71,7 @@ const StyledButton = styled.button`
 
     @media (max-device-width: 440px) {
         font-size: 1.2rem;
-        margin: 1rem auto;
+        margin: 0.5rem auto;
     }
 
     @media (max-device-width: 321px) {

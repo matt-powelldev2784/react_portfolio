@@ -12,7 +12,7 @@ const Projects = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
     const { THEME_BG } = theme?.colors?.[pageTheme]
 
     const swipeHandlers = useSwipeable({
-        onSwiped: eventData => scrollToComponent()
+        onSwipedDown: eventData => scrollToComponent()
     })
 
     return (

@@ -15,7 +15,7 @@ const Title = ({ scrollToComponent, triggerAnimation }, ref) => {
     const [lineAnimationStart, setLineAnimationStart] = useState(false)
 
     const swipeHandlers = useSwipeable({
-        onSwiped: eventData => scrollToComponent()
+        onSwipeDown: eventData => scrollToComponent()
     })
 
     setTimeout(() => {

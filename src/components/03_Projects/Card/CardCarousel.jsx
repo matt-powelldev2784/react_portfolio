@@ -61,7 +61,7 @@ const StyledContainerDiv = styled.div`
     transform: translate(-50%, -60%);
 
     @media (max-device-width: 440px) {
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, calc(-50% - 10px));
     }
 `
 

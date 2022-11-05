@@ -51,15 +51,3 @@ const StyledOpacityConatiner = styled.div`
         padding: 0rem;
     }
 `
-
-// const StyledContainer = styled.div`
-//     position: absolute;
-//     display: block;
-//     top: 46%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//     border: 10px solid black;
-
-//     @media (max-device-width: 440px) {
-//     }
-// `

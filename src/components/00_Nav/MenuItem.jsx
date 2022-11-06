@@ -50,7 +50,7 @@ const StyledMenuItem = styled.div`
         border-bottom: solid 1px ${({ menuTextMob }) => menuTextMob};
 
         &:hover {
-            color: ${({ menuTextMob }) => menuText};
+            color: ${({ menuTextMob }) => menuTextMob};
             border-bottom: solid 1px ${({ menuTextMob }) => menuTextMob};
         }
     }

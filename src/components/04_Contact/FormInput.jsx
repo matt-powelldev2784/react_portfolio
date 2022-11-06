@@ -60,7 +60,7 @@ const Input = styled.input`
     height: 100%;
     padding: 0.5rem;
     background: #ffffff;
-    border: 8px solid ${({ text }) => text};
+    border: 5px solid ${({ text }) => text};
     border-radius: 1rem;
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.3);
     font-size: 1rem;

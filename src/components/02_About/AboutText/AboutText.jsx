@@ -52,11 +52,11 @@ const StyledContainer = styled.section`
     padding: 2rem 7.5rem;
 
     @media (max-device-width: 440px) {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         padding: 0rem 1rem;
     }
 
     @media (max-device-width: 380px) {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 `

@@ -15,9 +15,9 @@ export const AboutText = ({ triggerAnimation }) => {
     }
 
     return (
-        <StyledSection onClick={onClickToEndTypingEffect} onTouchEnd={onClickToEndTypingEffect}>
+        <StyledSection onClick={onClickToEndTypingEffect}>
             <StyledContainer text={ABOUT_TEXT}>
-                {!typingEffectEnd && isDesktop && (
+                {!typingEffectEnd && isDesktop && triggerAnimation && (
                     <Typewriter
                         onInit={typewriter => {
                             typewriter.typeString().callFunction(() => {

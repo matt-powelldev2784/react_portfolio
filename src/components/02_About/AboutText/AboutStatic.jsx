@@ -31,8 +31,21 @@ const fadeInAnimation = keyframes`
     0% {
         opacity: 0;
     }
-    40% {
+     50% {
+        opacity: 0.5;
+     }
+    100% {
         opacity: 1;
+     }
+}`
+
+const fadeInAnimationMob = keyframes`
+{
+    0% {
+        opacity: 0;
+    }
+     50% {
+        opacity: 0;
      }
     100% {
         opacity: 1;
@@ -49,10 +62,10 @@ const StyledContainer = styled.section`
     animation: ${({ triggerAnimation, isDesktop }) => {
         return triggerAnimation && isDesktop
             ? css`
-                  ${fadeInAnimation} 6s ease normal
+                  ${fadeInAnimation} 2s ease normal
               `
             : css`
-                  ${fadeInAnimation} 10s ease normal
+                  ${fadeInAnimationMob} 2s ease normal
               `
     }};
 

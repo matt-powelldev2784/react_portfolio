@@ -1,5 +1,5 @@
 const text1 = "Hi, my name is Matthew Powell, I'm a software developer looking to land my first professional role."
-const text2 = 'I have full stack experience with JavaScript, React, Redux, TypeScript, NodeJS and GIT.'
+const text2 = 'I have full stack experience and have developed solutions with JavaScript, React, Redux, TypeScript, NodeJS and GIT.'
 const text3 =
     'I love to code, I enjoy the challenge of learning new technologies. I get a buzz when solving problems or completing new features in my projects.'
 const text4 =

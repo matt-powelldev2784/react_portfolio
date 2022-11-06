@@ -24,7 +24,6 @@ export const AboutText = ({ triggerAnimation }) => {
                             strings: textArray,
                             autoStart: true,
                             loop: false,
-                            delay: 1,
                             deleteSpeed: 1
                         }}
                     />

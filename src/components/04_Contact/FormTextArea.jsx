@@ -12,7 +12,7 @@ export const FormTextArea = ({ width, height, label, type, placeholder, name, va
             <Label htmlFor={name}></Label>
             <Span text={CONTACT_TEXT}>{labelUppercase}</Span>
             <TextArea
-                background={CONTACT_TEXT}
+                text={CONTACT_TEXT}
                 name={name}
                 type={type}
                 placeholder={placeholder}
@@ -69,7 +69,7 @@ const TextArea = styled.textarea`
 
     @media (max-device-width: 440px) {
         width: 90vw;
-        border: 2px solid #d1d7e0;
+        border: 2px solid ${({ text }) => text};
         border-radius: 0.7rem;
         max-height: 80%;
         height: 12rem;
@@ -77,7 +77,7 @@ const TextArea = styled.textarea`
 
     @media (max-device-width: 380px) {
         width: 90vw;
-        border: 2px solid ${({ background }) => background};
+        border: 2px solid ${({ text }) => text};
         border-radius: 0.7rem;
         max-height: 80%;
         height: 6rem;

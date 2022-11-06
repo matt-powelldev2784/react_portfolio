@@ -36,7 +36,7 @@ export const AboutText = ({ triggerAnimation }) => {
                     />
                 )}
                 {!isDesktop && <AboutStatic triggerAnimation={triggerAnimation} />}
-                {typingEffectEnd && <AboutStatic />}
+                {typingEffectEnd && isDesktop && <AboutStatic />}
             </StyledContainer>
         </StyledSection>
     )

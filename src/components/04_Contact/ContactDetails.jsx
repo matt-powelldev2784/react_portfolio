@@ -36,7 +36,6 @@ const StyledFlexItem = styled.div`
     position: relative;
     display: block;
     margin: 1rem;
-    min-width: 35rem;
 
     @media (max-device-width: 440px) {
         width: 90vw;
@@ -77,6 +76,7 @@ const StyledLi = styled.li`
     position: relative;
     display: block;
     height: 4rem;
+    width: auto;
 
     @media (max-device-width: 440px) {
         height: 2rem;
@@ -106,6 +106,7 @@ const StyledA = styled.a`
     position: relative;
     display: block;
     height: 4rem;
+    min-width: 28rem;
     padding: 1rem;
     text-align: center;
     font-size: 1.5rem;
@@ -118,6 +119,7 @@ const StyledA = styled.a`
         padding: 0.4rem;
         font-size: 0.95rem;
         font-weight: 700;
+        min-width: unset;
     }
 `
 

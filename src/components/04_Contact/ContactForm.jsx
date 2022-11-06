@@ -16,7 +16,7 @@ export const ContactForm = () => {
             <FormInput type="text" placeholder="Name" label="NAME" name="email" width={'30rem'}></FormInput>
             <FormInput type="text" placeholder="Email" label="EMAIL" name="email" width={'30rem'}></FormInput>
             <FormTextArea type="textarea" placeholder="Message" label="MESSAGE" name="email" width={'30rem'} height={'10rem'}></FormTextArea>
-            <StyledButton background={CONTACT_H1_BG}>Submit</StyledButton>
+            <StyledButton>Submit</StyledButton>
         </StyledFlexItem>
     )
 }
@@ -25,7 +25,6 @@ const StyledFlexItem = styled.div`
     position: relative;
     display: block;
     margin: 1rem;
-    min-width: 35rem;
 
     @media (max-device-width: 440px) {
         width: 90vw;
@@ -65,7 +64,7 @@ const StyledH1 = styled.h1`
 const StyledButton = styled.button`
     position: relative;
     display: block;
-    margin: 2.5rem 0rem;
+    margin: 2.5rem auto;
     width: 8rem;
     font-size: 1.5rem;
     background: #ffffff;

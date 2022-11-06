@@ -32,7 +32,7 @@ const StyledContainerDiv = styled.div`
     display: block;
     width: ${({ width }) => width};
     height: ${({ height }) => height};
-    margin: 1rem 0rem;
+    margin: 1rem auto;
 
     @media (max-device-width: 440px) {
         width: 90vw;

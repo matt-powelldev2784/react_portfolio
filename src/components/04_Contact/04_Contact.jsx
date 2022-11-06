@@ -47,7 +47,6 @@ const StyledOpacityConatiner = styled.div`
     display: block;
     min-height: 100vh;
     max-height: 100vh;
-    height: 100%;
     margin: auto;
     background: ${({ background }) => background};
 

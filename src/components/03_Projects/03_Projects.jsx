@@ -45,7 +45,6 @@ const StyledOpacityConatiner = styled.div`
     min-height: 100vh;
     height: 100%;
     margin: auto;
-
     background: ${({ background }) => background};
 
     @media (max-device-width: 440px) {

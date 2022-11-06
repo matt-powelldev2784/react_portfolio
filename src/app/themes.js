@@ -54,7 +54,7 @@ export const light = {
     },
     projects: { PROJECTS_BG: 'rgb(209, 215, 224 0.75)' },
     contact: {
-        CONTACT_BG: 'rgb(209, 215, 224, 0.95)',
+        CONTACT_BG: 'rgb(209, 215, 224, 0.9)',
         CONTACT_H1_BG: '#000000',
         CONTACT_H1_TEXT: '#d1d7e0',
         CONTACT_TEXT: '#000000'

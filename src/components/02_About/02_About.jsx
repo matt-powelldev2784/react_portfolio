@@ -1,5 +1,4 @@
-import React, { useState, useRef, forwardRef } from 'react'
-import { useIntersection } from '../Utilities/useIntersection'
+import React, { useState, forwardRef } from 'react'
 import { useSwipeable } from 'react-swipeable'
 import styled from 'styled-components'
 import { ThemeContext } from '../../app/App'
@@ -9,31 +8,30 @@ import { Background } from '../ui/Background'
 import backgroundImage from '../../img/room_bg.jpg'
 
 const About = ({ triggerAnimation, scrollToComponent, pageTheme }, ref) => {
-    const intersectRef = useRef()
-    const [intersectAboutPage, setintersectAboutPage] = useState(false)
+    const [skipTypingEffect, setSkipTypingEffect] = useState(false)
     const { theme, isDesktop } = React.useContext(ThemeContext)
-    const { ABOUT_BG } = theme?.colors?.about
+    const { ABOUT_BG, ABOUT_TEXT } = theme?.colors?.about
 
     const swipeHandlers = useSwipeable({
         onSwipedUp: eventData => scrollToComponent()
     })
 
-    const inViewport = useIntersection(intersectRef, '-300px') // Trigger if 100px is visible from the element
-
-    if (inViewport && !intersectAboutPage) {
-        setintersectAboutPage(true)
-        console.log('in viewport:', ref.current)
+    const onClickSkipTypingEffect = () => {
+        setSkipTypingEffect(true)
     }
 
     return (
-        <StyledSection {...swipeHandlers} ref={intersectRef}>
+        <StyledSection {...swipeHandlers}>
             <StyledRefDiv ref={ref}></StyledRefDiv>
             <Background backgroundImage={backgroundImage} />
             <StyledFlexBox background={ABOUT_BG}>
-                <StyledFlexItem>
-                    <AboutText triggerAnimation={intersectAboutPage} />
-                </StyledFlexItem>
+                <AboutText skipTypingEffect={skipTypingEffect} />
             </StyledFlexBox>
+            {!skipTypingEffect && (
+                <StyledA onClick={onClickSkipTypingEffect} color={ABOUT_TEXT}>
+                    Click main text to<br></br>skip typing effect
+                </StyledA>
+            )}
             {isDesktop && <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
         </StyledSection>
     )
@@ -63,8 +61,21 @@ const StyledFlexBox = styled.section`
     background: ${({ background }) => background};
 `
 
-const StyledFlexItem = styled.div`
-    position: relative;
+const StyledA = styled.a`
+    position: absolute;
     display: block;
-    width: 100%;
+    bottom: 0;
+    right: 0;
+    padding: 1rem;
+    font-size: 0.8rem;
+    text-align: center;
+    color: ${({ color }) => color};
+
+    @media (max-device-width: 440px) {
+        top: 2rem;
+        left: 0rem;
+        font-size: 0.6rem;
+        padding: 0.5rem;
+        text-align: unset;
+    }
 `

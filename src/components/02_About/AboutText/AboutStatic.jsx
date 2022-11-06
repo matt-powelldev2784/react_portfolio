@@ -94,7 +94,7 @@ const StyledP = styled.p`
     }
 
     @media (max-device-width: 380px) {
-        font-size: 1rem;
+        font-size: 0.9rem;
         margin: 1rem;
     }
 `

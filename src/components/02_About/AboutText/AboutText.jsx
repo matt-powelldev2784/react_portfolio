@@ -5,15 +5,19 @@ import Typewriter from 'typewriter-effect'
 import { textArray } from '../aboutTextInfo'
 import { AboutStatic } from './AboutStatic'
 
-export const AboutText = ({ triggerAnimation }) => {
+export const AboutText = () => {
     const [typingEffectEnd, setTypingEffectEnd] = useState(false)
     const { theme } = React.useContext(ThemeContext)
     const { ABOUT_TEXT } = theme?.colors?.about
 
+    const onClickToEndTypingEffect = () => {
+        setTypingEffectEnd(true)
+    }
+
     return (
-        <StyledSection>
+        <StyledSection onClick={onClickToEndTypingEffect}>
             <StyledContainer text={ABOUT_TEXT}>
-                {triggerAnimation && !typingEffectEnd && (
+                {!typingEffectEnd && (
                     <Typewriter
                         onInit={typewriter => {
                             typewriter.typeString().callFunction(() => {

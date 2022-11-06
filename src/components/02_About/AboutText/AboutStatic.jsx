@@ -39,19 +39,6 @@ const fadeInAnimation = keyframes`
      }
 }`
 
-const fadeInAnimationMob = keyframes`
-{
-    0% {
-        opacity: 0;
-    }
-     50% {
-        opacity: 0;
-     }
-    100% {
-        opacity: 1;
-     }
-}`
-
 const StyledContainer = styled.section`
     position: relative;
     margin: auto;
@@ -65,7 +52,7 @@ const StyledContainer = styled.section`
                   ${fadeInAnimation} 2s ease normal
               `
             : css`
-                  ${fadeInAnimationMob} 2s ease normal
+                  unset
               `
     }};
 

@@ -5,7 +5,7 @@ import { fullText } from '../aboutTextInfo'
 
 export const AboutStatic = () => {
     const [startAnimation, setStartAnimation] = useState(false)
-    const { theme } = React.useContext(ThemeContext)
+    const { theme, isDesktop } = React.useContext(ThemeContext)
     const { ABOUT_H1_BG, ABOUT_H1_TEXT, ABOUT_TEXT } = theme?.colors?.about
 
     setTimeout(() => {
@@ -13,7 +13,7 @@ export const AboutStatic = () => {
     }, 1)
 
     return (
-        <StyledContainer triggerAnimation={startAnimation}>
+        <StyledContainer triggerAnimation={startAnimation} isDesktop={isDesktop}>
             <StyledH1 background={ABOUT_H1_BG} text={ABOUT_H1_TEXT}>
                 ABOUT ME
             </StyledH1>
@@ -31,6 +31,9 @@ const fadeInAnimation = keyframes`
     0% {
         opacity: 0;
     }
+    40% {
+        opacity: 1;
+     }
     100% {
         opacity: 1;
      }
@@ -43,13 +46,13 @@ const StyledContainer = styled.section`
     color: #d1d7e0;
     margin: 1rem 0rem;
     padding: 0rem 0rem;
-    animation: ${({ triggerAnimation }) => {
-        return triggerAnimation
+    animation: ${({ triggerAnimation, isDesktop }) => {
+        return triggerAnimation && isDesktop
             ? css`
-                  ${fadeInAnimation} 5s ease normal
+                  ${fadeInAnimation} 6s ease normal
               `
             : css`
-                  ${fadeInAnimation} 5s ease normal
+                  ${fadeInAnimation} 10s ease normal
               `
     }};
 

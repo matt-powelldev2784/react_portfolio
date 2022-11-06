@@ -10,10 +10,7 @@ export const AboutText = ({ triggerAnimation }) => {
     const { theme, isDesktop } = React.useContext(ThemeContext)
     const { ABOUT_TEXT } = theme?.colors?.about
 
-    console.log('')
-
     const onClickToEndTypingEffect = () => {
-        console.log('a')
         setTypingEffectEnd(true)
     }
 

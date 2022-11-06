@@ -1,7 +1,7 @@
 import React, { useState, createContext } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { base, light, dark } from './themes'
-import { Navbar } from '../components/00_Nav/Navbar'
+import { Navbar } from '../components/00_Nav/00_Navbar'
 import { Slides } from './Slides'
 
 const themesMap = { light, dark }

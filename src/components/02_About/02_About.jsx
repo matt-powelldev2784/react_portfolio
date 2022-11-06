@@ -3,8 +3,7 @@ import { useSwipeable } from 'react-swipeable'
 import styled from 'styled-components'
 import { ThemeContext } from '../../app/App'
 import { NeonText } from '../ui/NeonText'
-import { AboutText } from './AboutText'
-import { AboutTitle } from './AboutTitle'
+import { AboutText } from './AboutText/AboutText'
 import { Background } from '../ui/Background'
 import backgroundImage from '../../img/room_bg.jpg'
 
@@ -23,10 +22,7 @@ const About = ({ triggerAnimation, scrollToComponent, pageTheme }, ref) => {
 
             <StyledFlexBox background={ABOUT_BG}>
                 <StyledFlexItem>
-                    <AboutTitle />
-                </StyledFlexItem>
-                <StyledFlexItem>
-                    <AboutText />
+                    <AboutText triggerAnimation={triggerAnimation} />
                 </StyledFlexItem>
             </StyledFlexBox>
             {isDesktop && <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}

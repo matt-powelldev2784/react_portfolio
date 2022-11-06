@@ -5,6 +5,7 @@ import { ThemeContext } from '../../app/App'
 import { CardCarousel } from './Card/CardCarousel'
 import { NeonText } from '../ui/NeonText'
 import { Background } from '../ui/Background'
+import { ProjectTitle } from './ProjectTitle'
 import backgroundImage from '../../img/white_room_bg.jpg'
 
 const Projects = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
@@ -20,7 +21,7 @@ const Projects = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
             <StyledRefDiv ref={ref} />
             <Background backgroundImage={backgroundImage} />
             <StyledOpacityConatiner background={THEME_BG} />
-
+            <ProjectTitle />
             <CardCarousel />
             {isDesktop && <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
         </StyledSection>

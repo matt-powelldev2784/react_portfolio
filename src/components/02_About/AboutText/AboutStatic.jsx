@@ -46,10 +46,10 @@ const StyledContainer = styled.section`
     animation: ${({ triggerAnimation }) => {
         return triggerAnimation
             ? css`
-                  ${fadeInAnimation} 3s ease normal
+                  ${fadeInAnimation} 5s ease normal
               `
             : css`
-                  ${fadeInAnimation} 3s ease normal
+                  ${fadeInAnimation} 5s ease normal
               `
     }};
 

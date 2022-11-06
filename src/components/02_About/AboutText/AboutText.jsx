@@ -5,19 +5,22 @@ import Typewriter from 'typewriter-effect'
 import { textArray } from '../aboutTextInfo'
 import { AboutStatic } from './AboutStatic'
 
-export const AboutText = () => {
+export const AboutText = ({ triggerAnimation }) => {
     const [typingEffectEnd, setTypingEffectEnd] = useState(false)
-    const { theme } = React.useContext(ThemeContext)
+    const { theme, isDesktop } = React.useContext(ThemeContext)
     const { ABOUT_TEXT } = theme?.colors?.about
 
+    console.log('')
+
     const onClickToEndTypingEffect = () => {
+        console.log('a')
         setTypingEffectEnd(true)
     }
 
     return (
-        <StyledSection onClick={onClickToEndTypingEffect}>
+        <StyledSection onClick={onClickToEndTypingEffect} onTouchEnd={onClickToEndTypingEffect}>
             <StyledContainer text={ABOUT_TEXT}>
-                {!typingEffectEnd && (
+                {!typingEffectEnd && isDesktop && (
                     <Typewriter
                         onInit={typewriter => {
                             typewriter.typeString().callFunction(() => {
@@ -32,6 +35,7 @@ export const AboutText = () => {
                         }}
                     />
                 )}
+                {!isDesktop && <AboutStatic triggerAnimation={triggerAnimation} />}
                 {typingEffectEnd && <AboutStatic />}
             </StyledContainer>
         </StyledSection>

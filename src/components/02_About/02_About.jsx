@@ -7,8 +7,7 @@ import { AboutText } from './AboutText/AboutText'
 import { Background } from '../ui/Background'
 import backgroundImage from '../../img/room_bg.jpg'
 
-const About = ({ triggerAnimation, scrollToComponent, pageTheme }, ref) => {
-    const [skipTypingEffect, setSkipTypingEffect] = useState(false)
+const About = ({ triggerAnimation, scrollToComponent }, ref) => {
     const { theme, isDesktop } = React.useContext(ThemeContext)
     const { ABOUT_BG, ABOUT_TEXT } = theme?.colors?.about
 
@@ -16,20 +15,18 @@ const About = ({ triggerAnimation, scrollToComponent, pageTheme }, ref) => {
         onSwipedUp: eventData => scrollToComponent()
     })
 
-    const onClickSkipTypingEffect = () => {
-        setSkipTypingEffect(true)
-    }
-
     return (
         <StyledSection {...swipeHandlers}>
             <StyledRefDiv ref={ref}></StyledRefDiv>
             <Background backgroundImage={backgroundImage} />
             <StyledFlexBox background={ABOUT_BG}>
-                <AboutText skipTypingEffect={skipTypingEffect} />
+                <AboutText triggerAnimation={triggerAnimation} />
             </StyledFlexBox>
-            <StyledA onClick={onClickSkipTypingEffect} color={ABOUT_TEXT}>
-                Click main text to<br></br>skip typing effect
-            </StyledA>
+            {isDesktop && (
+                <StyledA color={ABOUT_TEXT}>
+                    Click main text to<br></br>skip typing effect
+                </StyledA>
+            )}
             {isDesktop && <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
         </StyledSection>
     )

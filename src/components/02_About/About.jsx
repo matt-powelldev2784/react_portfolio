@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { ThemeContext } from '../../app/App'
 import { NeonText } from '../ui/NeonText'
 import { AboutText } from './AboutText'
+import { AboutTitle } from './AboutTitle'
 import { Background } from '../ui/Background'
 import backgroundImage from '../../img/room_bg.jpg'
 
@@ -19,12 +20,16 @@ const About = ({ triggerAnimation, scrollToComponent, pageTheme }, ref) => {
         <StyledSection {...swipeHandlers}>
             <StyledRefDiv ref={ref}></StyledRefDiv>
             <Background backgroundImage={backgroundImage} />
+
             <StyledFlexBox background={ABOUT_BG}>
+                <StyledFlexItem>
+                    <AboutTitle />
+                </StyledFlexItem>
                 <StyledFlexItem>
                     <AboutText />
                 </StyledFlexItem>
-                {isDesktop && <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
             </StyledFlexBox>
+            {isDesktop && <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
         </StyledSection>
     )
 }
@@ -38,16 +43,14 @@ const StyledSection = styled.section`
     overflow: hidden;
 `
 
-const StyledRefDiv = styled.div`
-    background: blue;
-`
+const StyledRefDiv = styled.div``
 
 const StyledFlexBox = styled.section`
     position: relative;
     display: flex;
     min-height: 100vh;
     text-align: center;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -55,4 +58,8 @@ const StyledFlexBox = styled.section`
     background: ${({ background }) => background};
 `
 
-const StyledFlexItem = styled.div``
+const StyledFlexItem = styled.div`
+    position: relative;
+    display: block;
+    width: 100%;
+`

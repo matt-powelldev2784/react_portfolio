@@ -1,4 +1,4 @@
-import React, { useState, forwardRef } from 'react'
+import React, { forwardRef } from 'react'
 import { useSwipeable } from 'react-swipeable'
 import styled from 'styled-components'
 import { ThemeContext } from '../../app/App'

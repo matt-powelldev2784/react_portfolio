@@ -1,14 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
+import { ThemeContext } from '../../app/App'
 
 export const FormTextArea = ({ width, height, label, type, placeholder, name, value, onChange, error, autocomplete, required }) => {
+    const { theme } = React.useContext(ThemeContext)
+    const { CONTACT_TEXT } = theme?.colors?.contact
     const labelUppercase = label?.toUpperCase()
 
     return (
         <StyledContainerDiv width={width} height={height}>
             <Label htmlFor={name}></Label>
-            <Span>{labelUppercase}</Span>
+            <Span text={CONTACT_TEXT}>{labelUppercase}</Span>
             <TextArea
+                text={CONTACT_TEXT}
                 name={name}
                 type={type}
                 placeholder={placeholder}
@@ -57,7 +61,7 @@ const TextArea = styled.textarea`
     height: 100%;
     padding: 0.5rem;
     background: #ffffff;
-    border: 8px solid #d1d7e0;
+    border: 8px solid ${({ text }) => text};
     border-radius: 1rem;
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.3);
     font-size: 1rem;
@@ -73,7 +77,7 @@ const TextArea = styled.textarea`
 
     @media (max-device-width: 380px) {
         width: 90vw;
-        border: 2px solid #d1d7e0;
+        border: 2px solid ${({ background }) => background};
         border-radius: 0.7rem;
         max-height: 80%;
         height: 6rem;
@@ -84,7 +88,7 @@ const Span = styled.span`
     display: block;
     float: left;
     padding: 0.1rem;
-    color: #d1d7e0;
+    color: ${({ text }) => text};
     font-weight: 700;
     font-size: 1.2rem;
     background: none;

@@ -10,7 +10,7 @@ import { ContactForm } from './ContactForm'
 
 export const Contact = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
     const { theme, isDesktop } = React.useContext(ThemeContext)
-    const { THEME_BG } = theme?.colors?.[pageTheme]
+    const { CONTACT_BG } = theme?.colors?.contact
 
     const swipeHandlers = useSwipeable({
         onSwipedUp: eventData => scrollToComponent(),
@@ -21,8 +21,8 @@ export const Contact = ({ scrollToComponent, triggerAnimation, pageTheme }, ref)
         <StyledSection {...swipeHandlers}>
             <StyledRefDiv ref={ref} />
             <Background backgroundImage={backgroundImage} />
-            <StyledOpacityConatiner>
-                <StyledFlexBox background={THEME_BG}>
+            <StyledOpacityConatiner background={CONTACT_BG}>
+                <StyledFlexBox>
                     <ContactDetails />
                     <ContactForm />
                 </StyledFlexBox>
@@ -49,7 +49,7 @@ const StyledOpacityConatiner = styled.div`
     max-height: 100vh;
     height: 100%;
     margin: auto;
-    background: rgb(128, 43, 177, 0.9);
+    background: ${({ background }) => background};
 
     @media (max-device-width: 440px) {
         width: 100vw;
@@ -69,7 +69,7 @@ const StyledFlexBox = styled.div`
 
     @media (max-device-width: 440px) {
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: center;
         padding: 1.5rem 0rem;
         width: 100vw;
     }

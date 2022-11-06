@@ -1,22 +1,32 @@
 import React from 'react'
 import styled from 'styled-components'
+import { ThemeContext } from '../../app/App'
 import atSvg from '../../img/at.svg'
 import githubLogo from '../../img/github_logo.svg'
 
 export const ContactDetails = () => {
+    const { theme } = React.useContext(ThemeContext)
+    const { CONTACT_H1_BG, CONTACT_H1_TEXT, CONTACT_TEXT } = theme?.colors?.contact
+
     return (
         <StyledFlexItem>
-            <StyledH1>CONTACT DETAILS</StyledH1>
+            <StyledH1 background={CONTACT_H1_BG} text={CONTACT_H1_TEXT}>
+                CONTACT DETAILS
+            </StyledH1>
             <StyledLi>
-                <StyledPBold>Matthew Powell</StyledPBold>
+                <StyledPBold text={CONTACT_TEXT}>Matthew Powell</StyledPBold>
             </StyledLi>
             <StyledLi>
                 <StyledLogoImg src={atSvg} />
-                <StyledA href="mailto:matt.powell2784@gmail.com">matt.powell2784@gmail.com</StyledA>
+                <StyledA text={CONTACT_TEXT} href="mailto:matt.powell2784@gmail.com">
+                    matt.powell2784@gmail.com
+                </StyledA>
             </StyledLi>
             <StyledLi>
                 <StyledLogoImg src={githubLogo} />
-                <StyledA href="https://github.com/matt-powelldev2784">github.com/matt-powelldev2784</StyledA>
+                <StyledA text={CONTACT_TEXT} href="https://github.com/matt-powelldev2784">
+                    github.com/matt-powelldev2784
+                </StyledA>
             </StyledLi>
         </StyledFlexItem>
     )
@@ -43,8 +53,8 @@ const StyledH1 = styled.h1`
     text-align: left;
     font-size: 2rem;
     font-weight: 700;
-    background: #d1d7e0;
-    color: #802bb1;
+    background: ${({ background }) => background};
+    color: ${({ text }) => text};
     width: 26rem;
     clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
 
@@ -85,7 +95,7 @@ const StyledPBold = styled.p`
     font-size: 2rem;
     font-weight: 700;
     text-align: left;
-    color: #d1d7e0;
+    color: ${({ text }) => text};
 
     @media (max-device-width: 440px) {
         height: 2rem;
@@ -101,7 +111,7 @@ const StyledA = styled.a`
     font-size: 1.5rem;
     font-weight: 300;
     text-align: left;
-    color: #d1d7e0;
+    color: ${({ text }) => text};
 
     @media (max-device-width: 440px) {
         height: 2rem;

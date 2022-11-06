@@ -10,7 +10,7 @@ import backgroundImage from '../../img/white_room_bg.jpg'
 
 const Projects = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
     const { theme, isDesktop } = React.useContext(ThemeContext)
-    const { THEME_BG } = theme?.colors?.[pageTheme]
+    const { PROJECTS_BG } = theme?.colors?.projects
 
     const swipeHandlers = useSwipeable({
         onSwipedUp: eventData => scrollToComponent()
@@ -20,7 +20,7 @@ const Projects = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
         <StyledSection {...swipeHandlers}>
             <StyledRefDiv ref={ref} />
             <Background backgroundImage={backgroundImage} />
-            <StyledOpacityConatiner background={THEME_BG} />
+            <StyledOpacityConatiner background={PROJECTS_BG} />
             <ProjectTitle />
             <CardCarousel />
             {isDesktop && <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
@@ -46,7 +46,7 @@ const StyledOpacityConatiner = styled.div`
     height: 100%;
     margin: auto;
 
-    background: rgb(24, 29, 36, 0.7);
+    background: ${({ background }) => background};
 
     @media (max-device-width: 440px) {
         width: 100vw;

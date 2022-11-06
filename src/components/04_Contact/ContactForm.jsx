@@ -1,16 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
+import { ThemeContext } from '../../app/App'
 import { FormInput } from './FormInput'
 import { FormTextArea } from './FormTextArea'
 
 export const ContactForm = () => {
+    const { theme } = React.useContext(ThemeContext)
+    const { CONTACT_H1_BG, CONTACT_H1_TEXT } = theme?.colors?.contact
+
     return (
         <StyledFlexItem>
-            <StyledH1>CONTACT FORM</StyledH1>
+            <StyledH1 background={CONTACT_H1_BG} text={CONTACT_H1_TEXT}>
+                CONTACT FORM
+            </StyledH1>
             <FormInput type="text" placeholder="Name" label="NAME" name="email" width={'30rem'}></FormInput>
             <FormInput type="text" placeholder="Email" label="EMAIL" name="email" width={'30rem'}></FormInput>
             <FormTextArea type="textarea" placeholder="Message" label="MESSAGE" name="email" width={'30rem'} height={'10rem'}></FormTextArea>
-            <StyledButton>Submit</StyledButton>
+            <StyledButton background={CONTACT_H1_BG}>Submit</StyledButton>
         </StyledFlexItem>
     )
 }
@@ -36,8 +42,8 @@ const StyledH1 = styled.h1`
     text-align: left;
     font-size: 2rem;
     font-weight: 700;
-    background: #d1d7e0;
-    color: #802bb1;
+    background: ${({ background }) => background};
+    color: ${({ text }) => text};
     width: 24rem;
     clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
 
@@ -64,7 +70,7 @@ const StyledButton = styled.button`
     font-size: 1.5rem;
     background: #ffffff;
     color: #000000;
-    border: 3px solid #d1d7e0;
+    border: 3px solid ${({ background }) => background};
     border-radius: 20px;
     cursor: pointer;
     z-index: 1;

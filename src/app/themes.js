@@ -17,6 +17,21 @@ export const dark = {
         TITLE_H1: '#802bb1',
         TITLE_H2: '#d1d7e0'
     },
+    about: {
+        ABOUT_BG: 'rgb(128, 43, 177, 0.75)',
+        ABOUT_H1_BG: '#d1d7e0',
+        ABOUT_H1_TEXT: '#802bb1',
+        ABOUT_TEXT: '#d1d7e0'
+    },
+    projects: {
+        PROJECTS_BG: 'rgb(24, 29, 36, 0.7)'
+    },
+    contact: {
+        CONTACT_BG: 'rgb(128, 43, 177, 0.9);',
+        CONTACT_H1_BG: '#d1d7e0',
+        CONTACT_H1_TEXT: '#802bb1',
+        CONTACT_TEXT: '#d1d7e0'
+    },
     themeA: {
         THEME_BG: '#802bb1',
         THEME_TEXT: '#d1d7e0',
@@ -50,6 +65,19 @@ export const light = {
         TITLE_BG: '#d1d7e0',
         TITLE_H1: '#802bb1',
         TITLE_H2: '#272727'
+    },
+    about: {
+        ABOUT_BG: 'rgb(255, 255, 255, 0.75)',
+        ABOUT_H1_BG: '#000000',
+        ABOUT_H1_TEXT: '#d1d7e0',
+        ABOUT_TEXT: '#000000'
+    },
+    projects: { PROJECTS_BG: 'rgb(255, 255, 255, 0.75)' },
+    contact: {
+        CONTACT_BG: 'rgb(255, 255, 255, 0.95)',
+        CONTACT_H1_BG: '#000000',
+        CONTACT_H1_TEXT: '#d1d7e0',
+        CONTACT_TEXT: '#000000'
     },
     themeA: {
         THEME_BG: '#FFFFFF',

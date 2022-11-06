@@ -9,7 +9,7 @@ import backgroundImage from '../../img/room_bg.jpg'
 
 const About = ({ triggerAnimation, scrollToComponent, pageTheme }, ref) => {
     const { theme, isDesktop } = React.useContext(ThemeContext)
-    const { THEME_BG } = theme?.colors?.[pageTheme]
+    const { ABOUT_BG } = theme?.colors?.about
 
     const swipeHandlers = useSwipeable({
         onSwipedUp: eventData => scrollToComponent()
@@ -19,7 +19,7 @@ const About = ({ triggerAnimation, scrollToComponent, pageTheme }, ref) => {
         <StyledSection {...swipeHandlers}>
             <StyledRefDiv ref={ref}></StyledRefDiv>
             <Background backgroundImage={backgroundImage} />
-            <StyledFlexBox background={THEME_BG}>
+            <StyledFlexBox background={ABOUT_BG}>
                 <StyledFlexItem>
                     <AboutText />
                 </StyledFlexItem>
@@ -52,7 +52,7 @@ const StyledFlexBox = styled.section`
     justify-content: center;
     align-items: center;
     margin: auto;
-    background: rgb(128, 43, 177, 0.75);
+    background: ${({ background }) => background};
 `
 
 const StyledFlexItem = styled.div``

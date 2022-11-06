@@ -29,7 +29,7 @@ const StyledA = styled.a`
 
 const StyledMenuItem = styled.div`
     position: relative;
-    margin: 0rem 0.8rem 0rem 0rem;
+    margin: 0rem 0rem 0rem 0rem;
     padding: 0.6rem 0.7rem 0.3rem 0.7rem;
     font-size: 1rem;
     font-weight: 700;

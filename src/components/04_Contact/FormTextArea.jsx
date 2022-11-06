@@ -12,7 +12,7 @@ export const FormTextArea = ({ width, height, label, type, placeholder, name, va
             <Label htmlFor={name}></Label>
             <Span text={CONTACT_TEXT}>{labelUppercase}</Span>
             <TextArea
-                text={CONTACT_TEXT}
+                background={CONTACT_TEXT}
                 name={name}
                 type={type}
                 placeholder={placeholder}

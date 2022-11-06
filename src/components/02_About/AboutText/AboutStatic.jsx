@@ -19,7 +19,8 @@ export const AboutStatic = () => {
             </StyledH1>
             <StyledP text={ABOUT_TEXT}>{fullText}</StyledP>
             <StyledP text={ABOUT_TEXT}>
-                If you wish to contact me please email: <StyledA href={'mailto:matt.powell2784@gmail.com'}>matt.powell2784@gmail.com</StyledA>
+                I would love to find a role where I could develop myself further. If you wish to contact me, please email:
+                <StyledA href={'mailto:matt.powell2784@gmail.com'}>matt.powell2784@gmail.com</StyledA>
             </StyledP>
         </StyledContainer>
     )

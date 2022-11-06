@@ -32,31 +32,11 @@ export const dark = {
         CONTACT_H1_TEXT: '#802bb1',
         CONTACT_TEXT: '#d1d7e0'
     },
-    themeA: {
-        THEME_BG: '#802bb1',
-        THEME_TEXT: '#d1d7e0',
-        THEME_HEADER_BG: '#d1d7e0',
-        THEME_HEADER_TEXT: '#272727',
-        THEME_BLOCK_FG: '#802bb1',
-        THEME_BLOCK_BG: '#d1d7e0',
-        THEME_MOB_MENU_BG: '#802bb1',
-        THEME_MENU_TEXT: '#d1d7e0',
-        THEME_MOB_MENU_TEXT: '#d1d7e0',
-        THEME_CARD_SHADOW:
-            '0px 1px 2px 0px rgba(0, 0, 0, 0.3), 1px 2px 4px 0px rgba(0, 0, 0, 0.3), 2px 4px 8px 0px rgba(0, 0, 0, 0.3), 2px 4px 16px 0px rgba(0, 0, 0, 0.3)'
-    },
-    themeB: {
-        THEME_BG: '#000000',
-        THEME_TEXT: '#d1d7e0',
-        THEME_HEADER_BG: '#802bb1',
-        THEME_HEADER_TEXT: '#d1d7e0',
-        THEME_BLOCK_FG: '#802bb1',
-        THEME_BLOCK_BG: '#d1d7e0',
-        THEME_MOB_MENU_BG: '#802bb1',
-        THEME_MENU_TEXT: '#d1d7e0',
-        THEME_MOB_MENU_TEXT: '#d1d7e0',
-        THEME_CARD_SHADOW:
-            '0px 1px 2px 0px rgba(0, 0, 0, 0.7), 1px 2px 4px 0px rgba(0, 0, 0, 0.7), 2px 4px 8px 0px rgba(0, 0, 0, 0.7), 2px 4px 16px 0px rgba(0, 0, 0, 0.7)'
+    navigation: {
+        MENU_BG: '#802bb1',
+        MOB_MENU_BG: '#802bb1',
+        MENU_TEXT: '#d1d7e0',
+        MOB_MENU_TEXT: '#d1d7e0'
     }
 }
 
@@ -79,31 +59,11 @@ export const light = {
         CONTACT_H1_TEXT: '#d1d7e0',
         CONTACT_TEXT: '#000000'
     },
-    themeA: {
-        THEME_BG: '#FFFFFF',
-        THEME_TEXT: '#272727',
-        THEME_HEADER_BG: '#802bb1',
-        THEME_HEADER_TEXT: '#d1d7e0',
-        THEME_BLOCK_FG: '#802bb1',
-        THEME_BLOCK_BG: '#d1d7e0',
-        THEME_MOB_MENU_BG: '#802bb1',
-        THEME_MENU_TEXT: '#000000',
-        THEME_MOB_MENU_TEXT: '#d1d7e0',
-        THEME_CARD_SHADOW:
-            '0px 1px 2px 0px rgba(0, 0, 0, 0.3), 1px 2px 4px 0px rgba(0, 0, 0, 0.3), 2px 4px 8px 0px rgba(0, 0, 0, 0.3), 2px 4px 16px 0px rgba(0, 0, 0, 0.3);'
-    },
-    themeB: {
-        THEME_BG: '#FFFFFF',
-        THEME_TEXT: '#272727',
-        THEME_HEADER_BG: '#B12B88',
-        THEME_HEADER_TEXT: '#d1d7e0',
-        THEME_BLOCK_FG: '#B12B88',
-        THEME_BLOCK_BG: '#d1d7e0',
-        THEME_MOB_MENU_BG: '#802bb1',
-        THEME_MENU_TEXT: '#000000',
-        THEME_MOB_MENU_TEXT: '#d1d7e0',
-        THEME_CARD_SHADOW:
-            '0px 1px 2px 0px rgba(0, 0, 0, 0.3), 1px 2px 4px 0px rgba(0, 0, 0, 0.3), 2px 4px 8px 0px rgba(0, 0, 0, 0.3), 2px 4px 16px 0px rgba(0, 0, 0, 0.3);'
+    navigation: {
+        MENU_BG: '#FFFFFF',
+        MOB_MENU_BG: '#802bb1',
+        MENU_TEXT: '#000000',
+        MOB_MENU_TEXT: '#d1d7e0'
     }
 }
 // const Colors = {

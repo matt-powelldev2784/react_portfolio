@@ -8,7 +8,7 @@ export const Navbar = () => {
     const [isMobile, setIsMobile] = useState(false)
     const [menuOpen, setMenuOpen] = useState(false)
     const { theme } = React.useContext(ThemeContext)
-    const { THEME_BG, THEME_MOB_MENU_BG } = theme?.colors?.themeA
+    const { MENU_BG, MOB_MENU_BG } = theme?.colors?.navigation
 
     useEffect(() => {
         const deviceWidth = window.innerWidth
@@ -21,7 +21,7 @@ export const Navbar = () => {
 
     return (
         <StyledNav>
-            <Flexbox THEME_BG={THEME_BG} THEME_MOB_MENU_BG={THEME_MOB_MENU_BG}>
+            <Flexbox THEME_BG={MENU_BG} THEME_MOB_MENU_BG={MOB_MENU_BG}>
                 {isMobile && (
                     <MenuImgConatiner>
                         <StyledMenuImg src={menuIcon} onClick={menuClickHandler} />

@@ -4,7 +4,7 @@ import { ThemeContext } from '../../app/App'
 
 export const ThemeSelectorMenuItem = () => {
     const { theme, currentTheme, setCurrentTheme } = React.useContext(ThemeContext)
-    const { THEME_MENU_TEXT, THEME_MOB_MENU_TEXT } = theme?.colors?.themeA
+    const { MENU_TEXT, MOB_MENU_TEXT } = theme?.colors?.navigation
     const newTheme = currentTheme === 'light' ? 'dark' : 'light'
     const themeMenuTitle = `${newTheme.toUpperCase()} THEME`
 
@@ -14,7 +14,7 @@ export const ThemeSelectorMenuItem = () => {
 
     return (
         <StyledListItem>
-            <StyledMenuItem onClick={changeTheme} menuText={THEME_MENU_TEXT} menuTextMob={THEME_MOB_MENU_TEXT}>
+            <StyledMenuItem onClick={changeTheme} menuText={MENU_TEXT} menuTextMob={MOB_MENU_TEXT}>
                 {themeMenuTitle}
             </StyledMenuItem>
         </StyledListItem>

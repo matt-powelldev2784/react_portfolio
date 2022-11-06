@@ -4,12 +4,12 @@ import { ThemeContext } from '../../app/App'
 
 export const MenuItem = ({ href, menuContent }) => {
     const { theme } = React.useContext(ThemeContext)
-    const { THEME_MENU_TEXT, THEME_MOB_MENU_TEXT } = theme?.colors?.themeA
+    const { MENU_TEXT, MOB_MENU_TEXT } = theme?.colors?.navigation
 
     return (
         <StyledListItem>
             <StyledA href={href}>
-                <StyledMenuItem menuText={THEME_MENU_TEXT} menuTextMob={THEME_MOB_MENU_TEXT}>
+                <StyledMenuItem menuText={MENU_TEXT} menuTextMob={MOB_MENU_TEXT}>
                     {menuContent}
                 </StyledMenuItem>
             </StyledA>

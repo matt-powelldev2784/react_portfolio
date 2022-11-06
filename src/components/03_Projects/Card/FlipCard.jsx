@@ -30,8 +30,8 @@ const StyledContainer = styled.div`
     position: relative;
     display: block;
     overflow: visible;
-    width: 40rem;
-    height: 30rem;
+    max-width: 40rem;
+    max-height: 30rem;
     margin: 1rem;
     text-align: center;
     border-radius: 20px;

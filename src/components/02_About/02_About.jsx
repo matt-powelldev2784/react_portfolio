@@ -27,11 +27,9 @@ const About = ({ triggerAnimation, scrollToComponent, pageTheme }, ref) => {
             <StyledFlexBox background={ABOUT_BG}>
                 <AboutText skipTypingEffect={skipTypingEffect} />
             </StyledFlexBox>
-            {!skipTypingEffect && (
-                <StyledA onClick={onClickSkipTypingEffect} color={ABOUT_TEXT}>
-                    Click main text to<br></br>skip typing effect
-                </StyledA>
-            )}
+            <StyledA onClick={onClickSkipTypingEffect} color={ABOUT_TEXT}>
+                Click main text to<br></br>skip typing effect
+            </StyledA>
             {isDesktop && <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
         </StyledSection>
     )

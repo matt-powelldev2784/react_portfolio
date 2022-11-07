@@ -8,7 +8,7 @@ import { Background } from '../ui/Background'
 import { ProjectTitle } from './ProjectTitle'
 import backgroundImage from '../../img/white_room_bg.jpg'
 
-const Projects = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
+const Projects = ({ scrollToComponent, triggerAnimation }, ref) => {
     const { theme, isDesktop } = React.useContext(ThemeContext)
     const { PROJECTS_BG } = theme?.colors?.projects
 

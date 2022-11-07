@@ -20,13 +20,11 @@ const About = ({ triggerAnimation, scrollToComponent }, ref) => {
             <StyledRefDiv ref={ref}></StyledRefDiv>
             <Background backgroundImage={backgroundImage} />
             <StyledFlexBox background={ABOUT_BG}>
-                <AboutText triggerAnimation={triggerAnimation} />
+                <AboutText />
             </StyledFlexBox>
-            {isDesktop && (
-                <StyledA color={ABOUT_TEXT}>
-                    Click main text to<br></br>skip typing effect
-                </StyledA>
-            )}
+            <StyledA color={ABOUT_TEXT}>
+                Click main text to<br></br>skip typing effect
+            </StyledA>
             {isDesktop && <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
         </StyledSection>
     )
@@ -61,6 +59,8 @@ const StyledA = styled.a`
     display: block;
     bottom: 0;
     right: 0;
+    width: auto;
+    height: auto;
     padding: 1rem;
     font-size: 0.8rem;
     text-align: center;
@@ -69,6 +69,8 @@ const StyledA = styled.a`
     @media (max-device-width: 440px) {
         top: 2rem;
         left: 0rem;
+        width: 6rem;
+        height: 2rem;
         font-size: 0.6rem;
         padding: 0.5rem;
         text-align: unset;

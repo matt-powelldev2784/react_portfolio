@@ -1,27 +1,42 @@
-import React, { useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import styled from 'styled-components'
+import { useIsInViewport } from '../../Utilities/useIntersection'
 import { ThemeContext } from '../../../app/App'
 import Typewriter from 'typewriter-effect'
 import { textArray } from '../aboutTextInfo'
 import { AboutStatic } from './AboutStatic'
 
-export const AboutText = ({ triggerAnimation }) => {
-    const [typingEffectEnd, setTypingEffectEnd] = useState(false)
-    const { theme, isDesktop } = React.useContext(ThemeContext)
+export const AboutText = () => {
+    const typewriterRef = useRef(null)
+    const [displayTypingEffect, setDisplayTypingEffect] = useState(false)
+    const [disableTypingEffect, setDisableTypingEffect] = useState(false)
+    const [displayStaticText, setDisplayStaticText] = useState(false)
+    const { theme } = React.useContext(ThemeContext)
     const { ABOUT_TEXT } = theme?.colors?.about
 
     const onClickToEndTypingEffect = () => {
-        setTypingEffectEnd(true)
+        setDisplayTypingEffect(false)
+        setDisplayStaticText(true)
+        setDisableTypingEffect(true)
     }
+
+    const typewriterIsInViewport = useIsInViewport(typewriterRef)
+    useEffect(() => {
+        if (typewriterIsInViewport) {
+            setDisplayTypingEffect(true)
+        }
+    }, [typewriterIsInViewport, setDisplayTypingEffect])
 
     return (
         <StyledSection onClick={onClickToEndTypingEffect}>
-            <StyledContainer text={ABOUT_TEXT}>
-                {!typingEffectEnd && isDesktop && triggerAnimation && (
+            <StyledContainer text={ABOUT_TEXT} ref={typewriterRef}>
+                {displayTypingEffect && !disableTypingEffect && (
                     <Typewriter
                         onInit={typewriter => {
                             typewriter.typeString().callFunction(() => {
-                                setTypingEffectEnd(true)
+                                setDisplayTypingEffect(false)
+                                setDisplayStaticText(true)
+                                setDisableTypingEffect(true)
                             })
                         }}
                         options={{
@@ -32,8 +47,7 @@ export const AboutText = ({ triggerAnimation }) => {
                         }}
                     />
                 )}
-                {!isDesktop && <AboutStatic triggerAnimation={triggerAnimation} />}
-                {typingEffectEnd && isDesktop && <AboutStatic />}
+                {displayStaticText && <AboutStatic />}
             </StyledContainer>
         </StyledSection>
     )

@@ -27,7 +27,7 @@ export const Contact = ({ scrollToComponent, triggerAnimation, pageTheme }, ref)
                     <ContactForm />
                 </StyledFlexBox>
             </StyledOpacityConatiner>
-            {isDesktop && <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
+            {isDesktop && <NeonText char={'▴'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
         </StyledSection>
     )
 }

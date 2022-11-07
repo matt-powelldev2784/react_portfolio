@@ -34,7 +34,7 @@ export const CardCarousel = () => {
         // prettier-ignore
         const dotSpan = i === flipCardNumber ?
             <StyledDotSpan color={'#ffffff'} key={i}>{'•'}</StyledDotSpan>
-            : <StyledDotSpan key={i}> {'•'} </StyledDotSpan>
+            : <StyledDotSpan key={i}>{'•'}</StyledDotSpan>
 
         return dotSpan
     })
@@ -152,6 +152,7 @@ const StyledDotContainer = styled.span`
     color: #ffffff;
     top: 30.5rem;
     left: 50%;
+    width: auto;
     transform: translateX(-50%);
 
     @media (max-device-width: 440px) {
@@ -161,6 +162,7 @@ const StyledDotContainer = styled.span`
 
 const StyledDotSpan = styled.span`
     color: ${({ color }) => (color ? color : '#272727')};
+    width: 10rem;
     font-size: 3rem;
     padding: 0.25rem;
     font-family: 'Noto Sans Symbols 2', sans-serif;

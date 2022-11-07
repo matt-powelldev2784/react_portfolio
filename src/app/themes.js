@@ -24,7 +24,7 @@ export const dark = {
         ABOUT_TEXT: '#d1d7e0'
     },
     projects: {
-        PROJECTS_BG: 'rgb(209, 215, 224, 0.75)'
+        PROJECTS_BG: 'rgb(209, 215, 224, 0.2)'
     },
     contact: {
         CONTACT_BG: 'rgb(128, 43, 177, 0.9);',

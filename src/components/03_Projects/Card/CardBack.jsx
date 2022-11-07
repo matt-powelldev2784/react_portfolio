@@ -21,7 +21,7 @@ export const CardBack = ({ cardProps }) => {
 
                     <StyledP>{text1}</StyledP>
                     <StyledP>{text2}</StyledP>
-                    <StyledButton onClick={onButtonClick}>Visit Site</StyledButton>
+                    {href && <StyledButton onClick={onButtonClick}>Visit Site</StyledButton>}
                 </StyledContainerDiv>
             </StyledBack>
         </Fragment>
@@ -48,6 +48,7 @@ const StyledBack = styled.div`
 const StyledContainerDiv = styled.div`
     position: absolute;
     top: 50%;
+    width: 100%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 `
@@ -70,13 +71,15 @@ const StyledH1 = styled.h1`
 const StyledP = styled.p`
     display: block;
     margin: 1rem;
+    padding: 0rem 1rem;
     text-align: center;
     font-size: 1.2rem;
     font-weight: 300;
 
     @media (max-device-width: 440px) {
         font-size: 1rem;
-        margin: 1.2rem;
+        margin: 0.5rem 1.2rem;
+        padding: 0rem 0.5rem;
     }
 `
 
@@ -113,4 +116,8 @@ const StyledButton = styled.button`
     border-radius: 20px;
     cursor: pointer;
     z-index: 1;
+
+    @media (max-device-width: 440px) {
+        font-size: 1.2rem;
+    }
 `

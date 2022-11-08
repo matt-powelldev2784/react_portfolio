@@ -161,7 +161,7 @@ const StyledDotContainer = styled.span`
 `
 
 const StyledDotSpan = styled.span`
-    color: ${({ color }) => (color ? color : '#272727')};
+    color: ${({ color }) => (color ? color : 'rgb(1,1,1,0.4)')};
     width: 10rem;
     font-size: 3rem;
     padding: 0.25rem;

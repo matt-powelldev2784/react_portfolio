@@ -1,11 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
+import { ThemeContext } from '../../../app/App'
 
 export const CardFront = ({ cardProps }) => {
+    const { theme } = React.useContext(ThemeContext)
+    const { PROJECT_BOX_SHADOW } = theme?.colors?.projects
     const { title, description, backgroundImg, imgFront, blurb } = cardProps
 
     return (
-        <StyledFront>
+        <StyledFront boxShadow={PROJECT_BOX_SHADOW}>
             <StyledBackgroundImg src={backgroundImg} />
             {imgFront && <StyledLogoImg src={imgFront} />}
             <StyledTitleDiv>
@@ -24,7 +27,7 @@ const StyledFront = styled.div`
     height: 30rem;
     border-radius: 20px;
     border-radius: 20px;
-    box-shadow: rgb(40, 40, 40) 0px 20px 30px -10px;
+    box-shadow: ${({ boxShadow }) => boxShadow};
 
     @media (max-device-width: 440px) {
         height: 27rem;

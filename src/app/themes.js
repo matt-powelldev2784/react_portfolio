@@ -24,10 +24,11 @@ export const dark = {
         ABOUT_TEXT: '#d1d7e0'
     },
     projects: {
-        PROJECTS_BG: 'rgb(209, 215, 224, 0.2)'
+        PROJECTS_BG: '#000000',
+        PROJECT_BOX_SHADOW: '0 0 200px 20px rgb(255, 255, 255, 0.3)'
     },
     contact: {
-        CONTACT_BG: 'rgb(128, 43, 177, 0.9);',
+        CONTACT_BG: 'rgb(128, 43, 177, 0.75);',
         CONTACT_H1_BG: '#d1d7e0',
         CONTACT_H1_TEXT: '#802bb1',
         CONTACT_TEXT: '#d1d7e0'
@@ -53,10 +54,11 @@ export const light = {
         ABOUT_TEXT: '#000000'
     },
     projects: {
-        PROJECTS_BG: 'rgb(209, 215, 224, 0.2)'
+        PROJECTS_BG: 'rgb(209, 215, 224, 0.75)',
+        PROJECT_BOX_SHADOW: '0 0 200px 20px rgb(1, 1, 1, 0.55)'
     },
     contact: {
-        CONTACT_BG: 'rgb(209, 215, 224, 0.95)',
+        CONTACT_BG: 'rgb(209, 215, 224, 0.7)',
         CONTACT_H1_BG: '#000000',
         CONTACT_H1_TEXT: '#d1d7e0',
         CONTACT_TEXT: '#000000'

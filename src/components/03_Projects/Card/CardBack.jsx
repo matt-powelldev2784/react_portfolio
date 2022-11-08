@@ -1,7 +1,10 @@
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
+import { ThemeContext } from '../../../app/App'
 
 export const CardBack = ({ cardProps }) => {
+    const { theme } = React.useContext(ThemeContext)
+    const { PROJECT_BOX_SHADOW } = theme?.colors?.projects
     const { title, description, text1, text2, imgBack, href } = cardProps
 
     const onButtonClick = () => {
@@ -10,7 +13,7 @@ export const CardBack = ({ cardProps }) => {
 
     return (
         <Fragment>
-            <StyledBack>
+            <StyledBack boxShadow={PROJECT_BOX_SHADOW}>
                 <StyledContainerDiv>
                     <StyledImgContainer>
                         <StyledLogoImg src={imgBack} />
@@ -35,8 +38,7 @@ const StyledBack = styled.div`
     height: 30rem;
     border-radius: 20px;
     background: #ffffff;
-    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.7), 1px 2px 4px 0px rgba(0, 0, 0, 0.7), 2px 4px 8px 0px rgba(0, 0, 0, 0.7),
-        2px 4px 16px 0px rgba(0, 0, 0, 0.7);
+    box-shadow: ${({ boxShadow }) => boxShadow};
     transform: rotateY(180deg);
 
     @media (max-device-width: 440px) {

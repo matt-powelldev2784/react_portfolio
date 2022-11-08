@@ -4,7 +4,7 @@ import { useSwipeable } from 'react-swipeable'
 import { ThemeContext } from '../../app/App'
 import { NeonText } from '../ui/NeonText'
 import { Background } from '../ui/Background'
-import backgroundImage from '../../img/email_bg.jpg'
+import backgroundImage from '../../img/white_room_bg.jpg'
 import { ContactDetails } from './ContactDetails'
 import { ContactForm } from './ContactForm'
 

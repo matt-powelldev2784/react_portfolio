@@ -4,8 +4,6 @@ import { useSwipeable } from 'react-swipeable'
 import { ThemeContext } from '../../app/App'
 import { CardCarousel } from './Card/CardCarousel'
 import { NeonText } from '../ui/NeonText'
-import { Background } from '../ui/Background'
-import backgroundImage from '../../img/white_room_bg.jpg'
 
 const Projects = ({ scrollToComponent, triggerAnimation }, ref) => {
     const { theme, isDesktop } = React.useContext(ThemeContext)
@@ -18,7 +16,6 @@ const Projects = ({ scrollToComponent, triggerAnimation }, ref) => {
     return (
         <StyledSection {...swipeHandlers}>
             <StyledRefDiv ref={ref} />
-            <Background backgroundImage={backgroundImage} />
             <StyledOpacityConatiner background={PROJECTS_BG} />
             <CardCarousel />
             {isDesktop && <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}

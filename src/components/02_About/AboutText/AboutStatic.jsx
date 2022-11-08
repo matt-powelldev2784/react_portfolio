@@ -91,7 +91,7 @@ const StyledH1 = styled.h1`
         min-width: unset;
     }
 
-    @media (max-device-width: 370px) {
+    @media (max-device-width: 376px) {
         margin: 0.5rem 0.5rem;
     }
 `
@@ -109,8 +109,8 @@ const StyledPJustify = styled.p`
         margin: 1rem 1rem;
     }
 
-    @media (max-device-width: 370px) {
-        font-size: 0.1rem;
+    @media (max-device-width: 376px) {
+        font-size: 0.9rem;
         margin: 0.5rem 0.5rem;
     }
 `
@@ -126,7 +126,7 @@ const StyledP = styled.p`
         margin: 1rem 1rem;
     }
 
-    @media (max-device-width: 370px) {
+    @media (max-device-width: 376px) {
         font-size: 0.9rem;
         margin: 0.5rem 0.5rem;
     }
@@ -152,7 +152,7 @@ const StyledA = styled.a`
         font-size: 1.1rem;
     }
 
-    @media (max-device-width: 370px) {
+    @media (max-device-width: 376px) {
         font-size: 0.9rem;
     }
 `

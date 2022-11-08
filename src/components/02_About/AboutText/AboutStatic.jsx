@@ -110,7 +110,7 @@ const StyledPJustify = styled.p`
     }
 
     @media (max-device-width: 370px) {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         margin: 0.5rem 0.5rem;
     }
 `

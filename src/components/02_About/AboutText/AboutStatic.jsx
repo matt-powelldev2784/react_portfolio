@@ -17,9 +17,14 @@ export const AboutStatic = () => {
             <StyledH1 background={ABOUT_H1_BG} text={ABOUT_H1_TEXT}>
                 ABOUT ME
             </StyledH1>
-            <StyledP text={ABOUT_TEXT}>{fullText}</StyledP>
+            <StyledPJustify text={ABOUT_TEXT}>{fullText}</StyledPJustify>
             <StyledP text={ABOUT_TEXT}>
-                I would love to find a role where I could develop myself further. If you wish to contact me, please email:
+                Please see my github page:
+                <span> </span>
+                <StyledA href={'https://github.com/matt-powelldev2784'}>https://github.com/matt-powelldev2784</StyledA>
+            </StyledP>
+            <StyledP text={ABOUT_TEXT}>
+                If you wish to contact me, please email:
                 <span> </span>
                 <StyledA href={'mailto:matt.powell2784@gmail.com'}>matt.powell2784@gmail.com</StyledA>
             </StyledP>
@@ -60,7 +65,7 @@ const StyledContainer = styled.section`
     @media (max-device-width: 440px) {
         min-width: 90%;
         font-size: 1rem;
-        margin: 1rem;
+        margin: 0.25rem;
     }
 `
 
@@ -78,11 +83,35 @@ const StyledH1 = styled.h1`
     clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
 
     @media (max-device-width: 440px) {
-        padding: 0.3rem;
         font-size: 2rem;
+        padding: 0.3rem;
+        margin: 1rem 1rem;
         width: unset;
         clip-path: unset;
         min-width: unset;
+    }
+
+    @media (max-device-width: 370px) {
+        margin: 0.5rem 0.5rem;
+    }
+`
+
+const StyledPJustify = styled.p`
+    font-size: 2rem;
+    text-align: left;
+    margin: 2rem 1rem;
+    color: ${({ text }) => text};
+    text-align: justify;
+    text-justify: inter-word;
+
+    @media (max-device-width: 440px) {
+        font-size: 1.2rem;
+        margin: 1rem 1rem;
+    }
+
+    @media (max-device-width: 370px) {
+        font-size: 0.9rem;
+        margin: 0.5rem 0.5rem;
     }
 `
 
@@ -94,12 +123,12 @@ const StyledP = styled.p`
 
     @media (max-device-width: 440px) {
         font-size: 1.2rem;
-        margin: 1rem;
+        margin: 1rem 1rem;
     }
 
-    @media (max-device-width: 380px) {
+    @media (max-device-width: 370px) {
         font-size: 0.9rem;
-        margin: 1rem;
+        margin: 0.5rem 0.5rem;
     }
 `
 
@@ -115,5 +144,15 @@ const StyledA = styled.a`
     }
     &:active {
         color: unset;
+    }
+
+    white-space: nowrap;
+
+    @media (max-device-width: 440px) {
+        font-size: 1.1rem;
+    }
+
+    @media (max-device-width: 370px) {
+        font-size: 0.9rem;
     }
 `

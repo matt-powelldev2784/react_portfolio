@@ -13,7 +13,7 @@ export const aboutContext = createContext()
 const About = ({ triggerAnimation, scrollToComponent }, ref) => {
     const [displayTyping, setDisplayTyping] = useState(false)
     const { theme, isDesktop } = React.useContext(ThemeContext)
-    const { ABOUT_BG, ABOUT_TEXT } = theme?.colors?.about
+    const { ABOUT_BG } = theme?.colors?.about
 
     const swipeHandlers = useSwipeable({
         onSwipedUp: eventData => scrollToComponent()

@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useEffect } from 'react'
 import styled from 'styled-components'
 import { useIsInViewport } from '../../Utilities/useIntersection'
 import { ThemeContext } from '../../../app/App'

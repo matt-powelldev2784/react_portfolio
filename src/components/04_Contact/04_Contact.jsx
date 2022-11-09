@@ -8,7 +8,7 @@ import backgroundImage from '../../img/white_room_bg.jpg'
 import { ContactDetails } from './ContactDetails'
 import { ContactForm } from './ContactForm'
 
-export const Contact = ({ scrollToComponent, triggerAnimation, pageTheme }, ref) => {
+export const Contact = ({ scrollToComponent, triggerAnimation }, ref) => {
     const { theme, isDesktop } = React.useContext(ThemeContext)
     const { CONTACT_BG } = theme?.colors?.contact
 

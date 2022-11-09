@@ -2,41 +2,32 @@ import React, { useRef, useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { useIsInViewport } from '../../Utilities/useIntersection'
 import { ThemeContext } from '../../../app/App'
+import { aboutContext } from '../02_About'
 import Typewriter from 'typewriter-effect'
 import { textArray } from '../aboutTextInfo'
 import { AboutStatic } from './AboutStatic'
 
 export const AboutText = () => {
     const typewriterRef = useRef(null)
-    const [displayTypingEffect, setDisplayTypingEffect] = useState(false)
-    const [disableTypingEffect, setDisableTypingEffect] = useState(false)
-    const [displayStaticText, setDisplayStaticText] = useState(false)
     const { theme } = React.useContext(ThemeContext)
+    const { displayTyping, setDisplayTyping } = React.useContext(aboutContext)
     const { ABOUT_TEXT } = theme?.colors?.about
-
-    const onClickToEndTypingEffect = () => {
-        setDisplayTypingEffect(false)
-        setDisplayStaticText(true)
-        setDisableTypingEffect(true)
-    }
 
     const typewriterIsInViewport = useIsInViewport(typewriterRef)
     useEffect(() => {
         if (typewriterIsInViewport) {
-            setDisplayTypingEffect(true)
+            setDisplayTyping(true)
         }
-    }, [typewriterIsInViewport, setDisplayTypingEffect])
+    }, [typewriterIsInViewport, setDisplayTyping])
 
     return (
-        <StyledSection onClick={onClickToEndTypingEffect}>
+        <StyledSection>
             <StyledContainer text={ABOUT_TEXT} ref={typewriterRef}>
-                {displayTypingEffect && !disableTypingEffect && (
+                {displayTyping && (
                     <Typewriter
                         onInit={typewriter => {
                             typewriter.typeString().callFunction(() => {
-                                setDisplayTypingEffect(false)
-                                setDisplayStaticText(true)
-                                setDisableTypingEffect(true)
+                                setDisplayTyping(false)
                             })
                         }}
                         options={{
@@ -47,7 +38,7 @@ export const AboutText = () => {
                         }}
                     />
                 )}
-                {displayStaticText && <AboutStatic />}
+                {!displayTyping && <AboutStatic />}
             </StyledContainer>
         </StyledSection>
     )

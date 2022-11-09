@@ -1,13 +1,17 @@
-import React, { forwardRef } from 'react'
+import React, { useState, forwardRef, createContext } from 'react'
 import { useSwipeable } from 'react-swipeable'
 import styled from 'styled-components'
 import { ThemeContext } from '../../app/App'
 import { NeonText } from '../ui/NeonText'
 import { AboutText } from './AboutText/AboutText'
 import { Background } from '../ui/Background'
+import { TypingNotification } from './AboutText/TypingNotification'
 import backgroundImage from '../../img/room_bg.jpg'
 
+export const aboutContext = createContext()
+
 const About = ({ triggerAnimation, scrollToComponent }, ref) => {
+    const [displayTyping, setDisplayTyping] = useState(false)
     const { theme, isDesktop } = React.useContext(ThemeContext)
     const { ABOUT_BG, ABOUT_TEXT } = theme?.colors?.about
 
@@ -15,18 +19,22 @@ const About = ({ triggerAnimation, scrollToComponent }, ref) => {
         onSwipedUp: eventData => scrollToComponent()
     })
 
+    const toggleTypingNotification = () => {
+        setDisplayTyping(false)
+    }
+
     return (
-        <StyledSection {...swipeHandlers}>
-            <StyledRefDiv ref={ref}></StyledRefDiv>
-            <Background backgroundImage={backgroundImage} />
-            <StyledFlexBox background={ABOUT_BG}>
-                <AboutText />
-            </StyledFlexBox>
-            <StyledA color={ABOUT_TEXT}>
-                Click main text to<br></br>skip typing effect
-            </StyledA>
-            {isDesktop && <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
-        </StyledSection>
+        <aboutContext.Provider value={{ displayTyping, setDisplayTyping, toggleTypingNotification }}>
+            <StyledSection {...swipeHandlers} onClick={toggleTypingNotification}>
+                <StyledRefDiv ref={ref}></StyledRefDiv>
+                <Background backgroundImage={backgroundImage} />
+                <StyledFlexBox background={ABOUT_BG}>
+                    <AboutText />
+                </StyledFlexBox>
+                {displayTyping && <TypingNotification />}
+                {isDesktop && <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
+            </StyledSection>
+        </aboutContext.Provider>
     )
 }
 
@@ -52,27 +60,4 @@ const StyledFlexBox = styled.section`
     align-items: center;
     margin: auto;
     background: ${({ background }) => background};
-`
-
-const StyledA = styled.a`
-    position: absolute;
-    display: block;
-    bottom: 0;
-    right: 0;
-    width: auto;
-    height: auto;
-    padding: 1rem;
-    font-size: 0.8rem;
-    text-align: center;
-    color: ${({ color }) => color};
-
-    @media (max-device-width: 440px) {
-        top: 2rem;
-        left: 0rem;
-        width: 6rem;
-        height: 2rem;
-        font-size: 0.6rem;
-        padding: 0.5rem;
-        text-align: unset;
-    }
 `

@@ -1,22 +1,43 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import styled from 'styled-components'
+import emailjs from '@emailjs/browser'
 import { ThemeContext } from '../../app/App'
 import { FormInput } from './FormInput'
 import { FormTextArea } from './FormTextArea'
 
 export const ContactForm = () => {
+    const formRef = useRef()
     const { theme } = React.useContext(ThemeContext)
     const { CONTACT_H1_BG, CONTACT_H1_TEXT } = theme?.colors?.contact
+
+    const sendEmail = async e => {
+        e.preventDefault()
+
+        try {
+            const email = await emailjs.sendForm(
+                process.env.REACT_APP_EMAILJS_SERVICE_ID,
+                process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+                formRef.current,
+                process.env.REACT_APP_EMAILJS_KEY
+            )
+            console.log(email.text)
+            console.log('message sent')
+        } catch (error) {
+            console.log(error.text)
+        }
+    }
 
     return (
         <StyledFlexItem>
             <StyledH1 background={CONTACT_H1_BG} text={CONTACT_H1_TEXT}>
                 CONTACT FORM
             </StyledH1>
-            <FormInput type="text" placeholder="Name" label="NAME" name="email" width={'30rem'}></FormInput>
-            <FormInput type="text" placeholder="Email" label="EMAIL" name="email" width={'30rem'}></FormInput>
-            <FormTextArea type="textarea" placeholder="Message" label="MESSAGE" name="email" width={'30rem'} height={'10rem'}></FormTextArea>
-            <StyledButton>Submit</StyledButton>
+            <StyledForm ref={formRef} onSubmit={sendEmail}>
+                <FormInput type="text" placeholder="Name" label="NAME" name="user_name" width={'30rem'}></FormInput>
+                <FormInput type="text" placeholder="Email" label="EMAIL" name="user_email" width={'30rem'}></FormInput>
+                <FormTextArea type="textarea" placeholder="Message" label="MESSAGE" name="message" width={'30rem'} height={'10rem'}></FormTextArea>
+                <StyledButton onClick={sendEmail}>Submit</StyledButton>
+            </StyledForm>
         </StyledFlexItem>
     )
 }
@@ -32,6 +53,7 @@ const StyledFlexItem = styled.div`
         min-width: unset;
     }
 `
+const StyledForm = styled.form``
 
 const StyledH1 = styled.h1`
     position: relative;

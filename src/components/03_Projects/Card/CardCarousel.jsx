@@ -29,16 +29,6 @@ export const CardCarousel = () => {
         }
     }
 
-    //thsi loads card images to stop jumpy image transitions
-    useEffect(() => {
-        flipCardInfo.forEach(flipcard => {
-            setFlipCardNumber(prevState => {
-                return prevState + 1
-            })
-        })
-        setFlipCardNumber(0)
-    }, [])
-
     const currentFlipCard = <FlipCard cardProps={flipCardInfo[flipCardNumber]} />
 
     const flipCardDots = flipCardInfo.map((flipcard, i) => {

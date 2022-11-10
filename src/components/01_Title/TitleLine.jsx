@@ -1,16 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export const TitleLine = props => (
+export const TitleLine = () => (
     <StyledFlexItem>
-        <svg
-            id="Layer_1"
-            xmlns="http://www.w3.org/2000/svg"
-            x={0}
-            y={0}
-            viewBox="0 0 583.94 141.73"
-            xmlSpace="preserve"
-            {...props}>
+        <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" x={0} y={0} viewBox="0 0 583.94 141.73" xmlSpace="preserve">
             <style>
                 {
                     '@keyframes CiYOjQiP_draw{to{stroke-dashoffset:0}}@keyframes CiYOjQiP_fade{0%,94.44444444444444%{stroke-opacity:1}to{stroke-opacity:0}}'

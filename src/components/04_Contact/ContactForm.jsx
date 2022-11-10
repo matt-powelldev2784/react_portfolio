@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import styled from 'styled-components'
 import emailjs from '@emailjs/browser'
 import { ThemeContext } from '../../app/App'
@@ -7,21 +7,32 @@ import { FormTextArea } from './FormTextArea'
 
 export const ContactForm = () => {
     const formRef = useRef()
+    const [userName, setUserName] = useState('')
+    const [email, setEmail] = useState('')
+    const [message, setMessage] = useState('')
+
     const { theme } = React.useContext(ThemeContext)
     const { CONTACT_H1_BG, CONTACT_H1_TEXT } = theme?.colors?.contact
+
+    const onChangeUserName = e => setUserName(e.target.value)
+    const onChangeEmail = e => setEmail(e.target.value)
+    const onChangeMessage = e => setMessage(e.target.value)
 
     const sendEmail = async e => {
         e.preventDefault()
 
         try {
-            const email = await emailjs.sendForm(
+            await emailjs.sendForm(
                 process.env.REACT_APP_EMAILJS_SERVICE_ID,
                 process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
                 formRef.current,
                 process.env.REACT_APP_EMAILJS_KEY
             )
-            console.log(email.text)
-            console.log('message sent')
+
+            console.log('Message Sent...')
+            setUserName('')
+            setEmail('')
+            setMessage('')
         } catch (error) {
             console.log(error.text)
         }
@@ -33,9 +44,34 @@ export const ContactForm = () => {
                 CONTACT FORM
             </StyledH1>
             <StyledForm ref={formRef} onSubmit={sendEmail}>
-                <FormInput type="text" placeholder="Name" label="NAME" name="user_name" width={'30rem'}></FormInput>
-                <FormInput type="text" placeholder="Email" label="EMAIL" name="user_email" width={'30rem'}></FormInput>
-                <FormTextArea type="textarea" placeholder="Message" label="MESSAGE" name="message" width={'30rem'} height={'10rem'}></FormTextArea>
+                <FormInput
+                    onChange={onChangeUserName}
+                    value={userName}
+                    type="text"
+                    placeholder="Name"
+                    label="NAME"
+                    name="user_name"
+                    width={'30rem'}
+                />
+                <FormInput
+                    onChange={onChangeEmail}
+                    value={email}
+                    type="text"
+                    placeholder="Email"
+                    label="EMAIL"
+                    name="user_email"
+                    width={'30rem'}
+                />
+                <FormTextArea
+                    onChange={onChangeMessage}
+                    value={message}
+                    type="textarea"
+                    placeholder="Message"
+                    label="MESSAGE"
+                    name="message"
+                    width={'30rem'}
+                    height={'10rem'}
+                />
                 <StyledButton onClick={sendEmail}>Submit</StyledButton>
             </StyledForm>
         </StyledFlexItem>

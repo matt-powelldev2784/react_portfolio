@@ -7,6 +7,7 @@ import { Background } from '../ui/Background'
 import backgroundImage from '../../img/white_room_bg.jpg'
 import { ContactDetails } from './ContactDetails'
 import { ContactForm } from './ContactForm'
+import { MessageSentNotification } from './MessageSentNotification'
 
 export const Contact = ({ scrollToComponent, triggerAnimation }, ref) => {
     const { theme, isDesktop } = React.useContext(ThemeContext)
@@ -27,6 +28,7 @@ export const Contact = ({ scrollToComponent, triggerAnimation }, ref) => {
                     <ContactForm />
                 </StyledFlexBox>
             </StyledOpacityConatiner>
+            <MessageSentNotification />
             {isDesktop && <NeonText char={'▴'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
         </StyledSection>
     )
@@ -75,7 +77,7 @@ const StyledFlexBox = styled.div`
 
     @media (max-device-width: 374px) {
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: center;
         padding: 1.5rem 0rem;
         width: 100vw;
     }

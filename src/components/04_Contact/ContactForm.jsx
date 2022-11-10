@@ -2,10 +2,13 @@ import React, { useState, useRef } from 'react'
 import styled from 'styled-components'
 import emailjs from '@emailjs/browser'
 import { ThemeContext } from '../../app/App'
+import { ContactContext } from './04_Contact'
 import { FormInput } from './FormInput'
 import { FormTextArea } from './FormTextArea'
 
 export const ContactForm = () => {
+    const { setDisplayNotification, setNotificationText } = React.useContext(ContactContext)
+
     const formRef = useRef()
     const [userName, setUserName] = useState('')
     const [email, setEmail] = useState('')
@@ -29,7 +32,13 @@ export const ContactForm = () => {
                 process.env.REACT_APP_EMAILJS_KEY
             )
 
-            console.log('Message Sent...')
+            setNotificationText('Message Sent...')
+            setDisplayNotification(true)
+            setTimeout(() => {
+                setDisplayNotification(false)
+                setNotificationText('')
+            }, 3000)
+
             setUserName('')
             setEmail('')
             setMessage('')

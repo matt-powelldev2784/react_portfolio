@@ -2,13 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import { ThemeContext } from '../../app/App'
 
-export const MessageSentNotification = () => {
+export const TopOfPageNotification = ({ text }) => {
     const { theme } = React.useContext(ThemeContext)
     const { CONTACT_H1_BG, CONTACT_H1_TEXT } = theme?.colors?.contact
 
     return (
         <StyledP background={CONTACT_H1_BG} color={CONTACT_H1_TEXT}>
-            Message Sent...
+            {text}
         </StyledP>
     )
 }

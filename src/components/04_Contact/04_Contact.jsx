@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React, { useState, forwardRef, createContext } from 'react'
 import styled from 'styled-components'
 import { useSwipeable } from 'react-swipeable'
 import { ThemeContext } from '../../app/App'
@@ -7,9 +7,13 @@ import { Background } from '../ui/Background'
 import backgroundImage from '../../img/white_room_bg.jpg'
 import { ContactDetails } from './ContactDetails'
 import { ContactForm } from './ContactForm'
-import { MessageSentNotification } from './MessageSentNotification'
+import { TopOfPageNotification } from '../Utilities/TopOfPageNotification'
+
+export const ContactContext = createContext()
 
 export const Contact = ({ scrollToComponent, triggerAnimation }, ref) => {
+    const [displayNotification, setDisplayNotification] = useState(false)
+    const [notificationText, setNotificationText] = useState('')
     const { theme, isDesktop } = React.useContext(ThemeContext)
     const { CONTACT_BG } = theme?.colors?.contact
 
@@ -19,18 +23,20 @@ export const Contact = ({ scrollToComponent, triggerAnimation }, ref) => {
     })
 
     return (
-        <StyledSection {...swipeHandlers}>
-            <StyledRefDiv ref={ref} />
-            <Background backgroundImage={backgroundImage} />
-            <StyledOpacityConatiner background={CONTACT_BG}>
-                <StyledFlexBox>
-                    <ContactDetails />
-                    <ContactForm />
-                </StyledFlexBox>
-            </StyledOpacityConatiner>
-            <MessageSentNotification />
-            {isDesktop && <NeonText char={'▴'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
-        </StyledSection>
+        <ContactContext.Provider value={{ setDisplayNotification, setNotificationText }}>
+            <StyledSection {...swipeHandlers}>
+                <StyledRefDiv ref={ref} />
+                <Background backgroundImage={backgroundImage} />
+                <StyledOpacityConatiner background={CONTACT_BG}>
+                    <StyledFlexBox>
+                        <ContactDetails />
+                        <ContactForm />
+                    </StyledFlexBox>
+                </StyledOpacityConatiner>
+                {displayNotification && <TopOfPageNotification text={notificationText} />}
+                {isDesktop && <NeonText char={'▴'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
+            </StyledSection>
+        </ContactContext.Provider>
     )
 }
 

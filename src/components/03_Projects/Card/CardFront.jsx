@@ -99,7 +99,7 @@ const StyledLogoImg = styled.img`
     position: absolute;
     width: 10rem;
     left: 50%;
-    top: 0.5rem;
+    top: 10%;
     transform: translateX(-50%);
     border-radius: 20px;
 `

@@ -10,7 +10,10 @@ export const FormTextArea = ({ width, height, label, type, placeholder, name, va
     return (
         <StyledContainerDiv width={width} height={height}>
             <Label htmlFor={name}></Label>
-            <Span text={CONTACT_TEXT}>{labelUppercase}</Span>
+            <Span error={error} text={CONTACT_TEXT}>
+                {labelUppercase}
+            </Span>
+            {error && <ErrorSpan>{error}</ErrorSpan>}
             <TextArea
                 text={CONTACT_TEXT}
                 name={name}
@@ -69,7 +72,7 @@ const TextArea = styled.textarea`
 
     @media (max-device-width: 440px) {
         width: 90vw;
-        border: 2px solid ${({ text }) => text};
+        border: 2px solid ${({ error, text }) => (error ? 'red' : text)};
         border-radius: 0.7rem;
         max-height: 80%;
         height: 12rem;
@@ -77,7 +80,7 @@ const TextArea = styled.textarea`
 
     @media (max-device-width: 380px) {
         width: 90vw;
-        border: 2px solid ${({ text }) => text};
+        border: 2px solid ${({ error, text }) => (error ? 'red' : text)};
         border-radius: 0.7rem;
         max-height: 80%;
         height: 6rem;
@@ -92,6 +95,23 @@ const Span = styled.span`
     font-weight: 700;
     font-size: 1.2rem;
     background: none;
+
+    @media (max-device-width: 440px) {
+        height: 14%;
+        font-size: 1rem;
+    }
+`
+const ErrorSpan = styled.span`
+    display: block;
+    float: left;
+    margin: 0.1rem 0.1rem 0.1rem 0.5rem;
+    padding: 0.05rem 0.5rem;
+    background: white;
+    color: red;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 0.7rem;
 
     @media (max-device-width: 440px) {
         height: 14%;

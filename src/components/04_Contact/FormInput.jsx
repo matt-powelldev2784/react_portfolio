@@ -11,6 +11,7 @@ export const FormInput = ({ width, height, label, type, placeholder, name, value
         <StyledContainerDiv width={width} height={height}>
             <Label htmlFor={name}></Label>
             <Span text={CONTACT_TEXT}>{labelUppercase}</Span>
+            {error && <ErrorSpan text={CONTACT_TEXT}>{error}</ErrorSpan>}
             <Input
                 text={CONTACT_TEXT}
                 name={name}
@@ -90,6 +91,24 @@ const Span = styled.span`
     font-weight: 700;
     font-size: 1.2rem;
     background: none;
+
+    @media (max-device-width: 440px) {
+        height: 14%;
+        font-size: 1rem;
+    }
+`
+
+const ErrorSpan = styled.span`
+    display: block;
+    float: left;
+    margin: 0.1rem 0.1rem 0.1rem 0.5rem;
+    padding: 0.05rem 0.5rem;
+    background: white;
+    color: red;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 0.7rem;
 
     @media (max-device-width: 440px) {
         height: 14%;

@@ -5,25 +5,35 @@ import { ThemeContext } from '../../app/App'
 import { ContactContext } from './04_Contact'
 import { FormInput } from './FormInput'
 import { FormTextArea } from './FormTextArea'
+import { validateForm } from './validateForm'
 
 export const ContactForm = () => {
     const { setDisplayNotification, setNotificationText } = React.useContext(ContactContext)
-
-    const formRef = useRef()
-    const [userName, setUserName] = useState('')
-    const [email, setEmail] = useState('')
-    const [message, setMessage] = useState('')
-
     const { theme } = React.useContext(ThemeContext)
     const { CONTACT_H1_BG, CONTACT_H1_TEXT } = theme?.colors?.contact
+    const emptyFormData = { user_name: '', user_email: '', message: '' }
+    const [formData, setFormData] = useState(emptyFormData)
+    const [formErrors, setFormErrors] = useState(emptyFormData)
+    const formRef = useRef()
 
-    const onChangeUserName = e => setUserName(e.target.value)
-    const onChangeEmail = e => setEmail(e.target.value)
-    const onChangeMessage = e => setMessage(e.target.value)
+    const onInputChange = e => {
+        const inputName = e.target.name
+        setFormData({ ...formData, [inputName]: e.target.value })
+    }
 
-    const sendEmail = async e => {
+    const validateFormAndSendEmail = e => {
         e.preventDefault()
+        setFormErrors(emptyFormData)
+        const { validForm, errors } = validateForm(formData)
 
+        if (validForm) {
+            sendEmail()
+        } else {
+            setFormErrors(errors)
+        }
+    }
+
+    const sendEmail = async () => {
         try {
             await emailjs.sendForm(
                 process.env.REACT_APP_EMAILJS_SERVICE_ID,
@@ -32,18 +42,20 @@ export const ContactForm = () => {
                 process.env.REACT_APP_EMAILJS_KEY
             )
 
+            setFormData(emptyFormData)
             setNotificationText('Message Sent...')
             setDisplayNotification(true)
             setTimeout(() => {
                 setDisplayNotification(false)
                 setNotificationText('')
-            }, 3000)
-
-            setUserName('')
-            setEmail('')
-            setMessage('')
+            }, 5000)
         } catch (error) {
-            console.log(error.text)
+            setNotificationText('Error Sending Message...')
+            setDisplayNotification(true)
+            setTimeout(() => {
+                setDisplayNotification(false)
+                setNotificationText('')
+            }, 5000)
         }
     }
 
@@ -54,34 +66,37 @@ export const ContactForm = () => {
             </StyledH1>
             <StyledForm ref={formRef} onSubmit={sendEmail}>
                 <FormInput
-                    onChange={onChangeUserName}
-                    value={userName}
+                    onChange={onInputChange}
+                    value={formData.user_name}
                     type="text"
                     placeholder="Name"
                     label="NAME"
                     name="user_name"
                     width={'30rem'}
+                    error={formErrors.user_name}
                 />
                 <FormInput
-                    onChange={onChangeEmail}
-                    value={email}
+                    onChange={onInputChange}
+                    value={formData.user_email}
                     type="text"
                     placeholder="Email"
                     label="EMAIL"
                     name="user_email"
                     width={'30rem'}
+                    error={formErrors.user_email}
                 />
                 <FormTextArea
-                    onChange={onChangeMessage}
-                    value={message}
+                    onChange={onInputChange}
+                    value={formData.message}
                     type="textarea"
                     placeholder="Message"
                     label="MESSAGE"
                     name="message"
                     width={'30rem'}
                     height={'10rem'}
+                    error={formErrors.message}
                 />
-                <StyledButton onClick={sendEmail}>Submit</StyledButton>
+                <StyledButton onClick={validateFormAndSendEmail}>Submit</StyledButton>
             </StyledForm>
         </StyledFlexItem>
     )

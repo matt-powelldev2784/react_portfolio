@@ -58,7 +58,7 @@ const StyledContainer = styled.section`
     font-size: 3rem;
     font-weight: 700;
     color: ${({ text }) => text};
-    padding: 2rem 7.5rem;
+    padding: 2rem;
 
     @media (max-device-width: 440px) {
         font-size: 1.5rem;

@@ -96,7 +96,9 @@ export const ContactForm = () => {
                     height={'10rem'}
                     error={formErrors.message}
                 />
-                <StyledButton onClick={validateFormAndSendEmail}>Submit</StyledButton>
+                <StyledButton background={CONTACT_H1_BG} onClick={validateFormAndSendEmail}>
+                    Submit
+                </StyledButton>
             </StyledForm>
         </StyledFlexItem>
     )
@@ -163,6 +165,6 @@ const StyledButton = styled.button`
 
     @media (max-device-width: 380px) {
         font-size: 1rem;
-        margin: 0 auto;
+        margin: 0.5rem auto;
     }
 `

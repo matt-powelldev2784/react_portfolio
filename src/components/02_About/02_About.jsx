@@ -5,7 +5,7 @@ import { ThemeContext } from '../../app/App'
 import { NeonText } from '../ui/NeonText'
 import { AboutText } from './AboutText/AboutText'
 import { Background } from '../ui/Background'
-import { TypingNotification } from './AboutText/TypingNotification'
+import { TopOfPageNotification } from '../Utilities/TopOfPageNotification'
 import backgroundImage from '../../img/room_bg.jpg'
 
 export const aboutContext = createContext()
@@ -31,7 +31,7 @@ const About = ({ triggerAnimation, scrollToComponent }, ref) => {
                 <StyledFlexBox background={ABOUT_BG}>
                     <AboutText />
                 </StyledFlexBox>
-                {displayTyping && <TypingNotification />}
+                {displayTyping && <TopOfPageNotification text={'Click to cancel typing effect...'} />}
                 {isDesktop && <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
             </StyledSection>
         </aboutContext.Provider>

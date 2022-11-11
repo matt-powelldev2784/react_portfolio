@@ -44,7 +44,6 @@ const StyledContainerDiv = styled.div`
 
     @media (max-device-width: 380px) {
         width: 90vw;
-        height: 100%;
         margin: 0.3rem 0rem;
     }
 `
@@ -68,14 +67,13 @@ const TextArea = styled.textarea`
     border-radius: 1rem;
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.3);
     font-size: 1rem;
-    resize: none;
 
     @media (max-device-width: 440px) {
         width: 90vw;
         border: 2px solid ${({ error, text }) => (error ? 'red' : text)};
         border-radius: 0.7rem;
         max-height: 80%;
-        height: 12rem;
+        height: 8rem;
     }
 
     @media (max-device-width: 380px) {
@@ -101,11 +99,12 @@ const Span = styled.span`
         font-size: 1rem;
     }
 `
+
 const ErrorSpan = styled.span`
     display: block;
     float: left;
-    margin: 0.1rem 0.1rem 0.1rem 0.5rem;
-    padding: 0.05rem 0.5rem;
+    margin: 0rem 0.1rem 0.1rem 0.5rem;
+    padding: 0.05rem 0.7rem;
     background: red;
     color: white;
     font-weight: 700;
@@ -114,7 +113,6 @@ const ErrorSpan = styled.span`
     border-radius: 0.5rem;
 
     @media (max-device-width: 440px) {
-        height: 14%;
         font-size: 0.8rem;
     }
 `

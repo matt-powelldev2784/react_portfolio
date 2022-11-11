@@ -105,7 +105,7 @@ const Span = styled.span`
 const ErrorSpan = styled.span`
     display: block;
     float: left;
-    margin: 0.1rem 0.1rem 0.1rem 0.5rem;
+    margin: 0rem 0.1rem 0.1rem 0.5rem;
     padding: 0.05rem 0.7rem;
     background: red;
     color: white;
@@ -115,7 +115,6 @@ const ErrorSpan = styled.span`
     border-radius: 0.5rem;
 
     @media (max-device-width: 440px) {
-        height: 14%;
         font-size: 0.8rem;
     }
 `

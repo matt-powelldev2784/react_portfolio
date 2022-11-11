@@ -48,24 +48,28 @@ const StyledSection = styled.section`
     position: relative;
     display: block;
 
-    @media (max-device-width: 440px) {
+    @media only screen and (max-width: 451px) {
+    }
+
+    @media only screen and (max-width: 321px) {
     }
 `
 
 const StyledContainer = styled.section`
     position: relative;
     display: block;
-    font-size: 3rem;
+    font-size: calc(2vw + 0.5rem);
+    margin: max(1rem, 6rem);
     font-weight: 700;
     color: ${({ text }) => text};
-    padding: 4rem;
 
-    @media (max-device-width: 440px) {
+    @media only screen and (max-width: 600px) {
         font-size: 1.5rem;
-        padding: 0rem 1rem;
+        margin: 1rem;
     }
 
-    @media (max-device-width: 380px) {
+    @media only screen and (max-width: 321px) {
         font-size: 1.2rem;
+        margin: 1rem;
     }
 `

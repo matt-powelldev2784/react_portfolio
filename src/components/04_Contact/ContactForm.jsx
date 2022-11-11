@@ -5,7 +5,7 @@ import { ThemeContext } from '../../app/App'
 import { ContactContext } from './04_Contact'
 import { FormInput } from './FormInput'
 import { FormTextArea } from './FormTextArea'
-import { validateForm } from './validateForm'
+import { validateForm } from './ValidateForm'
 
 export const ContactForm = () => {
     const { setDisplayNotification, setNotificationText } = React.useContext(ContactContext)

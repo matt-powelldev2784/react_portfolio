@@ -45,13 +45,10 @@ const fadeInAnimation = keyframes`
      }
 }`
 
-const StyledContainer = styled.section`
-    position: relative;
-    margin: auto;
-    font-size: 2rem;
-    color: #d1d7e0;
-    margin: 1rem 0rem;
-    padding: 0rem 0rem;
+const StyledContainer = styled.div`
+    font-size: calc(2vw + 0.5rem);
+    margin: calc(2vw + 0.2rem);
+    max-width: 1200px;
     animation: ${({ triggerAnimation }) => {
         return triggerAnimation
             ? css`
@@ -62,73 +59,62 @@ const StyledContainer = styled.section`
               `
     }};
 
-    @media (max-device-width: 440px) {
-        min-width: 90%;
-        font-size: 1rem;
-        margin: 0.25rem;
+    @media only screen and (max-width: 451px) {
+        max-width: 90vw;
+        margin: unset;
     }
 `
 
 const StyledH1 = styled.h1`
-    position: relative;
-    display: block;
-    width: 70%;
-    font-size: 3rem;
+    font-size: calc(2vw + 1rem);
+    padding: calc(0.3vw + 0.2rem);
+    margin: calc(2vw + 1rem) calc(2vw + 1rem);
+    width: 60vw;
     font-weight: 700;
-    min-width: 12rem;
-    padding: 0.5rem;
     text-align: left;
     color: ${({ text }) => text};
     background: ${({ background }) => background};
     clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
 
-    @media (max-device-width: 440px) {
-        font-size: 2rem;
-        padding: 0.3rem;
-        margin: 1rem 1rem;
-        width: unset;
+    @media only screen and (max-width: 451px) {
         clip-path: unset;
-        min-width: unset;
-    }
-
-    @media (max-device-width: 376px) {
-        margin: 0.5rem 0.5rem;
+        width: unset;
+        margin: unset;
     }
 `
 
 const StyledPJustify = styled.p`
-    font-size: 2rem;
-    text-align: left;
-    margin: 2rem 1rem;
+    font-size: calc(1vw + 1rem);
+    margin: calc(2vw + 1rem) calc(2vw + 1rem);
     color: ${({ text }) => text};
     text-align: justify;
     text-justify: inter-word;
 
-    @media (max-device-width: 440px) {
+    @media only screen and (max-width: 451px) {
         font-size: 1.2rem;
-        margin: 1rem 1rem;
+        margin: 0.5rem;
     }
 
-    @media (max-device-width: 376px) {
+    @media only screen and (max-width: 321px) {
         font-size: 1rem;
-        margin: 0.5rem 0.5rem;
+        margin: 0.5rem;
     }
 `
 
 const StyledP = styled.p`
-    font-size: 2rem;
+    font-size: calc(1vw + 1rem);
+    margin: calc(2vw + 1rem) calc(2vw + 1rem);
     text-align: left;
-    margin: 2rem 1rem;
     color: ${({ text }) => text};
 
-    @media (max-device-width: 440px) {
-        font-size: 1.2rem;
-        margin: 1rem 1rem;
+    @media only screen and (max-width: 451px) {
+        font-size: 1.1rem;
+        margin: 0.5rem;
     }
 
-    @media (max-device-width: 376px) {
+    @media only screen and (max-width: 321px) {
         font-size: 0.9rem;
-        margin: 0.5rem 0.5rem;
+        margin: 0.5rem;
     }
 `
 
@@ -147,12 +133,4 @@ const StyledA = styled.a`
     }
 
     white-space: nowrap;
-
-    @media (max-device-width: 440px) {
-        font-size: 1.1rem;
-    }
-
-    @media (max-device-width: 376px) {
-        font-size: 0.9rem;
-    }
 `

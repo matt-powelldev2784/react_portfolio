@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { FlipCard } from '../Card/FlipCard'
 import { flipCardInfo } from './FlipCardInfo'
@@ -28,6 +28,13 @@ export const CardCarousel = () => {
             setFlipCardNumber(maxFlipCardNumber)
         }
     }
+
+    useEffect(() => {
+        flipCardInfo.forEach(picture => {
+            const img = new Image()
+            img.src = picture.backgroundImg
+        })
+    }, [])
 
     const currentFlipCard = <FlipCard cardProps={flipCardInfo[flipCardNumber]} />
 

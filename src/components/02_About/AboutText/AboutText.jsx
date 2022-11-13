@@ -47,12 +47,7 @@ export const AboutText = () => {
 const StyledSection = styled.section`
     position: relative;
     display: block;
-
-    @media only screen and (max-width: 451px) {
-    }
-
-    @media only screen and (max-width: 321px) {
-    }
+    width: 100%;
 `
 
 const StyledContainer = styled.section`
@@ -63,13 +58,8 @@ const StyledContainer = styled.section`
     font-weight: 700;
     color: ${({ text }) => text};
 
-    @media only screen and (max-width: 600px) {
-        font-size: 1.5rem;
-        margin: 1rem;
-    }
-
-    @media only screen and (max-width: 321px) {
-        font-size: 1.2rem;
-        margin: 1rem;
+    @media only screen and (max-width: 451px) {
+        font-size: calc(1vw + 1rem);
+        margin: min(0.5rem, 6rem);
     }
 `

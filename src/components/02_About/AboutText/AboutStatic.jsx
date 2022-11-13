@@ -60,8 +60,8 @@ const StyledContainer = styled.div`
     }};
 
     @media only screen and (max-width: 451px) {
-        max-width: 90vw;
-        margin: unset;
+        width: 95%;
+        margin: auto;
     }
 `
 

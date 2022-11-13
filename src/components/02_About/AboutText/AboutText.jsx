@@ -54,7 +54,7 @@ const StyledContainer = styled.section`
     position: relative;
     display: block;
     font-size: calc(2vw + 0.5rem);
-    margin: max(1rem, 6rem);
+    margin: calc(2vw + 0.5rem);
     font-weight: 700;
     color: ${({ text }) => text};
 

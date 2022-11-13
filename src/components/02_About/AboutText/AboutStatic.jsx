@@ -49,6 +49,7 @@ const StyledContainer = styled.div`
     font-size: calc(2vw + 0.5rem);
     margin: calc(2vw + 0.2rem);
     max-width: 1200px;
+    margin: auto;
     animation: ${({ triggerAnimation }) => {
         return triggerAnimation
             ? css`
@@ -61,7 +62,6 @@ const StyledContainer = styled.div`
 
     @media only screen and (max-width: 451px) {
         width: 95%;
-        margin: auto;
     }
 `
 
@@ -69,51 +69,38 @@ const StyledH1 = styled.h1`
     font-size: calc(2vw + 1rem);
     padding: calc(0.3vw + 0.2rem);
     margin: calc(2vw + 1rem) calc(2vw + 1rem);
-    width: 60vw;
     font-weight: 700;
     text-align: left;
     color: ${({ text }) => text};
     background: ${({ background }) => background};
-    clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
 
     @media only screen and (max-width: 451px) {
-        clip-path: unset;
-        width: unset;
-        margin: unset;
+        font-size: calc(1vw + 0.7rem);
+        margin: 0.5rem;
     }
 `
 
 const StyledPJustify = styled.p`
-    font-size: calc(1vw + 1rem);
+    font-size: min(calc(1vw + 1rem), 1.8rem);
     margin: calc(2vw + 1rem) calc(2vw + 1rem);
     color: ${({ text }) => text};
     text-align: justify;
     text-justify: inter-word;
 
     @media only screen and (max-width: 451px) {
-        font-size: 1.2rem;
-        margin: 0.5rem;
-    }
-
-    @media only screen and (max-width: 321px) {
-        font-size: 1rem;
+        font-size: max(calc(1vw + 0.7rem), 1rem);
         margin: 0.5rem;
     }
 `
 
 const StyledP = styled.p`
-    font-size: calc(1vw + 1rem);
+    font-size: min(calc(1vw + 1rem), 1.8rem);
     margin: calc(2vw + 1rem) calc(2vw + 1rem);
     text-align: left;
     color: ${({ text }) => text};
 
     @media only screen and (max-width: 451px) {
-        font-size: 1.1rem;
-        margin: 0.5rem;
-    }
-
-    @media only screen and (max-width: 321px) {
-        font-size: 0.9rem;
+        font-size: max(calc(1vw + 0.7rem), 0.92rem);
         margin: 0.5rem;
     }
 `

@@ -9,8 +9,6 @@ const Projects = ({ scrollToComponent, triggerAnimation }, ref) => {
     const { theme, isDesktop } = React.useContext(ThemeContext)
     const { PROJECTS_BG } = theme?.colors?.projects
 
-    console.log('window.innnerWidth', window.innerWidth)
-
     const swipeHandlers = useSwipeable({
         onSwipedUp: eventData => scrollToComponent()
     })

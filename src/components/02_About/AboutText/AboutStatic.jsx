@@ -75,7 +75,6 @@ const StyledH1 = styled.h1`
     background: ${({ background }) => background};
 
     @media only screen and (max-width: 451px) {
-        font-size: calc(1vw + 0.7rem);
         margin: 0.5rem;
     }
 `

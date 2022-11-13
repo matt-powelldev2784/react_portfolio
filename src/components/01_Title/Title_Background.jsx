@@ -45,10 +45,6 @@ const StyledBackgroundImg = styled.img`
     display: block;
     margin: auto;
     position: absolute;
-    width: 45%;
-    height: 45%;
-
-    @media (max-device-width: 440px) {
-        width: 50%;
-    }
+    width: calc(37vw + 4rem);
+    height: calc(37vw + 4rem);
 `

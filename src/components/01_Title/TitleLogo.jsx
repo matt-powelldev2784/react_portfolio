@@ -285,10 +285,6 @@ const StyledFlexItem = styled.div`
     position: absolute;
     display: block;
     margin: auto;
-    width: 70%;
+    width: calc(72vw + 5rem);
     background: ${({ background }) => background};
-
-    @media (max-device-width: 440px) {
-        width: 90%;
-    }
 `

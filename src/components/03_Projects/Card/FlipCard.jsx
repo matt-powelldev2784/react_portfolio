@@ -32,22 +32,17 @@ const StyledContainer = styled.div`
     overflow: visible;
     max-width: 40rem;
     max-height: 30rem;
-    margin: 1rem;
+    height: 100%;
+    width: 80vw;
+    margin: 0rem;
     text-align: center;
     border-radius: 20px;
-
     perspective: 1000px;
-
-    @media (max-device-width: 440px) {
-        margin: 0rem 0rem;
-        height: 27rem;
-        width: 80vw;
-    }
 `
 
 const StyledFlipper = styled.div`
-    width: 40rem;
-    height: 30rem;
+    width: min(40rem, 100%);
+    height: min(30rem, 27rem);
     border-radius: 20px;
     overflow: visible;
 
@@ -56,11 +51,4 @@ const StyledFlipper = styled.div`
         const flipAnimationReverse = 'transition: 0.4s; transform-style: preserve-3d; transform: rotateY(0deg);'
         return startFlipAnimation ? flipAnimation : flipAnimationReverse
     }}
-
-    @media (max-device-width: 440px) {
-        display: block;
-        width: 100%;
-        height: 27rem;
-        margin: auto;
-    }
 `

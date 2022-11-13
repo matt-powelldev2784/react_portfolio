@@ -23,16 +23,10 @@ export const CardFront = ({ cardProps }) => {
 const StyledFront = styled.div`
     position: absolute;
     overflow: visible;
-    width: 40rem;
-    height: 30rem;
-    border-radius: 20px;
+    width: 100%;
+    height: 27rem;
     border-radius: 20px;
     box-shadow: ${({ boxShadow }) => boxShadow};
-
-    @media (max-device-width: 440px) {
-        height: 27rem;
-        width: 100%;
-    }
 `
 
 const StyledTitleDiv = styled.div`
@@ -46,25 +40,25 @@ const StyledTitleDiv = styled.div`
     border: 3px solid #ffffff;
     border-radius: 20px;
     font-size: 3rem;
+    max-height: 98%;
 
-    @media (max-device-width: 440px) {
-        width: 90%;
-        bottom: 1rem;
+    @media only screen and (max-width: 744px) {
+        width: 98%;
+        max-width: 70%;
     }
 `
 
 const StyledH1 = styled.h1`
     position: relative;
     display: block;
-    margin: 1rem auto;
-
+    margin: 0.5rem;
     text-align: center;
-    font-size: 2rem;
+    font-size: max(calc(0.5vw + 0.8rem), 2rem);
     font-weight: 700;
+    padding: 0.2rem;
 
-    @media (max-device-width: 440px) {
-        padding: 0rem 0.3rem;
-        font-size: 1.2rem;
+    @media only screen and (max-width: 744px) {
+        font-size: max(calc(2vw + 0.8rem), 1.2rem);
         font-weight: 700;
     }
 `
@@ -72,14 +66,14 @@ const StyledH1 = styled.h1`
 const StyledH2 = styled.h2`
     position: relative;
     display: block;
-    margin: auto;
+    margin: 0.5rem;
     padding: 0.5rem;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: max(calc(0.5vw + 0.8rem), 1.5rem);
     font-weight: 300;
 
-    @media (max-device-width: 440px) {
-        font-size: 1rem;
+    @media only screen and (max-width: 744px) {
+        font-size: max(calc(1.5vw + 0.8rem), 1rem);
         font-weight: 300;
     }
 `

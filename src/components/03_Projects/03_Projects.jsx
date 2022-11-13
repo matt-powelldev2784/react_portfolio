@@ -9,6 +9,8 @@ const Projects = ({ scrollToComponent, triggerAnimation }, ref) => {
     const { theme, isDesktop } = React.useContext(ThemeContext)
     const { PROJECTS_BG } = theme?.colors?.projects
 
+    console.log('window.innnerWidth', window.innerWidth)
+
     const swipeHandlers = useSwipeable({
         onSwipedUp: eventData => scrollToComponent()
     })
@@ -41,9 +43,4 @@ const StyledOpacityConatiner = styled.div`
     height: 100%;
     margin: auto;
     background: ${({ background }) => background};
-
-    @media (max-device-width: 440px) {
-        width: 100vw;
-        padding: 0rem;
-    }
 `

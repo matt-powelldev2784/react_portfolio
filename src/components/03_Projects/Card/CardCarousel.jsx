@@ -66,11 +66,7 @@ const StyledContainerDiv = styled.div`
     display: block;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -55%);
-
-    @media (max-device-width: 440px) {
-        transform: translate(-50%, calc(-50% - 10px));
-    }
+    transform: translate(-50%, calc(-50% - 10px));
 `
 
 const StyledPrevCircleDiv = styled.div`
@@ -78,40 +74,27 @@ const StyledPrevCircleDiv = styled.div`
     display: block;
     top: 50%;
     transform: translateY(-50%);
-    width: 6rem;
-    height: 6rem;
-    left: -8rem;
+    width: 3rem;
+    height: 3rem;
+    left: -1.4rem;
     border-radius: 50%;
     border: 3px solid #ffffff;
     cursor: pointer;
 
     background: #000000;
     z-index: 1;
-
-    @media (max-device-width: 440px) {
-        width: 3rem;
-        height: 3rem;
-        left: -1.4rem;
-    }
 `
 
 const StyledPrevArrowP = styled.p`
     position: absolute;
-    top: 3.4rem;
-    left: 2.7rem;
+    top: 1.6rem;
+    left: 1.25rem;
     transform: translate(-50%, -50%);
-
     color: #ffffff;
-    font-size: 4.5rem;
+    font-size: 2rem;
     font-family: 'Noto Sans Symbols 2', sans-serif;
     margin: auto;
     z-index: 1;
-
-    @media (max-device-width: 440px) {
-        font-size: 2rem;
-        top: 1.6rem;
-        left: 1.25rem;
-    }
 `
 
 const StyledNextCircleDiv = styled.div`
@@ -119,52 +102,39 @@ const StyledNextCircleDiv = styled.div`
     display: block;
     top: 50%;
     transform: translateY(-50%);
-    width: 6rem;
-    height: 6rem;
-    right: -8rem;
+    width: 3rem;
+    height: 3rem;
+    right: -1.4rem;
     border-radius: 50%;
     border: 3px solid #ffffff;
     cursor: pointer;
-
     background: #000000;
     z-index: 1;
-
-    @media (max-device-width: 440px) {
-        width: 3rem;
-        height: 3rem;
-        right: -1.4rem;
-    }
 `
 
 const StyledNextArrowP = styled.p`
     position: absolute;
-    top: 3.4rem;
-    left: 2.9rem;
+    top: 1.6rem;
+    left: 1.4rem;
     transform: translate(-50%, -50%);
     color: #ffffff;
-    font-size: 4.5rem;
+    font-size: 2rem;
     font-family: 'Noto Sans Symbols 2', sans-serif;
     margin: auto;
     z-index: 1;
-
-    @media (max-device-width: 440px) {
-        font-size: 2rem;
-        top: 1.6rem;
-        left: 1.4rem;
-    }
 `
 
 const StyledDotContainer = styled.span`
     position: absolute;
     display: block;
     color: #ffffff;
-    top: 30.5rem;
+    top: 26.5rem;
     left: 50%;
     width: auto;
     transform: translateX(-50%);
 
-    @media (max-device-width: 440px) {
-        top: 26.8rem;
+    @media only screen and (max-width: 451px) {
+        top: 26rem;
     }
 `
 
@@ -174,8 +144,4 @@ const StyledDotSpan = styled.span`
     font-size: 3rem;
     padding: 0.25rem;
     font-family: 'Noto Sans Symbols 2', sans-serif;
-
-    @media (max-device-width: 440px) {
-        font-size: 2rem;
-    }
 `

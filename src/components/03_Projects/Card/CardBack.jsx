@@ -34,14 +34,14 @@ export const CardBack = ({ cardProps }) => {
 const StyledBack = styled.div`
     position: absolute;
     overflow: visible;
-    width: 40rem;
-    height: 30rem;
+    width: 100%;
+    height: 27rem;
     border-radius: 20px;
     background: #ffffff;
     box-shadow: ${({ boxShadow }) => boxShadow};
     transform: rotateY(180deg);
 
-    @media (max-device-width: 440px) {
+    @media only screen and (max-width: 744px) {
         width: 100%;
         height: 27rem;
     }
@@ -50,9 +50,15 @@ const StyledBack = styled.div`
 const StyledContainerDiv = styled.div`
     position: absolute;
     top: 50%;
-    width: 100%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-height: 98%;
+
+    @media only screen and (max-width: 744px) {
+        width: 79%;
+    }
 `
 
 const StyledH1 = styled.h1`
@@ -61,40 +67,38 @@ const StyledH1 = styled.h1`
     margin: auto;
     padding: 0.2rem;
     text-align: center;
-    font-size: 2rem;
+    font-size: max(calc(0.5vw + 0.8rem), 2rem);
     font-weight: 700;
 
-    @media (max-device-width: 440px) {
-        font-size: 1.2rem;
+    @media only screen and (max-width: 744px) {
+        font-size: max(calc(2vw + 0.8rem), 1.2rem);
         font-weight: 700;
     }
 `
 
 const StyledP = styled.p`
     display: block;
-    margin: 1rem;
-    padding: 0rem 1rem;
+    margin: 0.5rem auto;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: min(calc(0.5vw + 0.8rem), 1.2rem);
     font-weight: 300;
 
-    @media (max-device-width: 440px) {
-        font-size: 1rem;
-        margin: 0.5rem 1.2rem;
-        padding: 0rem 0.5rem;
+    @media only screen and (max-width: 744px) {
+        font-size: calc(1vw + 0.75rem);
+        margin: calc(2vw + 0.05rem);
     }
 `
 
 const StyledImgContainer = styled.div`
     position: relative;
     display: block;
-    width: 20rem;
-    height: 10rem;
+    width: calc(8vw + 2rem);
+    height: calc(8vw + 1.5rem);
     margin: auto;
 
-    @media (max-device-width: 440px) {
-        width: 10rem;
-        height: 6rem;
+    @media only screen and (max-width: 744px) {
+        width: calc(8vw + 3rem);
+        height: calc(8vw + 3rem);
     }
 `
 
@@ -109,9 +113,11 @@ const StyledLogoImg = styled.img`
 
 const StyledButton = styled.button`
     position: relative;
-    margin: 0rem;
-    width: 10rem;
-    font-size: 1.5rem;
+    margin: calc(2vw + 0.5rem);
+    width: min(calc(10vw + 2rem), 9rem);
+    height: min(calc(2vw + 0.7rem), 2.2rem);
+    font-size: min(calc(1.5vw + 0.2rem), 1.4rem);
+    margin: 0.5rem auto;
     background: #ffffff;
     color: #000000;
     border: 3px solid #d1d7e0;
@@ -119,7 +125,9 @@ const StyledButton = styled.button`
     cursor: pointer;
     z-index: 1;
 
-    @media (max-device-width: 440px) {
-        font-size: 1.2rem;
+    @media only screen and (max-width: 744px) {
+        width: min(calc(16vw + 2rem), 5.5rem);
+        height: min(calc(6vw + 0.7rem), 1.8rem);
+        font-size: min(calc(4vw + 0.2rem), 1rem);
     }
 `

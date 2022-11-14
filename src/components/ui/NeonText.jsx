@@ -38,8 +38,6 @@ const fadeInAnimationOnClick = keyframes`
 }`
 
 const StyledArrowContainer = styled.div`
-    overflow: hidden;
-
     animation: ${({ triggerAnimation }) => {
         return triggerAnimation
             ? css`
@@ -80,13 +78,10 @@ const StyledArrowP = styled.p`
     margin: auto;
     width: 20rem;
     height: 20rem;
-
     font-size: 8rem;
-
     text-align: center;
     transform: ${({ rotateDeg }) => `rotate(${rotateDeg || 0}deg)`};
     font-family: 'Noto Sans Symbols 2', sans-serif;
-
     color: #fff;
     text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #8000b1, 0 0 82px #8000b1, 0 0 92px #8000b1, 0 0 102px #8000b1,
         0 0 151px #8000b1;

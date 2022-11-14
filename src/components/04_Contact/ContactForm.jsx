@@ -61,9 +61,11 @@ export const ContactForm = () => {
 
     return (
         <StyledFlexItem>
-            <StyledH1 background={CONTACT_H1_BG} text={CONTACT_H1_TEXT}>
-                CONTACT FORM
-            </StyledH1>
+            <StyledLi>
+                <StyledH1 background={CONTACT_H1_BG} text={CONTACT_H1_TEXT}>
+                    CONTACT FORM
+                </StyledH1>
+            </StyledLi>
             <StyledForm ref={formRef} onSubmit={sendEmail}>
                 <FormInput
                     onChange={onInputChange}
@@ -72,7 +74,7 @@ export const ContactForm = () => {
                     placeholder="Name"
                     label="NAME"
                     name="user_name"
-                    width={'30rem'}
+                    width={'calc(35vw + 4rem)'}
                     error={formErrors.user_name}
                 />
                 <FormInput
@@ -82,7 +84,7 @@ export const ContactForm = () => {
                     placeholder="Email"
                     label="EMAIL"
                     name="user_email"
-                    width={'30rem'}
+                    width={'calc(35vw + 4rem)'}
                     error={formErrors.user_email}
                 />
                 <FormTextArea
@@ -92,8 +94,8 @@ export const ContactForm = () => {
                     placeholder="Message"
                     label="MESSAGE"
                     name="message"
-                    width={'30rem'}
-                    height={'10rem'}
+                    width={'calc(35vw + 4rem)'}
+                    height={'calc(10vw + 4rem)'}
                     error={formErrors.message}
                 />
                 <StyledButton background={CONTACT_H1_BG} onClick={validateFormAndSendEmail}>
@@ -107,64 +109,42 @@ export const ContactForm = () => {
 const StyledFlexItem = styled.div`
     position: relative;
     display: block;
-    margin: 1rem;
-
-    @media (max-device-width: 440px) {
-        width: 90vw;
-        margin: 0.1rem auto;
-        min-width: unset;
-    }
+    margin: auto;
 `
 const StyledForm = styled.form``
+
+const StyledLi = styled.li`
+    position: relative;
+    display: block;
+    margin: 0.5rem auto;
+`
 
 const StyledH1 = styled.h1`
     position: relative;
     display: block;
-    margin: 1rem 0rem;
     padding: 0.3rem;
     text-align: left;
-    font-size: 2rem;
+    font-size: min(calc(1.5vw + 1rem), 2rem);
     font-weight: 700;
     background: ${({ background }) => background};
     color: ${({ text }) => text};
-    width: 24rem;
-    clip-path: polygon(0 0, 100% 0%, 75% 100%, 0% 100%);
 
-    @media (max-device-width: 440px) {
-        font-size: 1.2rem;
-        margin: 0.5rem 0rem;
-        width: 90vw;
-        clip-path: unset;
-    }
-
-    @media (max-device-width: 380px) {
-        font-size: 1rem;
-        margin: 0.5rem 0rem;
-        width: 90vw;
-        clip-path: unset;
+    @media only screen and (max-width: 451px) {
+        min-width: 90vw;
+        font-size: min(calc(2vw + 1rem), 2rem);
     }
 `
 
 const StyledButton = styled.button`
     position: relative;
     display: block;
-    margin: 2.5rem auto;
+    margin: 0.3rem auto;
     width: 8rem;
-    font-size: 1.5rem;
+    font-size: min(calc(1vw + 1rem), 1.5rem);
     background: #ffffff;
     color: #000000;
     border: 3px solid ${({ background }) => background};
     border-radius: 20px;
     cursor: pointer;
     z-index: 1;
-
-    @media (max-device-width: 440px) {
-        font-size: 1.2rem;
-        margin: 0.5rem auto;
-    }
-
-    @media (max-device-width: 380px) {
-        font-size: 1rem;
-        margin: 0.5rem auto;
-    }
 `

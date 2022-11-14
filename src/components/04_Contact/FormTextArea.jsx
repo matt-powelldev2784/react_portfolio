@@ -35,15 +35,11 @@ const StyledContainerDiv = styled.div`
     display: block;
     width: ${({ width }) => width};
     height: ${({ height }) => height};
+    min-width: 27.5rem;
     margin: 1rem auto;
 
-    @media (max-device-width: 440px) {
-        width: 90vw;
-        margin: 1rem 0rem;
-    }
-
-    @media (max-device-width: 380px) {
-        width: 90vw;
+    @media only screen and (max-width: 451px) {
+        min-width: 90vw;
         margin: 0.3rem 0rem;
     }
 `
@@ -59,8 +55,9 @@ const TextArea = styled.textarea`
     position: relative;
     display: block;
     margin: 0rem auto 0rem auto;
+    min-width: 27.5rem;
     width: 100%;
-    height: 100%;
+    height: 80%;
     padding: 0.5rem;
     background: #ffffff;
     border: 5px solid ${({ error, text }) => (error ? 'red' : text)};
@@ -68,20 +65,11 @@ const TextArea = styled.textarea`
     box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.3);
     font-size: 1rem;
 
-    @media (max-device-width: 440px) {
-        width: 90vw;
+    @media only screen and (max-width: 451px) {
         border: 2px solid ${({ error, text }) => (error ? 'red' : text)};
         border-radius: 0.7rem;
-        max-height: 80%;
-        height: 8rem;
-    }
-
-    @media (max-device-width: 380px) {
-        width: 90vw;
-        border: 2px solid ${({ error, text }) => (error ? 'red' : text)};
-        border-radius: 0.7rem;
-        max-height: 80%;
-        height: 6rem;
+        max-height: 70%;
+        min-width: 90vw;
     }
 `
 
@@ -94,8 +82,7 @@ const Span = styled.span`
     font-size: 1.2rem;
     background: none;
 
-    @media (max-device-width: 440px) {
-        height: 14%;
+    @media only screen and (max-width: 451px) {
         font-size: 1rem;
     }
 `
@@ -112,7 +99,7 @@ const ErrorSpan = styled.span`
     text-transform: uppercase;
     border-radius: 0.5rem;
 
-    @media (max-device-width: 440px) {
+    @media only screen and (max-width: 451px) {
         font-size: 0.8rem;
     }
 `

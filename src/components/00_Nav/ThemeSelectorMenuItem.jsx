@@ -41,7 +41,7 @@ const StyledMenuItem = styled.div`
         border-bottom: solid 2px ${({ menuText }) => menuText};
     }
 
-    @media (max-device-width: 440px) {
+    @media only screen and (max-width: 451px) {
         width: 100vw;
         margin: auto;
         padding: 0.3rem;

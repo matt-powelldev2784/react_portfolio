@@ -26,7 +26,7 @@ const StyledP = styled.p`
     padding: 0.5rem;
     max-width: 16rem;
 
-    @media (max-device-width: 440px) {
+    @media only screen and (max-width: 451px) {
         top: 36px;
         width: auto;
         padding: 0.15rem;

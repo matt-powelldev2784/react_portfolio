@@ -46,7 +46,7 @@ const StyledFlexBox = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     align-items: start;
-    gap: 1rem;
+    gap: 4rem;
 
     @media only screen and (max-width: 451px) {
         padding: unset;

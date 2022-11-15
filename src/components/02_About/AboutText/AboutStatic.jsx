@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled, { keyframes, css } from 'styled-components'
 import { ThemeContext } from '../../../app/App'
 import { fullText } from '../aboutTextInfo'
+import { AboutLink } from './AboutLink'
 
 export const AboutStatic = () => {
     const [startAnimation, setStartAnimation] = useState(false)
@@ -18,16 +19,18 @@ export const AboutStatic = () => {
                 ABOUT ME
             </StyledH1>
             <StyledPJustify text={ABOUT_TEXT}>{fullText}</StyledPJustify>
-            <StyledP text={ABOUT_TEXT}>
-                Please see my github page:
-                <span> </span>
-                <StyledA href={'https://github.com/matt-powelldev2784'}>https://github.com/matt-powelldev2784</StyledA>
-            </StyledP>
-            <StyledP text={ABOUT_TEXT}>
-                If you wish to contact me, please email:
-                <span> </span>
-                <StyledA href={'mailto:matt.powell2784@gmail.com'}>matt.powell2784@gmail.com</StyledA>
-            </StyledP>
+            <AboutLink
+                textColor={ABOUT_TEXT}
+                text={'Please see my github page:'}
+                href={'https://github.com/matt-powelldev2784'}
+                linkText={'https://github.com/matt-powelldev2784'}
+            />
+            <AboutLink
+                textColor={ABOUT_TEXT}
+                text={'If you wish to contact me, please email:'}
+                href={'mailto:matt.powell2784@gmail.com'}
+                linkText={'matt.powell2784@gmail.com'}
+            />
         </StyledContainer>
     )
 }
@@ -90,33 +93,4 @@ const StyledPJustify = styled.p`
         font-size: max(calc(1vw + 0.7rem), 1rem);
         margin: 0.5rem;
     }
-`
-
-const StyledP = styled.p`
-    font-size: min(calc(1vw + 1rem), 1.8rem);
-    margin: calc(2vw + 1rem) calc(2vw + 1rem);
-    text-align: left;
-    color: ${({ text }) => text};
-
-    @media only screen and (max-width: 451px) {
-        font-size: max(calc(1vw + 0.7rem), 0.92rem);
-        margin: 0.5rem;
-    }
-`
-
-const StyledA = styled.a`
-    &:link {
-        color: unset;
-    }
-    &:visited {
-        color: unset;
-    }
-    &:hover {
-        color: unset;
-    }
-    &:active {
-        color: unset;
-    }
-
-    white-space: nowrap;
 `

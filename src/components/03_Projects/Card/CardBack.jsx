@@ -18,10 +18,8 @@ export const CardBack = ({ cardProps }) => {
                     <StyledImgContainer>
                         <StyledLogoImg src={imgBack} />
                     </StyledImgContainer>
-
                     <StyledH1>{title}</StyledH1>
                     <StyledH1>{description}</StyledH1>
-
                     <StyledP>{text1}</StyledP>
                     <StyledP>{text2}</StyledP>
                     {href && <StyledButton onClick={onButtonClick}>Visit Site</StyledButton>}

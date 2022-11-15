@@ -22,7 +22,7 @@ export const Contact = ({ scrollToComponent, triggerAnimation }, ref) => {
             <StyledSection {...swipeHandlers}>
                 <StyledRefDiv ref={ref} />
                 <Background backgroundImage={backgroundImage} />
-                <ContactFlexbox />
+                {/* <ContactFlexbox /> */}
                 {displayNotification && <TopOfPageNotification text={notificationText} />}
                 {/* <NeonText char={'▴'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} /> */}
             </StyledSection>

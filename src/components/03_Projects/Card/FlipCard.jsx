@@ -31,7 +31,7 @@ const StyledContainer = styled.div`
     display: block;
     overflow: visible;
     max-width: 40rem;
-    max-height: 30rem;
+    max-height: min(30rem, 80vh);
     height: 100%;
     width: 80vw;
     margin: 0rem;
@@ -43,6 +43,7 @@ const StyledContainer = styled.div`
 const StyledFlipper = styled.div`
     width: min(40rem, 100%);
     height: min(30rem, 27rem);
+    max-height: min(30rem, 80vh);
     border-radius: 20px;
     overflow: visible;
 

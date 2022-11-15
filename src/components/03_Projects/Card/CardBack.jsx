@@ -34,6 +34,7 @@ const StyledBack = styled.div`
     overflow: visible;
     width: 100%;
     height: 27rem;
+    max-height: min(30rem, 80vh);
     border-radius: 20px;
     background: #ffffff;
     box-shadow: ${({ boxShadow }) => boxShadow};
@@ -85,6 +86,11 @@ const StyledP = styled.p`
         font-size: calc(1vw + 0.75rem);
         margin: calc(2vw + 0.05rem);
     }
+
+    @media only screen and (max-height: 400px) {
+        font-size: calc(1vh + 0.75rem);
+        margin: calc(2vw + 0.05rem);
+    }
 `
 
 const StyledImgContainer = styled.div`
@@ -95,8 +101,13 @@ const StyledImgContainer = styled.div`
     margin: auto;
 
     @media only screen and (max-width: 744px) {
+        display: content;
         width: calc(8vw + 3rem);
         height: calc(8vw + 3rem);
+    }
+
+    @media only screen and (max-height: 400px) {
+        display: none;
     }
 `
 

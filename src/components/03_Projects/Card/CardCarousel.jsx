@@ -67,6 +67,7 @@ const StyledContainerDiv = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, calc(-50% - 10px));
+    max-height: min(30rem, 80vh);
 `
 
 const StyledPrevCircleDiv = styled.div`

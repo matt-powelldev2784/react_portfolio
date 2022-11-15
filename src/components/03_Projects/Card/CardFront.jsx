@@ -25,6 +25,7 @@ const StyledFront = styled.div`
     overflow: visible;
     width: 100%;
     height: 27rem;
+    max-height: min(30rem, 80vh);
     border-radius: 20px;
     box-shadow: ${({ boxShadow }) => boxShadow};
 `

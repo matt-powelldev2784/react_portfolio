@@ -6,7 +6,7 @@ import { CardCarousel } from './Card/CardCarousel'
 import { NeonText } from '../ui/NeonText'
 
 const Projects = ({ scrollToComponent, triggerAnimation }, ref) => {
-    const { theme, isDesktop } = React.useContext(ThemeContext)
+    const { theme } = React.useContext(ThemeContext)
     const { PROJECTS_BG } = theme?.colors?.projects
 
     const swipeHandlers = useSwipeable({
@@ -18,7 +18,7 @@ const Projects = ({ scrollToComponent, triggerAnimation }, ref) => {
             <StyledRefDiv ref={ref} />
             <StyledOpacityConatiner background={PROJECTS_BG} />
             <CardCarousel />
-            {isDesktop && <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
+            <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />
         </StyledSection>
     )
 }

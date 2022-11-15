@@ -24,7 +24,7 @@ export const Contact = ({ scrollToComponent, triggerAnimation }, ref) => {
                 <Background backgroundImage={backgroundImage} />
                 <ContactFlexbox />
                 {displayNotification && <TopOfPageNotification text={notificationText} />}
-                {/* {isDesktop && <NeonText char={'▴'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />} */}
+                {/* <NeonText char={'▴'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} /> */}
             </StyledSection>
         </ContactContext.Provider>
     )

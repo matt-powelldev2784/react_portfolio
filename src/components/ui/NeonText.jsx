@@ -38,6 +38,7 @@ const fadeInAnimationOnClick = keyframes`
 }`
 
 const StyledArrowContainer = styled.div`
+    display: contents;
     animation: ${({ triggerAnimation }) => {
         return triggerAnimation
             ? css`
@@ -49,7 +50,7 @@ const StyledArrowContainer = styled.div`
     }};
 
     @media only screen and (max-width: 451px) {
-        font-size: 5rem;
+        display: none;
     }
 `
 

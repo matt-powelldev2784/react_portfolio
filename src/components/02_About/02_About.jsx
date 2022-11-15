@@ -12,7 +12,7 @@ export const aboutContext = createContext()
 
 const About = ({ triggerAnimation, scrollToComponent }, ref) => {
     const [displayTyping, setDisplayTyping] = useState(false)
-    const { theme, isDesktop } = React.useContext(ThemeContext)
+    const { theme } = React.useContext(ThemeContext)
     const { ABOUT_BG } = theme?.colors?.about
 
     const swipeHandlers = useSwipeable({
@@ -32,7 +32,7 @@ const About = ({ triggerAnimation, scrollToComponent }, ref) => {
                     <AboutText />
                 </StyledFlexBox>
                 {displayTyping && <TopOfPageNotification text={'Click to cancel typing effect...'} />}
-                {isDesktop && <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />}
+                <NeonText char={'⏷'} onClick={scrollToComponent} triggerAnimation={triggerAnimation} />
             </StyledSection>
         </aboutContext.Provider>
     )

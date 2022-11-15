@@ -3,12 +3,12 @@ import styled from 'styled-components'
 import { ThemeContext } from '../../app/App'
 
 export const MenuItem = ({ scrollTo, menuContent, menuClickHandler }) => {
-    const { theme } = React.useContext(ThemeContext)
+    const { isDesktop, theme } = React.useContext(ThemeContext)
     const { MENU_TEXT, MOB_MENU_TEXT } = theme?.colors?.navigation
 
     const onClickHandler = () => {
         scrollTo()
-        menuClickHandler()
+        !isDesktop && menuClickHandler()
     }
 
     return (

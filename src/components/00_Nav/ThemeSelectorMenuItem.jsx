@@ -3,14 +3,14 @@ import styled from 'styled-components'
 import { ThemeContext } from '../../app/App'
 
 export const ThemeSelectorMenuItem = ({ menuClickHandler }) => {
-    const { theme, currentTheme, setCurrentTheme } = React.useContext(ThemeContext)
+    const { isDesktop, theme, currentTheme, setCurrentTheme } = React.useContext(ThemeContext)
     const { MENU_TEXT, MOB_MENU_TEXT } = theme?.colors?.navigation
     const newTheme = currentTheme === 'light' ? 'dark' : 'light'
     const themeMenuTitle = `${newTheme.toUpperCase()} THEME`
 
     const changeTheme = e => {
         setCurrentTheme(newTheme)
-        menuClickHandler()
+        !isDesktop && menuClickHandler()
     }
 
     return (

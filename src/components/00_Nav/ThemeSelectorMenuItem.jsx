@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { ThemeContext } from '../../app/App'
 
-export const ThemeSelectorMenuItem = () => {
+export const ThemeSelectorMenuItem = ({ menuClickHandler }) => {
     const { theme, currentTheme, setCurrentTheme } = React.useContext(ThemeContext)
     const { MENU_TEXT, MOB_MENU_TEXT } = theme?.colors?.navigation
     const newTheme = currentTheme === 'light' ? 'dark' : 'light'
@@ -10,6 +10,7 @@ export const ThemeSelectorMenuItem = () => {
 
     const changeTheme = e => {
         setCurrentTheme(newTheme)
+        menuClickHandler()
     }
 
     return (

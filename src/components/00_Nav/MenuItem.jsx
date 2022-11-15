@@ -2,13 +2,18 @@ import React from 'react'
 import styled from 'styled-components'
 import { ThemeContext } from '../../app/App'
 
-export const MenuItem = ({ href, menuContent }) => {
+export const MenuItem = ({ scrollTo, menuContent, menuClickHandler }) => {
     const { theme } = React.useContext(ThemeContext)
     const { MENU_TEXT, MOB_MENU_TEXT } = theme?.colors?.navigation
 
+    const onClickHandler = () => {
+        scrollTo()
+        menuClickHandler()
+    }
+
     return (
         <StyledListItem>
-            <StyledA href={href}>
+            <StyledA onClick={onClickHandler}>
                 <StyledMenuItem menuText={MENU_TEXT} menuTextMob={MOB_MENU_TEXT}>
                     {menuContent}
                 </StyledMenuItem>

@@ -15,7 +15,7 @@ export const MenuMobile = () => {
             <MenuImgConatiner>
                 <StyledMenuImg src={menuIcon} onClick={menuClickHandler} />
             </MenuImgConatiner>
-            {menuOpen && <MenuElements />}
+            {menuOpen && <MenuElements menuClickHandler={menuClickHandler} />}
         </StyledDiv>
     )
 }

@@ -48,7 +48,7 @@ const StyledArrowContainer = styled.div`
               `
     }};
 
-    @media (max-device-width: 440px) {
+    @media only screen and (max-width: 451px) {
         font-size: 5rem;
     }
 `
@@ -88,7 +88,7 @@ const StyledArrowP = styled.p`
     animation: ${animateNeonFlicker} 1.5s infinite alternate;
     cursor: pointer;
 
-    @media (max-device-width: 440px) {
+    @media only screen and (max-width: 451px) {
         width: 15rem;
         height: 15rem;
         bottom: -8rem;

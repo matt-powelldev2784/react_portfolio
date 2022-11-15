@@ -45,7 +45,7 @@ const StyledImg = styled.img`
 const StyledA = styled.a`
     position: relative;
     display: inline-block;
-    font-size: calc(0.8vw + 0.8rem);
+    font-size: max(calc(0.7vw + 0.7rem), 1.3rem);
     white-space: nowrap;
     color: ${({ color }) => color};
 

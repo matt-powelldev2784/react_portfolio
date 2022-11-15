@@ -32,12 +32,19 @@ const StyledBackgroundContainer = styled.div`
 `
 
 const StyledContainer = styled.div`
-    position: absolute;
+    position: relative;
     display: block;
     width: 100%;
-    height: auto;
-    top: 50%;
-    transform: translateY(-50%);
+    height: 100%;
+    min-height: 100vh;
+
+    @media only screen and (max-width: 451px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
 `
 
 const StyledFlexBox = styled.div`
@@ -47,6 +54,7 @@ const StyledFlexBox = styled.div`
     justify-content: center;
     align-items: start;
     gap: calc(2vw + 1.2rem);
+    padding: calc(8vh + 1rem) 0rem;
 
     @media only screen and (max-width: 451px) {
         padding: unset;

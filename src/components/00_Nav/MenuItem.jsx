@@ -3,12 +3,14 @@ import styled from 'styled-components'
 import { ThemeContext } from '../../app/App'
 
 export const MenuItem = ({ scrollTo, menuContent, menuClickHandler }) => {
-    const { isDesktop, theme } = React.useContext(ThemeContext)
+    const { theme } = React.useContext(ThemeContext)
     const { MENU_TEXT, MOB_MENU_TEXT } = theme?.colors?.navigation
 
     const onClickHandler = () => {
         scrollTo()
-        !isDesktop && menuClickHandler()
+        if (typeof menuClickHandler === 'function') {
+            menuClickHandler()
+        }
     }
 
     return (
@@ -48,6 +50,19 @@ const StyledMenuItem = styled.div`
     }
 
     @media only screen and (max-width: 451px) {
+        width: 100vw;
+        margin: auto;
+        padding: 0.3rem;
+        color: ${({ menuTextMob }) => menuTextMob};
+        border-bottom: solid 1px ${({ menuTextMob }) => menuTextMob};
+
+        &:hover {
+            color: ${({ menuTextMob }) => menuTextMob};
+            border-bottom: solid 1px ${({ menuTextMob }) => menuTextMob};
+        }
+    }
+
+    @media only screen and (max-height: 400px) {
         width: 100vw;
         margin: auto;
         padding: 0.3rem;

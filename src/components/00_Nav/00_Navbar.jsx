@@ -30,4 +30,15 @@ const StyledNav = styled.nav`
         margin: unset;
         background: #000000;
     }
+
+    @media only screen and (max-height: 400px) {
+        position: fixed;
+        display: block;
+        margin: auto;
+        top: unset;
+        padding: unset;
+        right: unset;
+        margin: unset;
+        background: #000000;
+    }
 `

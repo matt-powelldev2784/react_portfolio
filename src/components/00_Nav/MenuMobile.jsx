@@ -31,12 +31,27 @@ const StyledDiv = styled.div`
         width: 100%;
         z-index: 10000;
     }
+    @media only screen and (max-height: 400px) {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: auto;
+        width: 100%;
+        z-index: 10000;
+    }
 `
 
 const MenuImgConatiner = styled.ul`
     display: none;
 
     @media only screen and (max-width: 451px) {
+        position: relative;
+        display: block;
+        width: 100vw;
+    }
+
+    @media only screen and (max-height: 400px) {
         position: relative;
         display: block;
         width: 100vw;

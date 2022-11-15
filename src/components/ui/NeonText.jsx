@@ -52,6 +52,10 @@ const StyledArrowContainer = styled.div`
     @media only screen and (max-width: 451px) {
         display: none;
     }
+
+    @media only screen and (max-height: 400px) {
+        display: none;
+    }
 `
 
 const animateNeonFlicker = keyframes`
